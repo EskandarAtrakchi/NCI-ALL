@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        input {
+            float: right;
+        }
+        textarea {
+            float: right;
+        }
+        button {
+            float: right;
+        }
+        #forme {
+            width: 300px;
+            height: 100px;
+            padding: 100px;
+            background-color: whitesmoke;
+            box-shadow: 10px 10px 10px 10px;
+            border-radius: 5%;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <div style="border:1 px black; display:block;">
+            <center id="forme">
+                <form action="/action_page.php">
+                    <label for="fname">Name:</label>
+                    <input type="text" id="name" name="name"><br><br>
+                    <label for="E-mail">E-mail:</label>
+                    <input type="email" id="email" name="email"><br><br>
+                    Message: <textarea for="text" id="message" name="message"></textarea>
+                    <br><br><br>
+                    <div style="padding-right: 9%;"><button>Submit your message</button></div>
+                    
+                </form>
+            </center>
+        </div>
+    </center>
+</body>
+</html>
