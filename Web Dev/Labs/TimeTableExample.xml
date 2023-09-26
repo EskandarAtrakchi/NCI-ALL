@@ -1,0 +1,54 @@
+<timetable>
+<course>Technology</course>
+<year>2</year>
+<Week>
+<day name="monday">
+<slot id="1" type="lecture">
+<starttime>9:00am</starttime>
+<endtime>11:00am</endtime>
+<subject>Web Dev</subject>
+</slot>
+<slot id="2" type="lab">
+<starttime>1:00pm</starttime>
+<endtime>3:00pm</endtime>
+<subject>Java</subject>
+</slot>
+</day>
+<day name="tuesday">
+<slot id="1" type="lecture">
+<starttime>9:00am</starttime>
+<endtime>11:00am</endtime>
+<subject>Web Dev</subject>
+</slot>
+<slot id="2" type="lab">
+<starttime>1:00pm</starttime>
+<endtime>3:00pm</endtime>
+<subject>Java</subject>
+</slot>
+</day>
+<day name="wednesday">
+<slot id="1" type="lecture">
+<starttime>9:00am</starttime>
+<endtime>11:00am</endtime>
+<subject>Web Dev</subject>
+</slot>
+<slot id="2" type="lab">
+<starttime>1:00pm</starttime>
+<endtime>3:00pm</endtime>
+<subject>Java</subject>
+</slot>
+</day>
+<day name="friday">
+<slot id="1" type="lecture">
+<starttime>9:00am</starttime>
+<endtime>11:00am</endtime>
+<subject>Web Dev</subject>
+</slot>
+<slot id="2" type="lab">
+<starttime>1:00pm</starttime>
+<endtime>3:00pm</endtime>
+<subject>Java</subject>
+</slot>
+</day>
+</Week>
+</timetable>

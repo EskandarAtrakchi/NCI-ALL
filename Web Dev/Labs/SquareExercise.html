@@ -1,0 +1,103 @@
+<html>
+	<head></head>
+	<body style="margin:0">
+		<table cellpadding="0" cellspacing="0" width="100%" height="100%">
+			<tr style="height:10px;">
+				<td style="vertical-align:top; width:10px; border:3px solid red;">fr1cell</td>
+				<td style="border-bottom:3px solid red;"></td>
+				<td style="vertical-align:top; text-align:right; width:10px; border:3px solid red;">fr3cell</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td style="border-right:3px solid red; border-left:3px solid red;"></td>
+				<td></td>
+			</tr>
+			<tr style="height:10px">
+				<td style="vertical-align:bottom; text-align:left; border:3px solid red;">tr1cell</td>
+				<td style="border-top:3px solid red;"></td>
+				<td style="vertical-align:bottom; text-align:right; border:3px solid red;">tr3cell</td>
+			</tr>
+		</table>
+	</body>
+</html>
+
+==========================================================================
+
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #topContainer {
+            #background-color: red;
+            #border-bottom: 1px solid black;
+            height: 30px;
+            position: absolute;
+            width: 100%;
+        }
+
+        #middleContainer {
+            #background-color: yellow;
+            position: absolute;
+			border: 4px solid red;
+            top: 34px;
+            bottom: 34px;
+            left: 34px; /* This should be adjusted according to border thickness */
+            right: 34px; /* This should be adjusted according to border thickness */
+        }
+
+        .box {
+            width: 30px;
+            height: 30px;
+            #background-color: green;
+			border: 4px solid red;
+            position: fixed;
+        }
+
+        #left {
+            top: 0;
+            left: 0;
+        }
+
+        #right {
+            top: 0;
+            right: 0;
+        }
+
+        #bottomContainer {
+            #background-color: red;
+            #border-top: 1px solid black;
+            height: 30px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        #bleft {
+            bottom: 0;
+            left: 0;
+        }
+
+        #bright {
+            bottom: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="topContainer">
+        <div id="left" class="box"></div>
+        <div id="right" class="box"></div>
+    </div>
+    <div id="middleContainer">
+        
+    </div>
+    <div id="bottomContainer">
+        <div id="bleft" class="box"></div>
+        <div id="bright" class="box"></div>
+    </div>
+</body>
+</html>
