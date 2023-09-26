@@ -19,20 +19,6 @@
               </lectures>
             </timetable>
           </module>
-          <module>
-            <module_name>Web Dev</module_name>
-            <timetable>
-              <day>Tuesday</day>
-              <time>10:00 AM - 12:00 PM</time>
-              <lectures>
-                <lecture>
-                  <professor>Prof. Shahid</professor>
-                  <room>Room 3.01</room>
-                </lecture>
-              </lectures>
-            </timetable>
-          </module>
-        </modules>
       </year>
     </years>
   </course>
