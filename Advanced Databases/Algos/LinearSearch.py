@@ -1,18 +1,30 @@
-#This code by the professor is to find the average of an array.
-
+#Import numpy as np
 import numpy as np
 
-arrp = np.array([4,8,9,1])
+#----------------------------------------------------------------
 
-#print(np.average(arrp))
-
-arr=[1,5,9,200,4,8,7]
-x = 200
-
-
-def search(arr, x):
-    for i in range(len(arr)):
-        if arr[i] == x:
-            return i
+def LinearSearch(data, query):
+    index = 0 #index of the item in the array to search 
+    found = False # True if the query is a linear search
+    for item in data: # search for the item
+        if (item == query): # if the item is found
+            print('found at position ' , index)
+            found = True # set found to true
+            break #break the loop
+        index+=1# index of the item to search
         
-    return -1
+    if (found == False): # 
+        print('not found')
+
+myRandoms = np.random.randint(1000, size=100)
+
+print (myRandoms)
+
+myRandoms[50] = 500
+
+LinearSearch(myRandoms, 500)
+
+
+#sort_randoms = np.sort(myRandoms)
+
+#print (sort_randoms)
