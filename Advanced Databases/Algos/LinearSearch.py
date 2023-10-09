@@ -16,13 +16,13 @@ def LinearSearch(data, query):
     if (found == False): # 
         print('not found')
 
-myRandoms = np.random.randint(1000, size=100)
+myRandoms = np.random.randint(1000, size=100) # create an array of random integers
 
-print (myRandoms)
+print (myRandoms)################################
 
-myRandoms[50] = 500
+myRandoms[50] = 500# set the item at index 50 to be 500
 
-LinearSearch(myRandoms, 500)
+LinearSearch(myRandoms, 500)# run the linear search
 
 
 #sort_randoms = np.sort(myRandoms)
