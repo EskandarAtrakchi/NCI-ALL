@@ -20,7 +20,7 @@ public class EmployeeApp {
      * @param args the command line arguments
      */
     
-    public static void main(String[] args) {
+    public static void main (String[] args) {
         
         //Manager instance here 
         
@@ -48,13 +48,35 @@ public class EmployeeApp {
         E.setName("Josh Alex");
         
         ////////////////////////////////////////////////
+        //Start to add here from today's lecture 
+        
+        //C.details();//Remeber the method returns so print it out 
+        
         System.out.println(C.details());
+        
         ////////////////////////////////////////////////
         
+        Employee e = new Manager ();
+        
+        //e.canHireEmployee(e);//Remeber the method returns so print it out 
+        
+        System.out.println("Can hire? " + e.canHireEmployee(e));
+        
+        Employee e1 = new Cleaner();
+        
+        System.out.println("Can hire? " + e1.canHireEmployee(e1) );
+        
+        M.modifyForSalary(e, 12321.0);
+        
+        //the end of what we added from today's lecture
+        
         System.out.println("Click one to display the manager and two to display the cleaner or number three for basic");
+        
         int scChoice = sc.nextInt() ;
         
-        while(true){
+        boolean X = false;
+        
+        while(X != true){//keep looping as long as it is true
             
             if (scChoice == 1) {
 
@@ -64,6 +86,7 @@ public class EmployeeApp {
                 System.out.println("The ID is: " + M.getId());
                 System.out.println("The name of the manager is: " + M.getName());
                 System.out.println("The salary of the manager is: " + M.getSalary());
+                
                 break;
                 
             }
@@ -76,6 +99,7 @@ public class EmployeeApp {
                 System.out.println("This is the worked hours: " + 40 + " hours.");
                 System.out.println("This is the claener ID: " + C.getId());
                 System.out.println("This is the cleaner's name: " + C.getName());
+                
                 break;
                 
             }
@@ -86,13 +110,15 @@ public class EmployeeApp {
                 System.out.println("this is the date of birth of the person added to basic section:" + E.getDob());
                 System.out.println("this is the ID of the person added to basic section:" + E.getId());
                 System.out.println("this is the name of the person added to basic section:" + E.getName());
-                break;
+                
+                break;//Stop the loop 
                 
             }
             
             else {
                 
                 System.out.println("Opps, wrong choice!!");
+                
                 break;
                 
             }

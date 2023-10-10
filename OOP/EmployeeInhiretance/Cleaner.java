@@ -19,9 +19,13 @@ public class Cleaner extends Employee {
     @Override
     public String details() {
         
-        return super.details() +
-               "\nHourly Rate: " + hourlyRate + "\n" +
-               "Hours Worked: " + hours + "\n";
+        return super.details() 
+                
+                + "\n" + 
+                "Hourly Rate: " + hourlyRate 
+                + "\n" +
+               "Hours Worked: " + hours 
+                + "\n";
         
     }
 
