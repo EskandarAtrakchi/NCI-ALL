@@ -1,137 +1,115 @@
-<catalog>
-    <book id="bk101">
-        <author>Gambardella, Matthew</author>
-        <title>XML Developer's Guide</title>
-        <genre>Computer</genre>
-        <price>44.95</price>
-        <publish>
-            <publish_date>2000</publish_date>
-            <publisher>Wiley</publisher>
-        </publish>
-        <description>An in-depth look at creating applications with XML.</description>
-    </book>
-    <book id="bk102">
-        <author>Ralls, Kim</author>
-        <title>Midnight Rain</title>
-        <genre>Fantasy</genre>
-        <price>5.95</price>
-        <publish>
-            <publish_date>2000</publish_date>
-            <publisher>Penguin</publisher>
-        </publish>
-        <description>A former architect battles corporate zombies, an evil sorceress, and her own childhood to become queen of the world.</description>
-    </book>
-    <book id="bk103">
-        <author>Corets, Eva</author>
-        <title>Maeve Ascendant</title>
-        <genre>Fantasy</genre>
-        <price>5.95</price>
-        <publish>
-            <publish_date>2000</publish_date>
-            <publisher>Penguin</publisher>
-        </publish>
-        <description>After the collapse of a nanotechnology society in England, the young survivors lay the foundation for a new society.</description>
-    </book>
-    <book id="bk104">
-        <author>Corets, Eva</author>
-        <title>Oberon's Legacy</title>
-        <genre>Fantasy</genre>
-        <price>5.95</price>
-        <publish>
-            <publish_date>2001</publish_date>
-            <publisher>Penguin</publisher>
-        </publish>
-        <outOfPrint/>
-        <description>In post-apocalypse England, the mysterious agent known only as Oberon helps to create a new life for the inhabitants of London. Sequel to Maeve Ascendant.</description>
-    </book>
-    <book id="bk105">
-        <author>Corets, Eva</author>
-        <title>The Sundered Grail</title>
-        <genre>Fantasy</genre>
-        <price>5.95</price>
-        <publish>
-            <publish_date>2002</publish_date>
-            <publisher>Penguin</publisher>
-        </publish>
-        <description>The two daughters of Maeve, half-sisters, battle one another for control of England. Sequel to Oberon's Legacy.</description>
-    </book>
-    <book id="bk106">
-        <author>Randall, Cynthia</author>
-        <title>Lover Birds</title>
-        <genre>Romance</genre>
-        <price>4.95</price>
-        <publish>
-            <publish_date>2000</publish_date>
-            <publisher>Whitehouse</publisher>
-        </publish>
-        <description>When Carla meets Paul at an ornithology conference, tempers fly as feathers get ruffled.</description>
-    </book>
-    <book id="bk107">
-        <author>Thurman, Paula</author>
-        <title>Splish Splash</title>
-        <genre>Romance</genre>
-        <price>4.95</price>
-        <publish>
-            <publish_date>2000</publish_date>
-            <publisher>Whitehouse</publisher>
-        </publish>
-        <description>A deep sea diver finds true love twenty thousand leagues beneath the sea.</description>
-    </book>
-    <book id="bk108">
-        <author>Knorr, Stefan</author>
-        <title>Creepy Crawlies</title>
-        <genre>Horror</genre>
-        <price>4.95</price>
-        <publish>
-            <publish_date>2000</publish_date>
-            <publisher>Wiley</publisher>
-        </publish>
-        <outOfPrint/>
-        <description>An anthology of horror stories about roaches,centipedes, scorpions and other insects.</description>
-    </book>
-    <book id="bk109">
-        <author>Kress, Peter</author>
-        <title>Paradox Lost</title>
-        <genre>Science Fiction</genre>
-        <price>6.95</price>
-        <publish>
-            <publish_date>2000</publish_date>
-            <publisher>Penguin</publisher>
-        </publish>
-        <description>After an inadvertant trip through a HeisenbergUncertainty Device, James Salway discovers the problems of being quantum.</description>
-    </book>
-    <book id="bk110">
-        <author>O'Brien, Tim</author>
-        <title>Microsoft .NET: The Programming Bible</title>
-        <genre>Computer</genre>
-        <price>36.95</price>
-        <publish>
-            <publish_date>2000</publish_date>
-            <publisher>Penguin</publisher>
-        </publish>
-        <description>Microsoft's .NET initiative is explored in detail in this deep programmer's reference.</description>
-    </book>
-    <book id="bk111">
-        <author>O'Brien, Tim</author>
-        <title>MSXML3: A Comprehensive Guide</title>
-        <genre>Computer</genre>
-        <price>36.95</price>
-        <publish>
-            <publish_date>2000</publish_date>
-            <publisher>Penguin</publisher>
-        </publish>
-        <outOfPrint/>
-        <description>The Microsoft MSXML3 parser is covered in detail, with attention to XML DOM interfaces, XSLT processing, SAX and more.</description>
-    </book>
-    <book id="bk112">
-        <author>Galos, Mike</author>
-        <title>Visual Studio 7: A Comprehensive Guide</title>
-        <genre>Computer</genre>
-        <price>49.95</price>
-        <publish>
-            <publish_date>2001</publish_date>
-            <publisher>Wiley</publisher>
-        </publish>
-        <description>Microsoft Visual Studio 7 is explored in depth,looking at how Visual Basic, Visual C++, C#, and ASP+ are integrated into a comprehensive development environment.</description>
-    </book>
-</catalog>
+<?xml version="1.0" encoding="UTF-8"?>
+<hotelDatabase>
+    <!-- Rooms Information are here-->
+    <rooms>
+        <room>
+            <roomId>101</roomId>
+            <roomType>Single</roomType>
+            <ratePerNight>100.00</ratePerNight>
+            <available>true</available>
+        </room>
+        <room>
+            <roomId>102</roomId>
+            <roomType>Double</roomType>
+            <ratePerNight>150.00</ratePerNight>
+            <available>true</available>
+        </room>
+        <room>
+            <roomId>103</roomId>
+            <roomType>Single</roomType>
+            <ratePerNight>100.00</ratePerNight>
+            <available>true</available>
+        </room>
+        <room>
+            <roomId>104</roomId>
+            <roomType>Double</roomType>
+            <ratePerNight>150.00</ratePerNight>
+            <available>true</available>
+        </room>
+        <room>
+            <roomId>105</roomId>
+            <roomType>Single</roomType>
+            <ratePerNight>100.00</ratePerNight>
+            <available>true</available>
+        </room>
+        <room>
+            <roomId>106</roomId>
+            <roomType>Double</roomType>
+            <ratePerNight>150.00</ratePerNight>
+            <available>true</available>
+        </room>
+        <room>
+            <roomId>107</roomId>
+            <roomType>Single</roomType>
+            <ratePerNight>100.00</ratePerNight>
+            <available>true</available>
+        </room>
+        <room>
+            <roomId>108</roomId>
+            <roomType>Double</roomType>
+            <ratePerNight>150.00</ratePerNight>
+            <available>true</available>
+        </room>
+    </rooms>
+
+    <!-- Guests Information -->
+    <guests>
+        <guest>
+            <!-- if a guest has an id that means the guest occupice the room with id <roomid> -->
+            <guestId>001</guestId>
+            <firstName>Joshua</firstName>
+            <lastName>Tupac</lastName>
+            <email>Joshua.Tupac@gmail.com</email>
+            <phone>0035312345678</phone>
+        </guest>
+        <guest>
+            <guestId>002</guestId>
+            <firstName>Yonus</firstName>
+            <lastName>Hafton</lastName>
+            <email>Yonus.Hafton@gmail.com</email>
+            <phone>0035323456781</phone>
+        </guest>
+        <guest>
+            <guestId>003</guestId>
+            <firstName>David</firstName>
+            <lastName>Davy</lastName>
+            <email>David.Davy@gmail.com</email>
+            <phone>0035334567812</phone>
+        </guest>
+        <guest>
+            <guestId>004</guestId>
+            <firstName>Eskandar</firstName>
+            <lastName>Atrakchi</lastName>
+            <email>Eskandar.Atrakchi@gmail.com</email>
+            <phone>0035345678123</phone>
+        </guest>
+    </guests>
+
+    <!-- Reservations Information -->
+    <reservations>
+        <reservation>
+            <reservationId>1001</reservationId>
+            <roomId>107</roomId>
+            <guestId>001</guestId>
+            <checkInDate>2023-10-15</checkInDate>
+            <checkOutDate>2023-10-20</checkOutDate>
+            <totalAmount>500.00</totalAmount>
+        </reservation>
+        <reservation>
+            <reservationId>1002</reservationId>
+            <roomId>102</roomId>
+            <guestId>002</guestId>
+            <checkInDate>2023-11-01</checkInDate>
+            <checkOutDate>2023-11-05</checkOutDate>
+            <totalAmount>750.00</totalAmount>
+        </reservation>
+        <reservation>
+            <reservationId>1003</reservationId>
+            <roomId>102</roomId>
+            <guestId>002</guestId>
+            <checkInDate>2023-11-01</checkInDate>
+            <checkOutDate>2023-11-05</checkOutDate>
+            <totalAmount>750.00</totalAmount>
+        </reservation>
+    </reservations>
+</hotelDatabase>

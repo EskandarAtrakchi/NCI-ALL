@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Define simple types -->
+    <xs:simpleType name="positiveInteger">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="positiveDecimal">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0.01"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="dateType">
+        <xs:restriction base="xs:date"/>
+    </xs:simpleType>
+
+    <!-- Define complex types -->
+    <xs:element name="hotelDatabase">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="rooms" type="roomListType"/>
+                <xs:element name="guests" type="guestListType"/>
+                <xs:element name="reservations" type="reservationListType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="roomType">
+        <xs:sequence>
+            <xs:element name="roomId" type="positiveInteger"/>
+            <xs:element name="roomType" type="xs:string"/>
+            <xs:element name="ratePerNight" type="positiveDecimal"/>
+            <xs:element name="available" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="guestType">
+        <xs:sequence>
+            <xs:element name="guestId" type="positiveInteger"/>
+            <xs:element name="firstName" type="xs:string"/>
+            <xs:element name="lastName" type="xs:string"/>
+            <xs:element name="email" type="xs:string"/>
+            <xs:element name="phone" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="reservationType">
+        <xs:sequence>
+            <xs:element name="reservationId" type="positiveInteger"/>
+            <xs:element name="roomId" type="positiveInteger"/>
+            <xs:element name="guestId" type="positiveInteger"/>
+            <xs:element name="checkInDate" type="dateType"/>
+            <xs:element name="checkOutDate" type="dateType"/>
+            <xs:element name="totalAmount" type="positiveDecimal"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="roomListType">
+        <xs:sequence>
+            <xs:element name="room" type="roomType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="guestListType">
+        <xs:sequence>
+            <xs:element name="guest" type="guestType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="reservationListType">
+        <xs:sequence>
+            <xs:element name="reservation" type="reservationType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
