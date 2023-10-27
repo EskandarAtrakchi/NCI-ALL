@@ -1,26 +1,68 @@
 // Parent class for User Profiles
 class UserProfile {
-    private String username;
-    private String password;
-    private String fullName;
+    protected int patientId;
+    protected String patientFirstName;
+    protected String patientLastName;
+    protected int patientAge;
 
-    public UserProfile(String username, String password, String fullName) {
-        this.username = username;
-        this.password = password;
-        this.fullName = fullName;
+    public testingDeleteLater() {
     }
 
-    // Getters and setters for user profile attributes
-    public String getUsername() {
-        return username;
+    public testingDeleteLater(int patientId, String patientFirstName, String patientLastName, int patientAge) {
+
+        this.patientId = patientId;
+        this.patientFirstName = patientFirstName;
+        this.patientLastName = patientLastName;
+        this.patientAge = patientAge;
+
     }
 
-    public String getPassword() {
-        return password;
+    public int getPatientId() {
+
+        return patientId;
+
     }
 
-    public String getFullName() {
-        return fullName;
+    public void setPatientId(int patientId) {
+
+        this.patientId = patientId;
+
+    }
+
+    public String getPatientFirstName() {
+
+        return patientFirstName;
+
+    }
+
+    public void setPatientFirstName(String patientFirstName) {
+
+        this.patientFirstName = patientFirstName;
+
+    }
+
+    public String getPatientLastName() {
+
+        return patientLastName;
+
+    }
+
+    public void setPatientLastName(String patientLastName) {
+
+        this.patientLastName = patientLastName;
+
+    }
+
+    public int getPatientAge() {
+
+        return patientAge;
+
+    }
+
+    public void setPatientAge(int patientAge) {
+
+        this.patientAge = patientAge;
+
     }
 
     // Additional methods related to user profiles can be added here
@@ -28,22 +70,56 @@ class UserProfile {
 
 // Child class for Electronic Health Records (EHR)
 class ElectronicHealthRecord extends UserProfile {
+
+    private String alergies;
+    private String currentMedication;
     private String medicalHistory;
-    private String currentMedications;
 
-    public ElectronicHealthRecord(String username, String password, String fullName, String medicalHistory, String currentMedications) {
-        super(username, password, fullName);
+    public testingDeleteLater() {
+    }
+
+    public testingDeleteLater(String alergies, String currentMedication, String medicalHistory) {
+    
+        this.alergies = alergies;
+        this.currentMedication = currentMedication;
         this.medicalHistory = medicalHistory;
-        this.currentMedications = currentMedications;
+    
     }
 
-    // Getters and setters for EHR attributes
+    public String getAlergies() {
+    
+        return alergies;
+    
+    }
+
+    public void setAlergies(String alergies) {
+    
+        this.alergies = alergies;
+    
+    }
+
+    public String getCurrentMedication() {
+    
+        return currentMedication;
+    
+    }
+
+    public void setCurrentMedication(String currentMedication) {
+    
+        this.currentMedication = currentMedication;
+    
+    }
+
     public String getMedicalHistory() {
+    
         return medicalHistory;
+    
     }
 
-    public String getCurrentMedications() {
-        return currentMedications;
+    public void setMedicalHistory(String medicalHistory) {
+    
+        this.medicalHistory = medicalHistory;
+    
     }
 
     // Additional methods related to EHR can be added here
@@ -51,22 +127,70 @@ class ElectronicHealthRecord extends UserProfile {
 
 // Child class for Appointment Scheduling System
 class Appointment extends UserProfile {
-    private String doctorUsername;
-    private String dateAndTime;
 
-    public Appointment(String username, String doctorUsername, String dateAndTime) {
-        super(username, "", ""); // Password and full name can be empty or null for appointments.
-        this.doctorUsername = doctorUsername;
-        this.dateAndTime = dateAndTime;
+    private String time;
+    private String date;
+    private String contactNumber;
+    private String doctorName;
+
+    public testingDeleteLater() {
     }
 
-    // Getters and setters for appointment attributes
-    public String getDoctorUsername() {
-        return doctorUsername;
+    public testingDeleteLater(String time, String date, String contactNumber, String doctorName) {
+
+        this.time = time;
+        this.date = date;
+        this.contactNumber = contactNumber;
+        this.doctorName = doctorName;
+
     }
 
-    public String getDateAndTime() {
-        return dateAndTime;
+    public String getTime() {
+
+        return time;
+
+    }
+
+    public void setTime(String time) {
+
+        this.time = time;
+
+    }
+
+    public String getDate() {
+
+        return date;
+
+    }
+
+    public void setDate(String date) {
+
+        this.date = date;
+
+    }
+
+    public String getContactNumber() {
+
+        return contactNumber;
+
+    }
+
+    public void setContactNumber(String contactNumber) {
+
+        this.contactNumber = contactNumber;
+
+    }
+
+    public String getDoctorName() {
+
+        return doctorName;
+
+    }
+
+    public void setDoctorName(String doctorName) {
+
+        this.doctorName = doctorName;
+
     }
 
     // Additional methods related to appointment scheduling can be added here
@@ -85,6 +209,6 @@ public class Main {
         // Create an appointment
         Appointment appointment1 = new Appointment("john_doe", "dr_smith", "2023-10-30 10:00 AM");
 
-        // You can perform various operations with these objects as needed.
+        
     }
 }
