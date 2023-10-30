@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<clothing_shop>
-    <male>
+<company>
+    <products>
         <product code="000-01">
-            <category>Men's Shirts</category>
-            <name>Shirt</name>
-            <description>A stylish men's dress shirt suitable for formal occasions.</description>
-            <size>L</size>
+            <category>Laptops</category>
+            <name>Dell</name>
+            <description>32 GB laptop with 128 GB storage capacity.</description>
+            <size>15.6 inch</size>
             <color>White</color>
             <quantity>20</quantity>
-            <unit_price currency="Euros">39.99</unit_price currency="Euros">
+            <unit_price currency="Euros">99.99</unit_price>
             <discount>false</discount>
         </product>
         <product code="000-02">
@@ -18,7 +18,7 @@
             <size>M</size>
             <color>Black</color>
             <quantity>23</quantity>
-            <unit_price currency="Euros">99.99</unit_price currency="Euros">
+            <unit_price currency="Euros">99.99</unit_price>
             <discount>false</discount>
         </product>
         <product code="000-03">
@@ -28,7 +28,7 @@
             <size>M</size>
             <color>Black</color>
             <quantity>20</quantity>
-            <unit_price currency="Euros">39.99</unit_price currency="Euros">
+            <unit_price currency="Euros">39.99</unit_price>
             <discount>false</discount>
         </product>
         <product code="000-04">
@@ -38,7 +38,7 @@
             <size>L</size>
             <color>Grey</color>
             <quantity>100</quantity>
-            <unit_price currency="Euros">11.99</unit_price currency="Euros">
+            <unit_price currency="Euros">11.99</unit_price>
             <discount>false</discount>
         </product>
         <product code="000-05">
@@ -48,7 +48,7 @@
             <size>M</size>
             <color>Black</color>
             <quantity>150</quantity>
-            <unit_price currency="Euros">19.99</unit_price currency="Euros">
+            <unit_price currency="Euros">19.99</unit_price>
             <discount>false</discount>
         </product>
         <product code="000-06">
@@ -58,7 +58,7 @@
             <size>M</size>
             <color>Black</color>
             <quantity>99</quantity>
-            <unit_price currency="Euros">39.99</unit_price currency="Euros">
+            <unit_price currency="Euros">39.99</unit_price>
             <discount>false</discount>
         </product>
         <product code="000-07">
@@ -68,7 +68,7 @@
             <size>L</size>
             <color>White</color>
             <quantity>200</quantity>
-            <unit_price currency="Euros">6.99</unit_price currency="Euros">
+            <unit_price currency="Euros">6.99</unit_price>
             <discount>false</discount>
         </product>
         <product code="000-08">
@@ -78,7 +78,7 @@
             <size>L</size>
             <color>blue</color>
             <quantity>20</quantity>
-            <unit_price currency="Euros">17.99</unit_price currency="Euros">
+            <unit_price currency="Euros">17.99</unit_price>
             <discount>false</discount>
         </product>
         <product code="000-09">
@@ -88,7 +88,7 @@
             <size>M</size>
             <color>Grey</color>
             <quantity>20</quantity>
-            <unit_price currency="Euros">39.99</unit_price currency="Euros">
+            <unit_price currency="Euros">39.99</unit_price>
             <discount>false</discount>
         </product>
         <product code="000-10">
@@ -98,111 +98,8 @@
             <size>L</size>
             <color>White</color>
             <quantity>122</quantity>
-            <unit_price currency="Euros">98.99</unit_price currency="Euros">
+            <unit_price currency="Euros">98.99</unit_price>
             <discount>false</discount>
         </product>
-    </male>
-    
-    <female>
-        <product code="000-01">
-            <category>Women's Shirts</category>
-            <name>Shirt</name>
-            <description>A stylish Women's dress shirt suitable for formal occasions.</description>
-            <size>L</size>
-            <color>White</color>
-            <quantity>20</quantity>
-            <unit_price currency="Euros">39.99</unit_price currency="Euros">
-            <discount>false</discount>
-        </product>
-        <product code="000-02">
-            <category>Women's Coats</category>
-            <name>Coat</name>
-            <description>A stylish Women's dress coat suitable for formal occasions.</description>
-            <size>M</size>
-            <color>Black</color>
-            <quantity>23</quantity>
-            <unit_price currency="Euros">99.99</unit_price currency="Euros">
-            <discount>false</discount>
-        </product>
-        <product code="000-03">
-            <category>Women's Trousers</category>
-            <name>Trouser</name>
-            <description>A stylish Women's dress Trousers suitable for hotel jobs.</description>
-            <size>M</size>
-            <color>Black</color>
-            <quantity>20</quantity>
-            <unit_price currency="Euros">39.99</unit_price currency="Euros">
-            <discount>false</discount>
-        </product>
-        <product code="000-04">
-            <category>Women's Gloves</category>
-            <name>Gloves</name>
-            <description>A stylish Women's gloves suitable for winter weather.</description>
-            <size>L</size>
-            <color>Grey</color>
-            <quantity>100</quantity>
-            <unit_price currency="Euros">11.99</unit_price currency="Euros">
-            <discount>false</discount>
-        </product>
-        <product code="000-05">
-            <category>Women's Wallets</category>
-            <name>Wallet</name>
-            <description>A stylish Women's dress wallet suitable for formal occasions.</description>
-            <size>M</size>
-            <color>Black</color>
-            <quantity>150</quantity>
-            <unit_price currency="Euros">19.99</unit_price currency="Euros">
-            <discount>false</discount>
-        </product>
-        <product code="000-06">
-            <category>Women's Sunglasses</category>
-            <name>Sunglasses</name>
-            <description>A stylish Women's dress sunglasses suitable for sunny weather.</description>
-            <size>M</size>
-            <color>Black</color>
-            <quantity>99</quantity>
-            <unit_price currency="Euros">39.99</unit_price currency="Euros">
-            <discount>false</discount>
-        </product>
-        <product code="000-07">
-            <category>Women's Underwears</category>
-            <name>Underwear</name>
-            <description>A stylish Women's dress underwear and also comfortable</description>
-            <size>L</size>
-            <color>White</color>
-            <quantity>200</quantity>
-            <unit_price currency="Euros">6.99</unit_price currency="Euros">
-            <discount>false</discount>
-        </product>
-        <product code="000-08">
-            <category>Women's Dress Ties</category>
-            <name>Ties</name>
-            <description>A stylish Women's dress tie suitable for formal occasions.</description>
-            <size>L</size>
-            <color>blue</color>
-            <quantity>20</quantity>
-            <unit_price currency="Euros">17.99</unit_price currency="Euros">
-            <discount>false</discount>
-        </product>
-        <product code="000-09">
-            <category>Women's Dress Scarves</category>
-            <name>Scarf</name>
-            <description>A stylish Women's dress scarves suitable for formal occasions also.</description>
-            <size>M</size>
-            <color>Grey</color>
-            <quantity>20</quantity>
-            <unit_price currency="Euros">39.99</unit_price currency="Euros">
-            <discount>false</discount>
-        </product>
-        <product code="000-10">
-            <category>Women's Shoes</category>
-            <name>Shoes</name>
-            <description>A stylish Women's shoes suitable for formal occasions.</description>
-            <size>L</size>
-            <color>White</color>
-            <quantity>122</quantity>
-            <unit_price currency="Euros">98.99</unit_price currency="Euros">
-            <discount>false</discount>
-        </product>
-    </female>
-</clothing_shop>
+    </products>
+</company>

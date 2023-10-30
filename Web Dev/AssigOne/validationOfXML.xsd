@@ -1,69 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-
-    <!-- Definition of complex types -->
-
-    <!-- Room Type -->
-    <xs:complexType name="roomType">
-        <xs:sequence>
-            <xs:element name="roomId" type="xs:integer"/>
-            <xs:element name="roomType" type="xs:string"/>
-            <xs:element name="ratePerNight" type="xs:decimal"/>
-            <xs:element name="available" type="xs:boolean"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <!-- Guest Type -->
-    <xs:complexType name="guestType">
-        <xs:sequence>
-            <xs:element name="guestId" type="xs:string"/>
-            <xs:element name="firstName" type="xs:string"/>
-            <xs:element name="lastName" type="xs:string"/>
-            <xs:element name="email" type="xs:string"/>
-            <xs:element name="phone" type="xs:string"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <!-- Reservation Type -->
-    <xs:complexType name="reservationType">
-        <xs:sequence>
-            <xs:element name="reservationId" type="xs:integer"/>
-            <xs:element name="roomId" type="xs:integer"/>
-            <xs:element name="guestId" type="xs:string"/>
-            <xs:element name="checkInDate" type="xs:date"/>
-            <xs:element name="checkOutDate" type="xs:date"/>
-            <xs:element name="totalAmount" type="xs:decimal"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <!-- Definition of root elements -->
-
-    <!-- Hotel Database -->
-    <xs:element name="hotelDatabase">
+<!-- xmlns means XML name space -->
+    <xs:element name="clothing_shop">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="rooms">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="room" type="roomType" maxOccurs="unbounded"/>
-                        </xs:sequence>
-                    </xs:complexType>
+            <!-- This sequance means the male clothes first and then female clothes second -->
+                <xs:element name="male" type="xs:complexType">
+                    <xs:sequence>
+                    <!-- This sequance is for all the elements named product of the male clothes -->
+                        <xs:element name="product" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                <!-- This sequance is for all the other elements of the elements of the male clothes -->
+                                    <xs:element name="category" type="xs:string"/>
+                                    <xs:element name="name" type="xs:string"/>
+                                    <xs:element name="description" type="xs:string"/>
+                                    <xs:element name="size" type="xs:string"/>
+                                    <xs:element name="color" type="xs:string"/>
+                                    <xs:element name="quantity" type="xs:integer"/>
+                                    <xs:element name="unit_price" type="xs:decimal"/>
+                                    <xs:element name="discount" type="xs:boolean"/>
+                                </xs:sequence>
+                                <!-- end sequance of all the other elements of the elements of the male clothes -->
+                                <xs:attribute name="code" type="xs:string" use="required"/>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                    <!-- end the sequance of all the elements named product of the male clothes -->
                 </xs:element>
-                <xs:element name="guests">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="guest" type="guestType" maxOccurs="unbounded"/>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="reservations">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="reservation" type="reservationType" maxOccurs="unbounded"/>
-                        </xs:sequence>
-                    </xs:complexType>
+                <xs:element name="female" type="xs:complexType">
+                    <xs:sequence>
+                    <!-- This sequance is for all the elements named product of the female clothes -->
+                        <xs:element name="product" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                <!-- This sequance is for all the other elements of the elements of the female clothes -->
+                                    <xs:element name="category" type="xs:string"/>
+                                    <xs:element name="name" type="xs:string"/>
+                                    <xs:element name="description" type="xs:string"/>
+                                    <xs:element name="size" type="xs:string"/>
+                                    <xs:element name="color" type="xs:string"/>
+                                    <xs:element name="quantity" type="xs:integer"/>
+                                    <xs:element name="unit_price" type="xs:decimal"/>
+                                    <xs:element name="discount" type="xs:boolean"/>
+                                </xs:sequence>
+                                <!-- end sequance of all the other elements of the elements of the female clothes -->
+                                <xs:attribute name="code" type="xs:string" use="required"/>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                    <!-- end the sequance of all the elements named product of the female clothes -->
                 </xs:element>
             </xs:sequence>
+            <!-- end the sequance of the male clothes first and then female clothes second -->
         </xs:complexType>
     </xs:element>
-
 </xs:schema>
