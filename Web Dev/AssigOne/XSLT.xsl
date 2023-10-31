@@ -8,7 +8,7 @@
   <!-- starting html -->
     <html>
       <head>
-        <title>Product Information</title>
+        <title>Home</title>
         <!-- linking the main.js here -->
         <script src="main.js"></script>
         <!--linking the css styling sheet here -->
