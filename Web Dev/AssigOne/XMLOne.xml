@@ -1,7 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <company>
     <products>
-        <product code="000-01">
+    <!-- 
+    important notes for me later to write schema accordingly
+    1. the code attribute should only contain positive numbers and unique 
+    2. only integers should be in quantity 
+    3. the discount element should have only two values, either true or false
+    4. the unit_price should only be positive integers 
+    5. no symbols are allowed in any element 
+    -->
+        <product code="00001">
+            <category>Laptops</category>
+            <name>Dell</name>
+            <description>2 GB laptop with 128 GB storage capacity.</description>
+            <size>15.6 inch</size>
+            <color>White</color>
+            <quantity>20</quantity>
+            <unit_price currency="Euros">99.99</unit_price>
+            <discount>false</discount>
+        </product>
+        <product code="00002">
+            <category>Laptops</category>
+            <name>Dell</name>
+            <description>4 GB laptop with 250 GB storage capacity.</description>
+            <size>15.6 inch</size>
+            <color>Grey</color>
+            <quantity>20</quantity>
+            <unit_price currency="Euros">149.99</unit_price>
+            <discount>false</discount>
+        </product>
+        <product code="00003">
+            <category>Laptops</category>
+            <name>Dell</name>
+            <description>8 GB laptop with 250 GB storage capacity.</description>
+            <size>15.6 inch</size>
+            <color>White</color>
+            <quantity>20</quantity>
+            <unit_price currency="Euros">99.99</unit_price>
+            <discount>false</discount>
+        </product>
+        <product code="00004">
             <category>Laptops</category>
             <name>Dell</name>
             <description>32 GB laptop with 128 GB storage capacity.</description>
@@ -11,94 +49,64 @@
             <unit_price currency="Euros">99.99</unit_price>
             <discount>false</discount>
         </product>
-        <product code="000-02">
-            <category>Men's Coats</category>
-            <name>Coat</name>
-            <description>A stylish men's dress coat suitable for formal occasions.</description>
-            <size>M</size>
-            <color>Black</color>
-            <quantity>23</quantity>
+        <product code="00005">
+            <category>Laptops</category>
+            <name>Dell</name>
+            <description>32 GB laptop with 128 GB storage capacity.</description>
+            <size>15.6 inch</size>
+            <color>White</color>
+            <quantity>20</quantity>
             <unit_price currency="Euros">99.99</unit_price>
             <discount>false</discount>
         </product>
-        <product code="000-03">
-            <category>Men's Trousers</category>
-            <name>Trouser</name>
-            <description>A stylish men's dress Trousers suitable for hotel jobs.</description>
-            <size>M</size>
-            <color>Black</color>
-            <quantity>20</quantity>
-            <unit_price currency="Euros">39.99</unit_price>
-            <discount>false</discount>
-        </product>
-        <product code="000-04">
-            <category>Men's Gloves</category>
-            <name>Gloves</name>
-            <description>A stylish men's gloves suitable for winter weather.</description>
-            <size>L</size>
-            <color>Grey</color>
-            <quantity>100</quantity>
-            <unit_price currency="Euros">11.99</unit_price>
-            <discount>false</discount>
-        </product>
-        <product code="000-05">
-            <category>Men's Wallets</category>
-            <name>Wallet</name>
-            <description>A stylish men's dress wallet suitable for formal occasions.</description>
-            <size>M</size>
-            <color>Black</color>
-            <quantity>150</quantity>
-            <unit_price currency="Euros">19.99</unit_price>
-            <discount>false</discount>
-        </product>
-        <product code="000-06">
-            <category>Men's Sunglasses</category>
-            <name>Sunglasses</name>
-            <description>A stylish men's dress sunglasses suitable for sunny weather.</description>
-            <size>M</size>
-            <color>Black</color>
-            <quantity>99</quantity>
-            <unit_price currency="Euros">39.99</unit_price>
-            <discount>false</discount>
-        </product>
-        <product code="000-07">
-            <category>Men's Underwears</category>
-            <name>Underwear</name>
-            <description>A stylish men's dress underwear and also comfortable</description>
-            <size>L</size>
+        <product code="00006">
+            <category>Laptops</category>
+            <name>Dell</name>
+            <description>32 GB laptop with 128 GB storage capacity.</description>
+            <size>15.6 inch</size>
             <color>White</color>
-            <quantity>200</quantity>
-            <unit_price currency="Euros">6.99</unit_price>
-            <discount>false</discount>
-        </product>
-        <product code="000-08">
-            <category>Men's Dress Ties</category>
-            <name>Ties</name>
-            <description>A stylish men's dress tie suitable for formal occasions.</description>
-            <size>L</size>
-            <color>blue</color>
             <quantity>20</quantity>
-            <unit_price currency="Euros">17.99</unit_price>
+            <unit_price currency="Euros">99.99</unit_price>
             <discount>false</discount>
         </product>
-        <product code="000-09">
-            <category>Men's Dress Scarves</category>
-            <name>Scarf</name>
-            <description>A stylish men's dress scarves suitable for formal occasions also.</description>
-            <size>M</size>
-            <color>Grey</color>
-            <quantity>20</quantity>
-            <unit_price currency="Euros">39.99</unit_price>
-            <discount>false</discount>
-        </product>
-        <product code="000-10">
-            <category>Men's Shoes</category>
-            <name>Shoes</name>
-            <description>A stylish men's shoes suitable for formal occasions.</description>
-            <size>L</size>
+        <product code="00007">
+            <category>Laptops</category>
+            <name>Dell</name>
+            <description>32 GB laptop with 128 GB storage capacity.</description>
+            <size>15.6 inch</size>
             <color>White</color>
-            <quantity>122</quantity>
-            <unit_price currency="Euros">98.99</unit_price>
+            <quantity>20</quantity>
+            <unit_price currency="Euros">99.99</unit_price>
+            <discount>false</discount>
+        </product>
+        <product code="00008">
+            <category>Laptops</category>
+            <name>Dell</name>
+            <description>32 GB laptop with 128 GB storage capacity.</description>
+            <size>15.6 inch</size>
+            <color>White</color>
+            <quantity>20</quantity>
+            <unit_price currency="Euros">99.99</unit_price>
+            <discount>false</discount>
+        </product>
+        <product code="00009">
+            <category>Laptops</category>
+            <name>Dell</name>
+            <description>32 GB laptop with 128 GB storage capacity.</description>
+            <size>15.6 inch</size>
+            <color>White</color>
+            <quantity>20</quantity>
+            <unit_price currency="Euros">99.99</unit_price>
+            <discount>false</discount>
+        </product>
+        <product code="00010">
+            <category>Laptops</category>
+            <name>Dell</name>
+            <description>32 GB laptop with 128 GB storage capacity.</description>
+            <size>15.6 inch</size>
+            <color>White</color>
+            <quantity>20</quantity>
+            <unit_price currency="Euros">99.99</unit_price>
             <discount>false</discount>
         </product>
     </products>
