@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
+<!--The xs name space is holding the value "http://www.w3.org/2001/XMLSchema" -->
+
   <xs:element name="company">
     <xs:complexType>
       <xs:sequence>
@@ -8,60 +10,77 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="product" maxOccurs="unbounded">
+              <!-- product can show unbounded number of times -->
                 <xs:complexType>
                   <xs:sequence>
+                  <!-- has to go as sequanced -->
                     <xs:element name="category">
                       <xs:simpleType>
                         <xs:restriction base="xs:string">
+                        <!-- category is restricted for String from here and all the way down -->
                           <xs:pattern value="[a-zA-Z\s]+"/>
+                          <!-- regular expression to limit the strings with only alphabets -->
                         </xs:restriction>
                       </xs:simpleType>
                     </xs:element>
                     <xs:element name="name">
                       <xs:simpleType>
                         <xs:restriction base="xs:string">
+                        <!-- name is restricted for String from here and all the way down -->
                           <xs:pattern value="[a-zA-Z\s]+"/>
+                          <!-- regular expression to limit the strings with only alphabets -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="description" type="xs:string"/>
+                    <!-- description is restricted for String from here and all the way down -->
+                    <xs:element name="size">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                        <!-- size is restricted for String from here and all the way down -->
+                          <xs:pattern value="[0-9a-zA-Z\s.]+"/>
+                          <!-- regular expression to limit the strings with only alphabets and numbers according to the requirements of the size of the items -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="color">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                        <!-- color is restricted for String from here and all the way down -->
+                          <xs:pattern value="[a-zA-Z\s]+"/>
+                          <!-- regular expression to limit the strings with only alphabets -->
                         </xs:restriction>
                     </xs:simpleType>
-                  </xs:element>
-                  <xs:element name="description" type="xs:string"/>
-                  <xs:element name="size">
-                    <xs:simpleType>
-                      <xs:restriction base="xs:string">
-                        <xs:pattern value="[0-9a-zA-Z\s.]+"/>
-                      </xs:restriction>
-                    </xs:simpleType>
-                  </xs:element>
-                  <xs:element name="color">
-                    <xs:simpleType>
-                      <xs:restriction base="xs:string">
-                        <xs:pattern value="[a-zA-Z\s]+"/>
-                      </xs:restriction>
-                  </xs:simpleType>
-                  </xs:element>
-                  <xs:element name="quantity">
-                    <xs:simpleType>
-                      <xs:restriction base="xs:integer">
-                        <xs:minInclusive value="0"/>
-                      </xs:restriction>
-                    </xs:simpleType>
-                  </xs:element>
-                  <xs:element name="unit_price">
-                    <xs:complexType>
-                      <xs:simpleContent>
-                        <xs:extension base="xs:decimal">
-                          <xs:attribute name="currency" type="xs:string" use="required"/>
-                        </xs:extension>
-                      </xs:simpleContent>
-                    </xs:complexType>
-                  </xs:element>
-                  <xs:element name="discount">
-                    <xs:simpleType>
-                      <xs:restriction base="xs:boolean"/>
-                    </xs:simpleType>
-                  </xs:element>
-                </xs:sequence>
+                    </xs:element>
+                    <xs:element name="quantity">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:integer">
+                        <!-- quantity is restricted for integers only from here and all the way down -->
+                          <xs:minInclusive value="1"/>
+                          <!-- the integers numbers has to be minimum of 1 if it is zero then the product should not to exist in the table -->
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="unit_price">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:decimal">
+                          <!-- money should have decimals for the cents -->
+                            <xs:attribute name="currency" type="xs:string" use="required"/>
+                            <!-- the artibute currency is Euro and it is been setted to String -->
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="discount">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:boolean"/>
+                        <!-- The type is true or false indicating that there is a discount or not -->
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
                 <xs:attribute name="code" type="xs:positiveInteger"/>
+                <!-- The code should always be positive integer and cannot be negative -->
               </xs:complexType>
             </xs:element>
           </xs:sequence>
