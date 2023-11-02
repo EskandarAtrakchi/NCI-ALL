@@ -4,9 +4,9 @@
     <products>
     <!-- 
     important notes for me later to write schema accordingly
-    1. the code attribute should only contain positive numbers and unique 
+    1. the code attribute should only contain positive numbers and unique according to the brief
     2. only integers should be in quantity 
-    3. the discount element should have only two values, either true or false
+    3. the discount element should have only two values, either true or false (boolean)
     4. the unit_price should only be positive integers 
     5. no symbols are allowed in any element 
     -->
@@ -37,7 +37,7 @@
             <size>15.6 inch</size>
             <color>White</color>
             <quantity>20</quantity>
-            <unit_price currency="Euros">99.99</unit_price>
+            <unit_price currency="Euros">499.99</unit_price>
             <discount>false</discount>
         </product>
         <product code="00004">
@@ -47,17 +47,17 @@
             <size>15.6 inch</size>
             <color>White</color>
             <quantity>20</quantity>
-            <unit_price currency="Euros">99.99</unit_price>
+            <unit_price currency="Euros">699.99</unit_price>
             <discount>false</discount>
         </product>
         <product code="00005">
             <category>Laptops</category>
             <name>HP</name>
-            <description>32 GB laptop with 128 GB storage capacity.</description>
+            <description>16 GB laptop with 1,250 GB storage capacity.</description>
             <size>15.6 inch</size>
             <color>White</color>
             <quantity>20</quantity>
-            <unit_price currency="Euros">99.99</unit_price>
+            <unit_price currency="Euros">163</unit_price>
             <discount>false</discount>
         </product>
         <product code="00006">
@@ -67,7 +67,7 @@
             <size>15.6 inch</size>
             <color>White</color>
             <quantity>20</quantity>
-            <unit_price currency="Euros">99.99</unit_price>
+            <unit_price currency="Euros">1,024</unit_price>
             <discount>false</discount>
         </product>
         <product code="00007">
@@ -77,7 +77,7 @@
             <size>15.6 inch</size>
             <color>White</color>
             <quantity>20</quantity>
-            <unit_price currency="Euros">99.99</unit_price>
+            <unit_price currency="Euros">2,234</unit_price>
             <discount>false</discount>
         </product>
         <product code="00008">
@@ -87,7 +87,7 @@
             <size>15.6 inch</size>
             <color>White</color>
             <quantity>20</quantity>
-            <unit_price currency="Euros">99.99</unit_price>
+            <unit_price currency="Euros">547</unit_price>
             <discount>false</discount>
         </product>
         <product code="00009">
@@ -97,7 +97,7 @@
             <size>15.6 inch</size>
             <color>White</color>
             <quantity>20</quantity>
-            <unit_price currency="Euros">99.99</unit_price>
+            <unit_price currency="Euros">456</unit_price>
             <discount>false</discount>
         </product>
         <product code="00010">
@@ -107,7 +107,7 @@
             <size>15.6 inch</size>
             <color>White</color>
             <quantity>20</quantity>
-            <unit_price currency="Euros">99.99</unit_price>
+            <unit_price currency="Euros">329</unit_price>
             <discount>false</discount>
         </product>
         <product code="00011">
@@ -117,7 +117,7 @@
             <size>15.6 inch</size>
             <color>White</color>
             <quantity>20</quantity>
-            <unit_price currency="Euros">99.99</unit_price>
+            <unit_price currency="Euros">897</unit_price>
             <discount>false</discount>
         </product>
         <product code="00012">
@@ -127,7 +127,7 @@
             <size>15.6 inch</size>
             <color>White</color>
             <quantity>20</quantity>
-            <unit_price currency="Euros">99.99</unit_price>
+            <unit_price currency="Euros">362</unit_price>
             <discount>false</discount>
         </product>
         <product code="00013">
@@ -137,7 +137,7 @@
             <size>15.6 inch</size>
             <color>White</color>
             <quantity>20</quantity>
-            <unit_price currency="Euros">99.99</unit_price>
+            <unit_price currency="Euros">523</unit_price>
             <discount>false</discount>
         </product>
         <product code="00014">
@@ -147,7 +147,7 @@
             <size>15.6 inch</size>
             <color>White</color>
             <quantity>20</quantity>
-            <unit_price currency="Euros">99.99</unit_price>
+            <unit_price currency="Euros">235</unit_price>
             <discount>false</discount>
         </product>
         <product code="00015">
@@ -157,7 +157,7 @@
             <size>15.6 inch</size>
             <color>White</color>
             <quantity>20</quantity>
-            <unit_price currency="Euros">99.99</unit_price>
+            <unit_price currency="Euros">457</unit_price>
             <discount>false</discount>
         </product>
         <product code="00016">
@@ -187,7 +187,7 @@
             <size>15.6 inch</size>
             <color>White</color>
             <quantity>20</quantity>
-            <unit_price currency="Euros">99.99</unit_price>
+            <unit_price currency="Euros">346</unit_price>
             <discount>false</discount>
         </product>
         <product code="00019">
@@ -197,7 +197,7 @@
             <size>15.6 inch</size>
             <color>White</color>
             <quantity>20</quantity>
-            <unit_price currency="Euros">99.99</unit_price>
+            <unit_price currency="Euros">1,044</unit_price>
             <discount>false</discount>
         </product>
         <product code="00020">
@@ -207,7 +207,7 @@
             <size>15.6 inch</size>
             <color>White</color>
             <quantity>20</quantity>
-            <unit_price currency="Euros">99.99</unit_price>
+            <unit_price currency="Euros">600</unit_price>
             <discount>false</discount>
         </product>
         <product code="00021">
@@ -237,7 +237,7 @@
             <size>15.6 inch</size>
             <color>White</color>
             <quantity>20</quantity>
-            <unit_price currency="Euros">99.99</unit_price>
+            <unit_price currency="Euros">345</unit_price>
             <discount>false</discount>
         </product>
         <product code="00024">
@@ -257,7 +257,7 @@
             <size>15.6 inch</size>
             <color>White</color>
             <quantity>20</quantity>
-            <unit_price currency="Euros">99.99</unit_price>
+            <unit_price currency="Euros">796</unit_price>
             <discount>false</discount>
         </product>
         <product code="00026">
@@ -267,7 +267,7 @@
             <size>15.6 inch</size>
             <color>White</color>
             <quantity>20</quantity>
-            <unit_price currency="Euros">99.99</unit_price>
+            <unit_price currency="Euros">456</unit_price>
             <discount>false</discount>
         </product>
         <product code="00027">
@@ -287,7 +287,7 @@
             <size>15.6 inch</size>
             <color>White</color>
             <quantity>20</quantity>
-            <unit_price currency="Euros">99.99</unit_price>
+            <unit_price currency="Euros">999.99</unit_price>
             <discount>false</discount>
         </product>
     </products>
