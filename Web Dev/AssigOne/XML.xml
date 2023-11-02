@@ -53,7 +53,7 @@
         <product code="00005">
             <category>Laptops</category>
             <name>HP</name>
-            <description>16 GB laptop with 1,250 GB storage capacity.</description>
+            <description>16 GB laptop with 1250 GB storage capacity.</description>
             <size>15.6 inch</size>
             <color>White</color>
             <quantity>20</quantity>
@@ -67,7 +67,7 @@
             <size>15.6 inch</size>
             <color>White</color>
             <quantity>20</quantity>
-            <unit_price currency="Euros">1,024</unit_price>
+            <unit_price currency="Euros">1024</unit_price>
             <discount>false</discount>
         </product>
         <product code="00007">
@@ -77,7 +77,7 @@
             <size>15.6 inch</size>
             <color>White</color>
             <quantity>20</quantity>
-            <unit_price currency="Euros">2,234</unit_price>
+            <unit_price currency="Euros">2234</unit_price>
             <discount>false</discount>
         </product>
         <product code="00008">
@@ -197,7 +197,7 @@
             <size>15.6 inch</size>
             <color>White</color>
             <quantity>20</quantity>
-            <unit_price currency="Euros">1,044</unit_price>
+            <unit_price currency="Euros">1044</unit_price>
             <discount>false</discount>
         </product>
         <product code="00020">
