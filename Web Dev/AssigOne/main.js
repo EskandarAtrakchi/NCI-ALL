@@ -73,7 +73,7 @@ function feedbackPage () {
 
 //===================================
 
-//function number 3 for confirmation pop-up dialog
+//function number 3 for conformation pop-up dialog
 
 //===================================
 
