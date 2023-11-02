@@ -164,7 +164,7 @@ function scrollBoxForFeedbackPage() {
 
     i += direction; //increment 
 
-    isTyping = !isTyping;
+    isTyping = !isTyping;//here to toggle 
     setTimeout("scrollBoxForFeedbackPage()", 200);
 
 }
@@ -178,6 +178,7 @@ function scrollBoxForFeedbackPage() {
 //===================================
 
 function scrollToTop() {
+
     // Scroll smoothly to the top of the page
     window.scrollTo({
 
@@ -224,10 +225,16 @@ function applyLightMode() {
 function toggleDarkMode() {
 
     var darkModeCheckbox = document.getElementById("darkModeCheckbox");
+
+    //just calling the methods that been created if the conditions are met
     if (darkModeCheckbox.checked) {
+
         applyDarkMode();
+
     } else {
+
         applyLightMode();
+
     }
 
 }
