@@ -1,0 +1,60 @@
+tabular format:
+
+**Fact Table: TrainingAttendanceFact**
+
+| StudentKey | ModuleKey | TimeKey | LocationKey | InstructorKey | AttendanceStatus | PerformanceScore |
+|------------|-----------|---------|-------------|---------------|------------------|------------------|
+| 1          | 101       | 501     | 1001        | 201           | Attended         | 90               |
+| 2          | 102       | 502     | 1002        | 202           | Absent           | 75               |
+| 3          | 103       | 503     | 1003        | 203           | Attended         | 88               |
+| ...        | ...       | ...     | ...         | ...           | ...              | ...              |
+
+**Dimension Tables:**
+
+**StudentDim**
+
+| StudentKey | StudentID | StudentName | StudentAge | StudentGender| StudentContact  |
+|------------|-----------|-------------|------------|--------------|------------------|
+| 1          | 1001      | John Doe    | 25         | Male         | john@example.com |
+| 2          | 1002      | Jane Smith  | 22         | Female       | jane@example.com |
+| 3          | 1003      | Tom Brown   | 28         | Male         | tom@example.com  |
+| ...        | ...       | ...         | ...        | ...          | ...              |
+
+**ModuleDim**
+
+| ModuleKey | ModuleID | ModuleName | ModuleDescription | ModuleLocation | ModuleInstructor | ModuleStartDate | ModuleEndDate |
+|-----------|----------|------------|-------------------|----------------|------------------|-----------------|---------------|
+| 101       | 10001    | ModuleA    | DescriptionA      | LocationA      | InstructorA      | 2023-01-15      | 2023-02-15    |
+| 102       | 10002    | ModuleB    | DescriptionB      | LocationB      | InstructorB      | 2023-02-20      | 2023-03-20    |
+| 103       | 10003    | ModuleC    | DescriptionC      | LocationC      | InstructorC      | 2023-03-01      | 2023-03-31    |
+| ...       | ...      | ...        | ...               | ...            | ...              | ...             | ...           |
+
+**TimeDim**
+
+| TimeKey | Date       | Day       | Month    | Quarter | Year |
+|---------|------------|-----------|----------|---------|------|
+| 501     | 2023-01-16 | Monday    | January  |   Q1    | 2023 |
+| 502     | 2023-02-22 | Wednesday | February |   Q1    | 2023 |
+| 503     | 2023-03-10 | Friday    | March    |   Q1    | 2023 |
+| ...     | ...        | ...       | ...      | ...     | ...  |
+
+**LocationDim**
+
+| LocationKey | LocationID | LocationName | Address      | City     | State | Country  |
+|-------------|------------|--------------|--------------|----------|-------|----------|
+| 1001        | L001       | LocationA    | 123 Main St. | CityA    | StateA| CountryA |
+| 1002        | L002       | LocationB    | 456 Elm St.  | CityB    | StateB| CountryB |
+| 1003        | L003       | LocationC    | 789 Oak St.  | CityC    | StateC| CountryC |
+| ...         | ...        | ...          | ...          | ...      | ...   | ...      |
+
+**InstructorDim**
+
+| InstructorKey | InstructorID | InstructorName | InstructorEmail    | InstructorPhone |
+|--------------|-------------|---------------|-----------------------|-----------------|
+| 201          | I001        | InstructorA   | instructA@example.com | +1234567890     |
+| 202          | I002        | InstructorB   | instructB@example.com | +9876543210     |
+| 203          | I003        | InstructorC   | instructC@example.com | +5555555555     |
+| ...          | ...         | ...           | ...                   | ...             |
+
+In this visual representation, the structure of the star schema with fact and dimension tables. The fact table "TrainingAttendanceFact" contains foreign keys to the dimension tables (StudentDim, ModuleDim, TimeDim, LocationDim, and InstructorDim). 
+This structure allows for efficient data analysis and reporting in the Leisure industry's training context.
