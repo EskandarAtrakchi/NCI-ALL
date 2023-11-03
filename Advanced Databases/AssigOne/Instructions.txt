@@ -1,0 +1,7 @@
+to run Jupyter
+Open CMD and enter the following statements to run 
+**pip install jupyterlab**
+then run
+**python -m jupyterlab**
+
+keeo the server runnig to execute codes
