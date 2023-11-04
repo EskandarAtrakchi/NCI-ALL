@@ -1,370 +1,377 @@
 /*changing the body background color */
-
 /*body {
 	background-color: #ffffff;
 }
 */
+/*logo style starts here */
+.logo {
+    width: 2%;
+    height: 2%;
+    padding-left: 1.1%;
+}
+/*logo styling ends here */
 /*nav bar styling here */
 .topnav {
-	overflow: hidden;
-	background-color: #333;
+    overflow: hidden;
+    background-color: #333;
 }
-  
 .topnav a {
-	float: left;
-	color: #f2f2f2;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-	font-size: 17px;
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
 }
-  
+
 .topnav a:hover {
-	background-color: #04AA6D;
-	color: black;
+    background-color: #04aa6d;
+    color: black;
 }
-  
-  /* Create a right-aligned (split) link inside the navigation bar */
+
+/* Create a right-aligned (split) link inside the navigation bar */
 .topnav a.split {
-	float: right;
-	background-color: #04AA6D;
-	color: white;
+    float: right;
+    background-color: #04aa6d;
+    color: white;
 }
-  /*marquee styling here */
-  /* Marquee text styling */
+/*marquee styling here */
+/* Marquee text styling */
 marquee {
-	font-size: 18px; /* Font size */
-	font-weight: bold; /* Font weight */
-	padding: 10px 0; 
-	white-space: nowrap; /* Prevent text from wrapping */
-	overflow: hidden; /* Hide overflowing text */
-	width: 100%; /* Make the marquee full width of its container */
-	animation: colorChange 5s infinite alternate;
-	background-color: #97b1d6;
+    font-size: 18px; /* Font size */
+    font-weight: bold; /* Font weight */
+    padding: 10px 0;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    width: 100%; /* Make the marquee full width of its container */
+    animation: colorChange 5s infinite alternate;
+    background-color: #97b1d6;
 }
-  /*Styling for search button */
+/*Styling for search button */
 .Btn {
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	width: 45px;
-	height: 45px;
-	border: none;
-	cursor: pointer;
-	position: relative;
-	overflow: hidden;
-	transition-duration: .3s;
-	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
-	background-color: rgb(255, 65, 65);
-	
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 45px;
+    height: 45px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: 0.3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: rgb(255, 65, 65);
 }
-  
-  /* plus sign */
+
+/* plus sign */
 .sign {
-	width: 100%;
-	transition-duration: .3s;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+    width: 100%;
+    transition-duration: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-  
+
 .sign svg {
-	width: 17px;
+    width: 17px;
 }
-  
+
 .sign svg path {
-	fill: white;
+    fill: white;
 }
-  /* text */
+/* text */
 .text {
-	position: absolute;
-	opacity: 0;
-	font-size: 1.2em;
-	font-weight: 600;
-	transition-duration: .3s;
+    position: absolute;
+    opacity: 0;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition-duration: 0.3s;
 }
-  /* hover effect on button width */
+/* hover effect on button width */
 .Btn:hover {
-	width: 125px;
-	border-radius: 40px;
-	transition-duration: .3s;
+    width: 125px;
+    border-radius: 40px;
+    transition-duration: 0.3s;
 }
-  
+
 .Btn:hover .sign {
-	width: 30%;
-	transition-duration: .3s;
-	padding-left: 20px;
-	display: none;
+    width: 30%;
+    transition-duration: 0.3s;
+    padding-left: 20px;
+    display: none;
 }
-  /* hover effect button's text */
+/* hover effect button's text */
 .Btn:hover .text {
-	opacity: 1;
-	width: 70%;
-	transition-duration: .3s;
-	padding-right: 10px;
+    opacity: 1;
+    width: 70%;
+    transition-duration: 0.3s;
+    padding-right: 10px;
 }
-  /*To inform user text */
-  /* Style for the 'informUser' paragraph */
+/*To inform user text */
+/* Style for the 'informUser' paragraph */
 .informUser {
-	display: none; /* Initially hide the element */
-	background-color: #f2f2f2; /* Background color */
-	color: #333; /* Text color */
-	padding: 10px; /* Padding for better readability */
-	font-size: 16px; /* Font size */
-	border: 1px solid #ddd; /* Border for separation */
-	margin-top: 10px; /* Margin for spacing */
-	text-align: center;
-	font-size: 3.3rem; /* Text size */
-	/* Animation for color change */
-	animation: colorChange 5s infinite alternate;
+    display: none; /* Initially hide the element */
+    background-color: #f2f2f2; /* Background color */
+    color: #333; /* Text color */
+    padding: 10px; /* Padding for better readability */
+    font-size: 16px; /* Font size */
+    border: 1px solid #ddd; /* Border for separation */
+    margin-top: 10px; /* Margin for spacing */
+    text-align: center;
+    font-size: 3.3rem; /* Text size */
+    /* Animation for color change */
+    animation: colorChange 5s infinite alternate;
 }
-  /* Keyframes for the color change animation */
+/* Keyframes for the color change animation */
 @keyframes colorChange {
-	0% {
-		color: #88ac4e; /* Start with one color  */
-	}
-	50% {
-		color: #ff0000; /* Midway, change to another color */
-	}
-	75% {
-			color:#000000;/* Midway, change to another color */
-	}
-	100% {
-		color: #0400ff; /* End with the original color  */
-	}
+    0% {
+        color: #88ac4e; /* Start with one color  */
+    }
+    50% {
+        color: #ff0000; /* Midway, change to another color */
+    }
+    75% {
+        color: #000000; /* Midway, change to another color */
+    }
+    100% {
+        color: #0400ff; /* End with the original color  */
+    }
 }
 
-  /*the inform user ends here */
+/*the inform user ends here */
 
-  /*This is for the input search bar*/
+/*This is for the input search bar*/
 .input {
-	font-size: 0.9rem;
-	background-color: transparent;
-	width: 100%;
-	box-sizing: border-box;
-	padding-inline: 0.5em;
-	padding-block: 0.7em;
-	border: none;
-	border-bottom: var(--border-height) solid var(--border-before-color);
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-  
-.input-border {
-	position: absolute;
-	background: var(--border-after-color);
-	width: 0%;
-	height: 2px;
-	bottom: 0;
-	left: 0;
-	transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
-}
-  
-.input:focus {
-	outline: none;
-}
-  
-.input:focus + .input-border {
-	width: 100%;
-}
-  
-.form-control {
-	position: relative;
-	--width-of-input: 300px;
-}
-  
-.input-alt {
-	font-size: 1.2rem;
-	padding-inline: 1em;
-	padding-block: 0.8em;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-  
-.input-border-alt {
-	height: 3px;
-	background: linear-gradient(90deg, #FF6464 0%, #FFBF59 50%, #47C9FF 100%);
-	transition: width 1s cubic-bezier(0.42, 0, 0.58, 1.00);
-}
-  
-.input-alt:focus + .input-border-alt {
-	width: 100%;
+    font-size: 0.9rem;
+    background-color: transparent;
+    width: 100%;
+    box-sizing: border-box;
+    padding-inline: 0.5em;
+    padding-block: 0.7em;
+    border: none;
+    border-bottom: var(--border-height) solid var(--border-before-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-  /*This style is for the table*/
+.input-border {
+    position: absolute;
+    background: var(--border-after-color);
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.input:focus {
+    outline: none;
+}
+
+.input:focus + .input-border {
+    width: 100%;
+}
+
+.form-control {
+    position: relative;
+    --width-of-input: 300px;
+}
+
+.input-alt {
+    font-size: 1.2rem;
+    padding-inline: 1em;
+    padding-block: 0.8em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-border-alt {
+    height: 3px;
+    background: linear-gradient(90deg, #ff6464 0%, #ffbf59 50%, #47c9ff 100%);
+    transition: width 1s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.input-alt:focus + .input-border-alt {
+    width: 100%;
+}
+
+/*This style is for the table*/
 
 #customers {
-	font-family: Arial, Helvetica, sans-serif;
-	border-collapse: collapse;
-	width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
 }
-  
-#customers td, #customers th {
-	border: 4px solid #000000;
-	padding: 8px;
-	color:#ff2c4f;
+
+#customers td,
+#customers th {
+    border: 4px solid #000000;
+    padding: 8px;
+    color: #ff2c4f;
 }
-  
+
 /*#customers tr:nth-child(even){background-color: #202020;}
   */
-#customers tr:hover {background-color: #9c4e62;}
-  
+#customers tr:hover {
+    background-color: #9c4e62;
+}
+
 #customers th {
-	padding-top: 12px;
-	padding-bottom: 12px;
-	text-align: left;
-	background-color: #8a4343;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #8a4343;
 }
 /*end style for the table*/
 
 /* Style for the contact form */
 .contact-form {
-	max-width: 400px;
-	margin: 0 auto;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .input-group {
-	display: flex;
-	justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
-.input[type="text"]{
-	width: 100%;
-	padding: 10px;
-	margin: 5px 0;
-	border: 1px solid #ccc;
-	border-radius: 5px;
+.input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 .textarea {
-	width: 100%;
-	padding: 10px;
-	margin: 5px 0;
-	border: 1px solid #ccc;
-	border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 .select {
-	height: 40px;
-	width: 100%;
-	padding: 10px;
-	margin: 5px 0;
-	border: 1px solid #ccc;
-	border-radius: 5px;
+    height: 40px;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 .button {
-	background-color: #007BFF;
-	color: #fff;
-	padding: 10px 20px;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .button[type="reset"] {
-	background-color: #ff1919;
-	margin-left: 10px;
+    background-color: #ff1919;
+    margin-left: 10px;
 }
 
 /* Style for the file upload form */
 .file-upload-form {
-	max-width: 400px;
-	margin: 20px auto;
+    max-width: 400px;
+    margin: 20px auto;
 }
 
 .label[for="filename"] {
-	display: block;
-	margin-bottom: 5px;
+    display: block;
+    margin-bottom: 5px;
 }
 
 .inputFile[type="file"] {
-	width: 100%;
-	margin: 5px 0;
-	border: 1px solid #ccc;
-	border-radius: 5px;
+    width: 100%;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 /*end the styling of the uploading form */
 /*start the first div of the card */
 
 .outterDivOfTheCard {
-	display: flex; 
-	justify-content: center; 
-	justify-items: center; 
-	width: 95% required; 
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    width: 95% required;
 }
 
 /*This is the container of the card (second div)*/
 .cardContainer {
-	width: 94%;
-	padding-left: 5%;
-	padding-right: 5%;
-	padding-top: 1.5%;
-	padding-bottom: 1.5%;
+    width: 94%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
 }
 /*Here starts the divToContainAllTheCards*/
 .divToContainAllTheCards {
-	width: 100%;
+    width: 100%;
 }
 /*end the container of the card (second div)*/
 /*start the card styling here */
 .card {
-	position: relative;
-	width: 300px;
-	height: 200px;
-	background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
-	border-radius: 10px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	overflow: hidden;
-	transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .card img {
-	width: 100%;
-	fill: #333;
-	transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    width: 100%;
+    fill: #333;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .card:hover {
-	transform: rotate(-5deg) scale(1.1);
-	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: rotate(-5deg) scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .card__content {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%) rotate(-45deg);
-	width: 100%;
-	height: 100%;
-	padding: 20px;
-	box-sizing: border-box;
-	background-color: #fff;
-	opacity: 0;
-	transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #fff;
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .card:hover .card__content {
-	transform: translate(-50%, -50%) rotate(0deg);
-	opacity: 1;
+    transform: translate(-50%, -50%) rotate(0deg);
+    opacity: 1;
 }
 
 .card__title {
-	margin: 0;
-	font-size: 24px;
-	color: #333;
-	font-weight: 700;
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+    font-weight: 700;
 }
 
 .card__description {
-	margin: 10px 0 0;
-	font-size: 14px;
-	color: #777;
-	line-height: 1.4;
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #777;
+    line-height: 1.4;
 }
 
 .card:hover img {
-	scale: 0;
-	transform: rotate(-45deg);
+    scale: 0;
+    transform: rotate(-45deg);
 }
 /*end the card styling here */
 /*footer starts here */
@@ -385,30 +392,31 @@ footer {
 /*testing here */
 /*Adding UI for the dark mode button here */
 .switch {
+    float: right;
     position: relative;
     width: 120px;
     height: 50px;
     margin: 0px;
     -webkit-appearance: none;
     appearance: none;
-    background-color: rgb(4,52,73);
+    background-color: rgb(4, 52, 73);
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 25px;
-    transition: background-image .7s ease-in-out;
+    transition: background-image 0.7s ease-in-out;
     outline: none;
     cursor: pointer;
     overflow: hidden;
 }
-  
+
 .switch:checked {
     background-color: rgb(0, 195, 255);
     background-size: cover;
     transition: background-image 1s ease-in-out;
 }
-  
+
 .switch:after {
-    content: '';
+    content: "";
     width: 46px;
     height: 46px;
     border-radius: 50%;
@@ -417,51 +425,51 @@ footer {
     left: 2px;
     top: 2px;
     transform: translateX(0px);
-    animation: off .7s forwards cubic-bezier(.8, .5, .2, 1.4);
+    animation: off 0.7s forwards cubic-bezier(0.8, 0.5, 0.2, 1.4);
     box-shadow: inset 5px -5px 4px rgba(53, 53, 53, 0.3);
 }
-  
+
 @keyframes off {
-	0% {
-		transform: translateX(80px);
-		width: 46px;
-	}
-	
-	50% {
-		width: 75px;
-		border-radius: 25px;
-	}
-	
-	100% {
-		transform: translateX(0px);
-		width: 46px;
-	}
+    0% {
+        transform: translateX(80px);
+        width: 46px;
+    }
+
+    50% {
+        width: 75px;
+        border-radius: 25px;
+    }
+
+    100% {
+        transform: translateX(0px);
+        width: 46px;
+    }
 }
-  
+
 .switch:checked:after {
-    animation: on .7s forwards cubic-bezier(.8, .5, .2, 1.4);
+    animation: on 0.7s forwards cubic-bezier(0.8, 0.5, 0.2, 1.4);
     box-shadow: inset -5px -5px 4px rgba(53, 53, 53, 0.3);
 }
-  
+
 @keyframes on {
-	0% {
-		transform: translateX(0px);
-		width: 46px;
-	}
-	
-	50% {
-		width: 75px;
-		border-radius: 25px;
-	}
-	
-	100% {
-		transform: translateX(80px);
-		width: 46px;
-	}
+    0% {
+        transform: translateX(0px);
+        width: 46px;
+    }
+
+    50% {
+        width: 75px;
+        border-radius: 25px;
+    }
+
+    100% {
+        transform: translateX(80px);
+        width: 46px;
+    }
 }
-  
+
 .switch:checked:before {
-    content: '';
+    content: "";
     width: 15px;
     height: 15px;
     border-radius: 50%;
@@ -472,45 +480,39 @@ footer {
     background-color: transparent;
     box-shadow: 5px -1px 0px #fff;
     filter: blur(0px);
-    animation: sun .7s forwards ease;
+    animation: sun 0.7s forwards ease;
 }
-  
+
 @keyframes sun {
-	0% {
-		transform: rotate(170deg);
-		background-color: transparent;
-		box-shadow: 5px -1px 0px #fff;
-		filter: blur(0px);
-	}
-	
-	50% {
-		background-color: transparent;
-		box-shadow: 5px -1px 0px #fff;
-		filter: blur(0px);
-	}
-	
-	90% {
-		background-color: #f5daaa;
-		box-shadow: 0px 0px 10px #f5deb4,
-		0px 0px 20px #f5deb4,
-		0px 0px 30px #f5deb4,
-		inset 0px 0px 2px #efd3a3;
-		filter: blur(1px);
-	}
-	
-	100% {
-		transform: rotate(0deg);
-		background-color: #f5daaa;
-		box-shadow: 0px 0px 10px #f5deb4,
-		0px 0px 20px #f5deb4,
-		0px 0px 30px #f5deb4,
-		inset 0px 0px 2px #efd3a3;
-		filter: blur(1px);
-	}
+    0% {
+        transform: rotate(170deg);
+        background-color: transparent;
+        box-shadow: 5px -1px 0px #fff;
+        filter: blur(0px);
+    }
+
+    50% {
+        background-color: transparent;
+        box-shadow: 5px -1px 0px #fff;
+        filter: blur(0px);
+    }
+
+    90% {
+        background-color: #f5daaa;
+        box-shadow: 0px 0px 10px #f5deb4, 0px 0px 20px #f5deb4, 0px 0px 30px #f5deb4, inset 0px 0px 2px #efd3a3;
+        filter: blur(1px);
+    }
+
+    100% {
+        transform: rotate(0deg);
+        background-color: #f5daaa;
+        box-shadow: 0px 0px 10px #f5deb4, 0px 0px 20px #f5deb4, 0px 0px 30px #f5deb4, inset 0px 0px 2px #efd3a3;
+        filter: blur(1px);
+    }
 }
-  
+
 .switch:before {
-    content: '';
+    content: "";
     width: 15px;
     height: 15px;
     border-radius: 50%;
@@ -519,46 +521,43 @@ footer {
     top: 5px;
     filter: blur(1px);
     background-color: #f5daaa;
-    box-shadow: 0px 0px 10px #f5deb4,
-		0px 0px 20px #f5deb4,
-		0px 0px 30px #f5deb4,
-   inset 0px 0px 2px #efd3a3;
+    box-shadow: 0px 0px 10px #f5deb4, 0px 0px 20px #f5deb4, 0px 0px 30px #f5deb4, inset 0px 0px 2px #efd3a3;
     transform-origin: 53px 10px;
-    animation: moon .7s forwards ease;
+    animation: moon 0.7s forwards ease;
 }
-  
+
 @keyframes moon {
-	0% {
-		transform: rotate(0deg);
-		filter: blur(1px);
-	}
-	
-	50% {
-		filter: blur(1px);
-	}
-	
-	90% {
-		background-color: transparent;
-		box-shadow: 5px -1px 0px #fff;
-		filter: blur(0px);
-	}
-	
-	100% {
-		transform: rotate(170deg);
-		background-color: transparent;
-		box-shadow: 5px -1px 0px #fff;
-		filter: blur(0px);
-	}
+    0% {
+        transform: rotate(0deg);
+        filter: blur(1px);
+    }
+
+    50% {
+        filter: blur(1px);
+    }
+
+    90% {
+        background-color: transparent;
+        box-shadow: 5px -1px 0px #fff;
+        filter: blur(0px);
+    }
+
+    100% {
+        transform: rotate(170deg);
+        background-color: transparent;
+        box-shadow: 5px -1px 0px #fff;
+        filter: blur(0px);
+    }
 }
 @media (max-width: 750px) {
-	.wrapper {
-			padding-left: 60%;
-	}
+    .wrapper {
+        padding-left: 60%;
+    }
 }
 @media (max-width: 650px) {
-	.wrapper {
-			padding-left: 40%;
-	}
+    .wrapper {
+        padding-left: 40%;
+    }
 }
 
 /*This styling should be called by js when the button is toggled on */

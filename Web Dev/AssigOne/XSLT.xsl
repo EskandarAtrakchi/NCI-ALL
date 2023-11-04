@@ -3,6 +3,8 @@
 <xsl:output method="html" encoding="UTF-8" indent="yes"/>
 <!-- the starting tage from moodle -->
 
+<!--<xsl:output method="html"/>-->
+
   <xsl:template match="/">
   <!--The / is an XPath expression that references a node set from the source document -->
   <!-- starting html -->
@@ -17,7 +19,7 @@
         <link rel="website icon" href="https://moonbeam.network/wp-content/uploads/2020/10/rotating-ethereum-logo.gif"></link>
       </head>
       <body>
-
+        <img src="https://moonbeam.network/wp-content/uploads/2020/10/rotating-ethereum-logo.gif" style="padding-left:1%; width:2%; height:8%;" alt="Logo"></img>
         <input type="checkbox" name="checkbox" class="switch" id="darkModeCheckbox"></input>
     
         <script>

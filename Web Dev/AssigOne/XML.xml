@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="xslt.xsl"?>
 <company>
     <products>
-    <!-- 
+        <!-- 
     important notes for me later to write schema accordingly
     1. the code attribute should only contain positive numbers and unique according to the brief
     2. only integers should be in quantity 
