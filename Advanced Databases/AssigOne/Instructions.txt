@@ -1,7 +1,32 @@
-to run Jupyter
-Open CMD and enter the following statements to run 
-**pip install jupyterlab**
+Instructions for @yonas255 
+
+First:
+To run Jupyter
+Open CMD and enter the following statements to run:
+
+1. **pip install jupyterlab**
+
 then run
-**python -m jupyterlab**
+
+2. **python -m jupyterlab**
 
 keeo the server runnig to execute codes
+
+------------------------------------------------------------
+Second:
+To run the codes on mysql server then follow those steps 
+
+1. Download mysql workbench https://dev.mysql.com/downloads/workbench/
+
+2. Follow instruction to download 
+
+3. Create a connection and make sure you have a connection with connection name and hostname
+
+4. make sure the connection method is TCP/IP
+
+5. make sure that the server is running by checking the server status
+
+6. before yu execute the code run those SQL statement 
+6.1. CREATE DATABASE yourDBname;
+6.2. USE yourDBname;
+6.3. Then execute the SQL codes 
