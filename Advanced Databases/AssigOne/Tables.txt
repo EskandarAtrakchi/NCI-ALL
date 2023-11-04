@@ -13,7 +13,7 @@ tabular format:
 
 **StudentDim**
 
-| StudentKey | StudentID | StudentName | StudentAge | StudentGender| StudentContact  |
+| StudentKey | StudentID | StudentName | StudentAge | StudentGender| StudentContact   |
 |------------|-----------|-------------|------------|--------------|------------------|
 | 1          | 1001      | John Doe    | 25         | Male         | john@example.com |
 | 2          | 1002      | Jane Smith  | 22         | Female       | jane@example.com |
@@ -31,30 +31,29 @@ tabular format:
 
 **TimeDim**
 
-| TimeKey | Date       | Day       | Month    | Quarter | Year |
-|---------|------------|-----------|----------|---------|------|
-| 501     | 2023-01-16 | Monday    | January  |   Q1    | 2023 |
-| 502     | 2023-02-22 | Wednesday | February |   Q1    | 2023 |
-| 503     | 2023-03-10 | Friday    | March    |   Q1    | 2023 |
-| ...     | ...        | ...       | ...      | ...     | ...  |
+| TimeKey | DimDate    | DimDay    | DimMonth | Quarter | DimYear |
+|---------|------------|-----------|----------|---------|---------|    
+| 501     | 2023-01-16 | Monday    | January  |   Q1    | 2023    |    
+| 502     | 2023-02-22 | Wednesday | February |   Q1    | 2023    |    
+| 503     | 2023-03-10 | Friday    | March    |   Q1    | 2023    |    
+| ...     | ...        | ...       | ...      | ...     | ...     |    
 
 **LocationDim**
 
-| LocationKey | LocationID | LocationName | Address      | City     | State | Country  |
-|-------------|------------|--------------|--------------|----------|-------|----------|
-| 1001        | L001       | LocationA    | 123 Main St. | CityA    | StateA| CountryA |
-| 1002        | L002       | LocationB    | 456 Elm St.  | CityB    | StateB| CountryB |
-| 1003        | L003       | LocationC    | 789 Oak St.  | CityC    | StateC| CountryC |
-| ...         | ...        | ...          | ...          | ...      | ...   | ...      |
+| LocationKey | LocationID | LocationName | City     | Country  |
+|-------------|------------|--------------|----------|----------|
+| 1001        | L001       | LocationA    | CityA    | CountryA |
+| 1002        | L002       | LocationB    | CityB    | CountryB |
+| 1003        | L003       | LocationC    | CityC    | CountryC |
+| ...         | ...        | ...          | ...      | ...      |
 
 **InstructorDim**
 
-| InstructorKey | InstructorID | InstructorName | InstructorEmail    | InstructorPhone |
+|InstructorKey | InstructorID| InstructorName| InstructorEmail       | InstructorPhone |
 |--------------|-------------|---------------|-----------------------|-----------------|
 | 201          | I001        | InstructorA   | instructA@example.com | +1234567890     |
 | 202          | I002        | InstructorB   | instructB@example.com | +9876543210     |
 | 203          | I003        | InstructorC   | instructC@example.com | +5555555555     |
 | ...          | ...         | ...           | ...                   | ...             |
 
-In this visual representation, the structure of the star schema with fact and dimension tables. The fact table "TrainingAttendanceFact" contains foreign keys to the dimension tables (StudentDim, ModuleDim, TimeDim, LocationDim, and InstructorDim). 
-This structure allows for efficient data analysis and reporting in the Leisure industry's training context.
+Note: The fact table "TrainingAttendanceFact" contains foreign keys to the dimension tables (StudentDim, ModuleDim, TimeDim, LocationDim, and InstructorDim).

@@ -6,12 +6,19 @@ Still in the testing state, so things might change later.
 | Attribute         | Data Type                                     |
 |-------------------|-----------------------------------------------|
 | StudentKey        | INT                                           |
+|-------------------|-----------------------------------------------|
 | ModuleKey         | INT                                           |
+|-------------------|-----------------------------------------------|
 | TimeKey           | INT                                           |
+|-------------------|-----------------------------------------------|
 | LocationKey       | INT                                           |
+|-------------------|-----------------------------------------------|
 | InstructorKey     | INT                                           |
+|-------------------|-----------------------------------------------|
 | AttendanceStatus  | BOOLEAN                                       |
+|-------------------|-----------------------------------------------|
 | PerformanceScore  | DECIMAL or FLOAT (depending on precision)     |
+|-------------------|-----------------------------------------------|
 
 Note: the fields StudentKey, ModuleKey, TimeKey, LocationKey, and InstructorKey are surrogate keys used in the context of Dimensional Modeling to establish relationships between the fact table (TrainingAttendanceFact) and the dimension tables (StudentDim, ModuleDim, TimeDim, LocationDim, InstructorDim). They act as foreign keys in the fact table, linking it to the related information in the dimension tables.
 
@@ -20,62 +27,90 @@ Note: the fields StudentKey, ModuleKey, TimeKey, LocationKey, and InstructorKey 
 
 **StudentDim**
 
-| Attribute          | Data Type  |
-|--------------------|------------|
-| StudentKey         | INT        |
+| Attribute          | Data Type                               |
+|--------------------|-----------------------------------------|
+| StudentKey         | INT                                     |
+|--------------------|-----------------------------------------|
 | StudentID          | VARCHAR or CHAR (depends on the format) |
-| StudentName        | VARCHAR or TEXT (for longer names) |
-| StudentAge         | INT        |
-| StudentGender      | CHAR or ENUM (e.g., 'M' or 'F') |
+|--------------------|-----------------------------------------|
+| StudentName        | VARCHAR or TEXT (for longer names)      |
+|--------------------|-----------------------------------------|
+| StudentAge         | INT                                     |
+|--------------------|-----------------------------------------|
+| StudentGender      | CHAR or ENUM (e.g., 'M' or 'F')         |
+|--------------------|-----------------------------------------|
 | StudentContact     | VARCHAR or CHAR (depends on the format) |
+|--------------------|-----------------------------------------|
 
 **ModuleDim**
 
-| Attribute          | Data Type  |
-|--------------------|------------|
-| ModuleKey          | INT        |
-| ModuleID           | VARCHAR or CHAR (depends on the format) |
-| ModuleName         | VARCHAR or TEXT (for longer names) |
+| Attribute          | Data Type                                 |
+|--------------------|-------------------------------------------|
+| ModuleKey          | INT                                       |
+|--------------------|-------------------------------------------|
+| ModuleID           | VARCHAR or CHAR (depends on the format)   |
+|--------------------|-------------------------------------------|
+| ModuleName         | VARCHAR or TEXT (for longer names)        |
+|--------------------|-------------------------------------------|
 | ModuleDescription  | VARCHAR or TEXT (for longer descriptions) |
-| ModuleLocation     | VARCHAR or CHAR (depends on the format) |
-| ModuleInstructor   | VARCHAR or CHAR (depends on the format) |
-| ModuleStartDate    | DATE       |
-| ModuleEndDate      | DATE       |
+|--------------------|-------------------------------------------|
+| ModuleLocation     | VARCHAR or CHAR (depends on the format)   |
+|--------------------|-------------------------------------------|
+| ModuleInstructor   | VARCHAR or CHAR (depends on the format)   |
+|--------------------|-------------------------------------------|
+| ModuleStartDate    | DATE                                      |
+|--------------------|-------------------------------------------|
+| ModuleEndDate      | DATE                                      |
+|--------------------|-------------------------------------------|
 
 **TimeDim**
 
-| Attribute  | Data Type  |
-|------------|------------|
-| TimeKey    | INT        |
-| Date       | DATE       |
-| Day        | VARCHAR or CHAR (e.g., 'Monday', 'Tuesday') |
-| Month      | VARCHAR or CHAR (e.g., 'January', 'February') |
-| Quarter    | CHAR or ENUM (e.g., 'Q1', 'Q2') |
-| Year       | INT        |
+| Attribute  | Data Type                                     |
+|------------|-----------------------------------------------|
+| TimeKey    | INT                                           |
+|------------|-----------------------------------------------|
+| DimDate    | DATE                                          |
+|------------|-----------------------------------------------|
+| DimDay     | VARCHAR or CHAR (e.g., 'Monday', 'Tuesday')   |
+|------------|-----------------------------------------------|
+| DimMonth   | VARCHAR or CHAR (e.g., 'January', 'February') |
+|------------|-----------------------------------------------|
+| Quarter    | CHAR or ENUM (e.g., 'Q1', 'Q2')               |
+|------------|-----------------------------------------------|
+| DimYear    | INT                                           |
+|------------|-----------------------------------------------|
 
 **LocationDim**
 
-| Attribute     | Data Type  |
-|---------------|------------|
-| LocationKey  | INT        |
+| Attribute    | Data Type                               |
+|--------------|-----------------------------------------|
+| LocationKey  | INT                                     |
+|--------------|-----------------------------------------|
 | LocationID   | VARCHAR or CHAR (depends on the format) |
-| LocationName | VARCHAR or TEXT (for longer names) |
-| Address       | VARCHAR or TEXT (for longer addresses) |
+|--------------|-----------------------------------------|
+| LocationName | VARCHAR or TEXT (for longer names)      |
+|--------------|-----------------------------------------|
 | City         | VARCHAR or CHAR (depends on the format) |
-| State        | VARCHAR or CHAR (depends on the format) |
+|--------------|-----------------------------------------|
 | Country      | VARCHAR or CHAR (depends on the format) |
+|--------------|-----------------------------------------|
 
 **InstructorDim**
 
-| Attribute        | Data Type  |
-|------------------|------------|
-| InstructorKey  | INT        |
-| InstructorID   | VARCHAR or CHAR (depends on the format) |
-| InstructorName | VARCHAR or TEXT (for longer names) |
-| InstructorEmail | VARCHAR or CHAR (depends on the format) |
-| InstructorPhone | VARCHAR or CHAR (depends on the format) |
+| Attribute        | Data Type                               |
+|------------------|-----------------------------------------|
+| InstructorKey    | INT                                     |
+|------------------|-----------------------------------------|
+| InstructorID     | VARCHAR or CHAR (depends on the format) |
+|------------------|-----------------------------------------|
+| InstructorName   | VARCHAR or TEXT (for longer names)      |
+|------------------|-----------------------------------------|
+| InstructorEmail  | VARCHAR or CHAR (depends on the format) |
+|------------------|-----------------------------------------|
+| InstructorPhone  | VARCHAR or CHAR (depends on the format) |
+|------------------|-----------------------------------------|
 
-*Note*: that the specific data types can vary based on the database system we are using and the requirements of the data. It's essential to choose appropriate data types that match our data's characteristics and our DBMS's capabilities.
+*Note*: that the specific data types can vary based on the database system we are using and the requirements of the data. It's essential to choose appropriate data types that match our data's characteristics and our DBMS's capabilities so @yonas255 if you want to change any data type you must inform me!
 
 Here are the keys in more details: 
 
