@@ -26,7 +26,7 @@ To run the codes on mysql server then follow those steps
 
 5. make sure that the server is running by checking the server status
 
-6. before yu execute the code run those SQL statement 
+6. before you execute the code run those SQL statement 
 6.1. CREATE DATABASE yourDBname;
 6.2. USE yourDBname;
 6.3. Then execute the SQL codes 
