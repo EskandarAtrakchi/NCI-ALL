@@ -3,13 +3,13 @@
 <company>
     <products>
         <!-- 
-    important notes for me later to write schema accordingly
-    1. the code attribute should only contain positive numbers and unique according to the brief
-    2. only integers should be in quantity 
-    3. the discount element should have only two values, either true or false (boolean)
-    4. the unit_price should only be positive integers 
-    5. no symbols are allowed in any element 
-    -->
+        important notes for me later to write schema accordingly
+        1. the code attribute should only contain positive numbers and unique according to the brief
+        2. only integers should be in quantity 
+        3. the discount element should have only two values, either true or false (boolean)
+        4. the unit_price should only be positive integers 
+        5. no symbols are allowed in any element 
+        -->
         <product code="00001">
             <category>Laptops</category>
             <name>Dell</name>
