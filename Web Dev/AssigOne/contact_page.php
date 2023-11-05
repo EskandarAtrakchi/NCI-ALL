@@ -1,6 +1,6 @@
 <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $to = "example@gmail.com";
+            $to = "x23137517@gmail.com";
             $subject = "Contact Form Submission";
 
             $message = "First Name: " . $_POST["fname"] . "\n";
