@@ -56,8 +56,8 @@
                       <xs:simpleType>
                         <xs:restriction base="xs:integer">
                         <!-- quantity is restricted for integers only from here and all the way down -->
-                          <xs:minInclusive value="1"/>
-                          <!-- the integers numbers has to be minimum of 1 if it is zero then the product should not to exist in the table -->
+                          <xs:minInclusive value="0"/>
+                          <!-- the integers numbers has to be minimum of 0 if it is zero then the product should not to exist in the table (will fix that by js later)-->
                         </xs:restriction>
                       </xs:simpleType>
                     </xs:element>
@@ -79,7 +79,14 @@
                       </xs:simpleType>
                     </xs:element>
                   </xs:sequence>
-                <xs:attribute name="code" type="xs:positiveInteger"/>
+                <xs:attribute name="code">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                    <!--reg expression been used here to restrict the # for digits only and taken all the code attribute as a String -->
+                      <xs:pattern value="\d{3}-\d{2}"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
                 <!-- The code should always be positive integer and cannot be negative -->
               </xs:complexType>
             </xs:element>
