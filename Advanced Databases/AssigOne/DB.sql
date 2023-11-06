@@ -2,12 +2,11 @@
 --  Create the StudentDim dimension table
 
 CREATE TABLE StudentDim (
-    StudentKey INT PRIMARY KEY,
-    StudentID VARCHAR(10),
+    StudentID INT PRIMARY KEY,
     StudentName VARCHAR(255),
     StudentAge INT,
     StudentGender CHAR(1),
-    StudentContact VARCHAR(255)
+    StudentEmail VARCHAR(255)
 );
 
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
@@ -27,8 +26,7 @@ VALUES
 --  Create the ModuleDim dimension table
 
 CREATE TABLE ModuleDim (
-    ModuleKey INT PRIMARY KEY,
-    ModuleID VARCHAR(10),
+    ModuleID PRIMARY KEY,
     ModuleName VARCHAR(255),
     ModuleDescription VARCHAR(1000),
     ModuleLocation VARCHAR(255),
