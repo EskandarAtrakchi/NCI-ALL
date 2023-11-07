@@ -5,10 +5,10 @@ class UserProfile {
     protected String patientLastName;
     protected int patientAge;
 
-    public testingDeleteLater() {
+    public UserProfile() {
     }
 
-    public testingDeleteLater(int patientId, String patientFirstName, String patientLastName, int patientAge) {
+    public UserProfile(int patientId, String patientFirstName, String patientLastName, int patientAge) {
 
         this.patientId = patientId;
         this.patientFirstName = patientFirstName;
@@ -75,10 +75,10 @@ class ElectronicHealthRecord extends UserProfile {
     private String currentMedication;
     private String medicalHistory;
 
-    public testingDeleteLater() {
+    public ElectronicHealthRecord() {
     }
 
-    public testingDeleteLater(String alergies, String currentMedication, String medicalHistory) {
+    public ElectronicHealthRecord(String alergies, String currentMedication, String medicalHistory) {
     
         this.alergies = alergies;
         this.currentMedication = currentMedication;
@@ -133,10 +133,10 @@ class Appointment extends UserProfile {
     private String contactNumber;
     private String doctorName;
 
-    public testingDeleteLater() {
+    public Appointment() {
     }
 
-    public testingDeleteLater(String time, String date, String contactNumber, String doctorName) {
+    public Appointment(String time, String date, String contactNumber, String doctorName) {
 
         this.time = time;
         this.date = date;
@@ -196,19 +196,74 @@ class Appointment extends UserProfile {
     // Additional methods related to appointment scheduling can be added here
 }
 
-public class Main {
+import java.util.ArrayList;
+
+public class HealthConnectorUI {
+
+    private ArrayList<UserProfile> userProfiles; // Store user profiles.
+    private UserProfile currentUser; // Store the currently logged-in user.
+
+    UserProfile u = new UserProfile();
+    ElectronicHealthRecord e = nwe ElectronicHealthRecord();
+    Appointment a = new Appointment();
+
+    public HealthConnectorUI() {
+        userProfiles = new ArrayList<>();
+    }
+
+    // User Registration
+    public void register() {
+        // Implement user registration logic here.
+    }
+
+    // User Login
+    public void login() {
+        // Implement user login logic here.
+    }
+
+    // User Search
+    public void search() {
+        // Implement user search logic here.
+    }
+
+    // User Deletion
+    public void delete() {
+        // Implement user deletion logic here.
+    }
+
+    // Booking an Appointment
+    public void bookAppointment() {
+        // Implement appointment booking logic here.
+    }
+
+    // Searching for Appointments
+    public void searchForAppointment() {
+        // Implement appointment search logic here.
+    }
+
+    // Deleting an Appointment
+    public void deleteAppointment() {
+        // Implement appointment deletion logic here.
+    }
+
+    // Adding an Electrical Healthcare Record (EHR)
+    public void addEHR() {
+        // Implement EHR addition logic here.
+    }
+
+    // Searching for EHRs
+    public void searchEHR() {
+        // Implement EHR search logic here.
+    }
+
+    // Deleting an EHR
+    public void deleteEHR() {
+        // Implement EHR deletion logic here.
+    }
+}
+public class main {
     public static void main(String[] args) {
-        // Example usage of the classes
-
-        // Create a user profile
-        UserProfile user1 = new UserProfile("john_doe", "password123", "John Doe");
-
-        // Create an electronic health record for the user
-        ElectronicHealthRecord ehr1 = new ElectronicHealthRecord("john_doe", "password123", "John Doe", "No major illnesses", "Aspirin, 81mg daily");
-
-        // Create an appointment
-        Appointment appointment1 = new Appointment("john_doe", "dr_smith", "2023-10-30 10:00 AM");
-
-        
+        HealthConnectorUI health = new HealthConnectorUI();
+        //the required method to be called here
     }
 }
