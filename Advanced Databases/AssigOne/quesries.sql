@@ -1,5 +1,5 @@
 -- Indexes for other tables as needed based on query patterns
-
+-- put comments here later 
 SELECT
     M.ModuleName,
     T.DimMonth,
