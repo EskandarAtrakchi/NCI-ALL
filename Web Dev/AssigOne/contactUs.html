@@ -11,7 +11,7 @@
         <script src="main.js"></script>
         <title>Contact Us</title>
     </head>
-    <body>
+    <body onload="scrollBoxForContactUsPage()" >
         <img src="https://moonbeam.network/wp-content/uploads/2020/10/rotating-ethereum-logo.gif" class="logo" alt="Logo" />
         <input type="checkbox" name="checkbox" class="switch" id="darkModeCheckbox" />
 
@@ -38,32 +38,36 @@
             <a href="contactUs.html">Contact Us</a>
             <a href="feedback.html" class="split">Feedback</a>
         </div>
-        <h1 style="text-align: center;">Please Contact Us</h1>
 
-        <h2>&nbsp;</h2>
-        <!--<form class="contact-form" action="process_form.php" method="post" enctype="multipart/form-data">-->
-        <form class="contact-form" action="mailto:x23137517@student.ncirl.ie" method="post" enctype="text/plain">
-            <div class="input-group">
-                <input class="input" type="text" name="fname" placeholder="First Name" required />
-                <input class="input" type="text" name="surname" placeholder="Last Name" required />
-            </div>
-            <label class="label" for="contactus">Contacting Us For</label>
-            <select name="contactus" class="select">
-                <option value="searching_page">Searching Page</option>
-                <option value="product_issues">Product Issues</option>
-                <option value="website">Website</option>
-                <option value="job_opportunity">Job Opportunity</option>
-                <option value="other">Other</option>
-            </select>
-            <label class="label" for="subject">Subject</label>
-            <textarea class="textarea" name="subject" rows="5" placeholder="Write your message here"></textarea>
-            <label class="label" for="filename">Attach File</label>
-            <input class="inputFile" type="file" name="filename" />
-            <div class="button-group">
-                <button type="submit" class="button">Submit</button>
-                <button type="reset" class="button">Reset</button>
-            </div>
-        </form>
+        <div style="width: 50%; padding-left: 25%;">
+            
+            <h1 style="text-align: center;">Please Contact Us<span id="DynamicTextForContactUsPage"></span></h1>
+
+            <h2>&nbsp;</h2>
+            <!--<form class="contact-form" action="process_form.php" method="post" enctype="multipart/form-data">-->
+            <form class="contact-form" action="mailto:x23137517@student.ncirl.ie" method="post" enctype="text/plain">
+                <div class="input-group">
+                    <input class="input" type="text" name="fname" placeholder="First Name" required />
+                    <input class="input" type="text" name="surname" placeholder="Last Name" required />
+                </div>
+                <label class="label" for="contactus">Contacting Us For</label>
+                <select name="contactus" class="select">
+                    <option value="searching_page">Searching Page</option>
+                    <option value="product_issues">Product Issues</option>
+                    <option value="website">Website</option>
+                    <option value="job_opportunity">Job Opportunity</option>
+                    <option value="other">Other</option>
+                </select>
+                <label class="label" for="subject">Subject</label>
+                <textarea class="textarea" name="subject" rows="5" placeholder="Write your message here"></textarea>
+                <label class="label" for="filename">Attach File</label>
+                <input class="inputFile" type="file" name="filename" />
+                <div class="button-group">
+                    <button type="submit" class="button">Submit</button>
+                    <button type="reset" class="button">Reset</button>
+                </div>
+            </form>
+        </div>
         <h6>&nbsp;</h6>
         <!--Space-->
         <!-- Footer section -->

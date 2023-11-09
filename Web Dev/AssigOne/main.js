@@ -5,7 +5,8 @@
 //===================================
 
 function filterProducts() {
-    //Grab the elements from the doucment
+
+    //Grab the elements from the document
     var input = document.getElementById("searchInput").value.toLowerCase();
     var rows = document.getElementsByTagName("tr");
     var noResultsMessage = document.querySelector(".informUser"); // Get the <p> element
@@ -18,24 +19,34 @@ function filterProducts() {
         var data = rows[i].textContent || rows[i].innerText; // Get the row
         //it is better to use the lowercase built in method here to match the chars in all cases
         if (data.toLowerCase().indexOf(input) > -1) {
+
             rows[i].style.display = ""; //set the display to noting-means to display as designed in css styles
             notFound = false; // Set notFound to false if a match is not Found
+
         } else {
+
             rows[i].style.display = "none"; //hide the table data
             //notFound = true;//This is just a reminder for me that I might need this later
+
         }
+
     } //end for loop
 
     // Show/hide the "Not available" message based on whether results are found
     if (notFound) {
+
         //display the text as block
         noResultsMessage.style.display = "block";
         hideTheTableHeader.style.display = "none"; //an opportunity to hide the header of the table here also
+
     } else {
+
         //display the text as hidden
         noResultsMessage.style.display = "none";
         hideTheTableHeader.style.display = ""; //get the table header back to its original css styling that have been set in css styling file
+
     }
+
 } //end method here
 
 //===================================
@@ -45,14 +56,20 @@ function filterProducts() {
 //===================================
 
 function feedbackPage() {
+
     hitCount(); //calling the method
     const userConfirmed = window.confirm("Do you want to continue observing our new product?");
 
     if (userConfirmed) {
+
         confirmation(); //calling the method
+
     } else if (!userConfirmed) {
+
         cancellation(); //calling the method
+
     }
+
 } //end method here
 
 //===================================
@@ -62,8 +79,10 @@ function feedbackPage() {
 //===================================
 
 function confirmation() {
+
     //open new tab productList.html
     window.open("productList.html");
+
 } //end method confirmation
 
 //===================================
@@ -73,8 +92,10 @@ function confirmation() {
 //===================================
 
 function cancellation() {
+
     //close the current tab feedback.html
     window.close();
+
 }
 
 //===================================
@@ -84,25 +105,35 @@ function cancellation() {
 //===================================
 
 function hitCount() {
+
     //checking if the submitted button of feedback was clicked before
     if (localStorage.pagecount) {
+
         localStorage.pagecount = Number(localStorage.pagecount) + 1;
+
     } else {
+
         localStorage.pagecount = 1;
+
     }
 
     //if it was clicked then run the if statements accordingly
     if (localStorage.pagecount > 1) {
+
         alert("You already have submitted your feedback!\nWe will read your feedback carefully!\nThank you.\nYour feedback helps us improve!");
+
     } else {
+
         //inform the user for their feedback feedback
         alert("Thank you for providing your feedback.\nYour feedback helps us improve!");
+
     }
+
 } //end hitCount
 
 //===================================
 
-//function number 6 scrollBox
+//function number 6 scrollBox for feedback page 
 
 //===================================
 
@@ -111,29 +142,35 @@ i = 0; // integer type
 direction = 1;
 isTyping = true; //boolean type
 function scrollBoxForFeedbackPage() {
+
     var message = "lease Send Us Your Feedback";
     if (isTyping) {
         //when the condition is true
 
         document.getElementById("DynamicTextForFeedbackPage").innerHTML = message.substring(0, i) + "_";
-    } else {
-        //otherwise
 
+    } else {
+
+        //otherwise
         document.getElementById("DynamicTextForFeedbackPage").innerHTML = message.substring(0, i);
+
     }
 
     if (i >= message.length) {
+
         setTimeout("scrollBoxForFeedbackPage()", 2000); //pause time in msI 2 seconds
         return (document.getElementById("DynamicTextForFeedbackPage").innerHTML = "lease Send Us Your Feedback");
+
     }
 
     i += direction; //increment
 
     isTyping = !isTyping; //here to toggle
     setTimeout("scrollBoxForFeedbackPage()", 200);
+
 }
 
-//end function scrollBox
+//end function scrollBox for feedback page 
 
 //===================================
 
@@ -142,11 +179,13 @@ function scrollBoxForFeedbackPage() {
 //===================================
 
 function scrollToTop() {
+
     // Scroll smoothly to the top of the page
     window.scrollTo({
         top: 0,
         behavior: "smooth",
     });
+    
 }
 
 //===================================
@@ -156,9 +195,11 @@ function scrollToTop() {
 //===================================
 
 function applyDarkMode() {
+
     var body = document.body;
     body.classList.add("dark-mode");
     document.getElementById("darkModeCheckbox").checked = true;
+
 }
 
 //===================================
@@ -168,9 +209,11 @@ function applyDarkMode() {
 //===================================
 
 function applyLightMode() {
+
     var body = document.body;
     body.classList.remove("dark-mode");
     document.getElementById("darkModeCheckbox").checked = false;
+
 }
 
 //===================================
@@ -180,6 +223,7 @@ function applyLightMode() {
 //===================================
 
 function toggleDarkMode() {
+
     var darkModeCheckbox = document.getElementById("darkModeCheckbox");
 
     //just calling the methods that been created if the conditions are met
@@ -188,8 +232,48 @@ function toggleDarkMode() {
     } else {
         applyLightMode();
     }
+
 }
 
 //===================================
 
-//eventlisteners were added in script tags in the pages of html
+//function number 11 scrollBox for contact us page
+
+//===================================
+
+function scrollBoxForContactUsPage() {
+
+    var message = "lease Contact Us";
+    if (isTyping) {
+        //when the condition is true
+
+        document.getElementById("DynamicTextForContactUsPage").innerHTML = message.substring(0, c) + "_";
+
+    } else {
+        //otherwise
+
+        document.getElementById("DynamicTextForContactUsPage").innerHTML = message.substring(0, c);
+
+    }
+
+    if (i >= message.length) {
+
+        setTimeout("scrollBoxForContactUsPage()", 2000); //pause time in msI 2 seconds
+        return (document.getElementById("DynamicTextForContactUsPage").innerHTML = "lease Contact Us");
+
+    }
+
+    i += direction; //increment
+
+    isTyping = !isTyping; //here to toggle
+    setTimeout("scrollBoxForContactUsPage()", 200);
+
+}
+
+//===================================
+
+//end function scrollBox for contact us page 
+
+//===================================
+
+//event listeners were added in script tags in the pages of html
