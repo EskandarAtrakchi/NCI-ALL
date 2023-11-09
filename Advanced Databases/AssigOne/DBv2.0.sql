@@ -54,11 +54,11 @@ CREATE TABLE TrainingFact (
     ModuleID INT,
     AttendacePerformace INT,
     AttendanceScore INT,
-    TuitionFees FLOAT
+    ModuleFees FLOAT
 );
 
 -- Insert sample values into TrainingFact
-INSERT INTO TrainingFact (TrainingFactID, InstructorID, StudentID, InstitutionID, LocationID, DateID, ModuleID, AttendacePerformace, AttendanceScore, TuitionFees)
+INSERT INTO TrainingFact (TrainingFactID, InstructorID, StudentID, InstitutionID, LocationID, DateID, ModuleID, AttendacePerformace, AttendanceScore, ModuleFees)
 VALUES
     (1, 1, 1, 1, 1, 1, 1, 90, 95, 1500.00),
     (2, 2, 2, 2, 2, 2, 2, 85, 88, 1800.00),
@@ -71,12 +71,12 @@ CREATE TABLE InstitutionDim (
     AmountOfStuff INT,
     OpenTime VARCHAR(255),
     CloseTime VARCHAR(255),
-    Address VARCHAR(255),
+    InstitutionAddress VARCHAR(255),
     InstitutionEmail VARCHAR(255)
 );
 
 -- Insert sample values into InstitutionDim
-INSERT INTO InstitutionDim (InstitutionID, InstitutionName, AmountOfStuff, OpenTime, CloseTime, Address, InstitutionEmail)
+INSERT INTO InstitutionDim (InstitutionID, InstitutionName, AmountOfStuff, OpenTime, CloseTime, InstitutionAddress, InstitutionEmail)
 VALUES
     (1, 'ABC University', 100, '08:00 AM', '06:00 PM', '123 Main St, City', 'contact@abcuniversity.com'),
     (2, 'XYZ College', 50, '09:00 AM', '05:00 PM', '456 Elm St, Town', 'info@xyzcollege.edu');
