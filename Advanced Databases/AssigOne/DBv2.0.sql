@@ -105,6 +105,7 @@ CREATE TABLE ModuleDim (
     ModuleDescription VARCHAR(1000),
     ModuleStartDate DATE,
     ModuleEndDate DATE
+    Country VARCHAR(255)
 );
 
 -- Insert sample values into ModuleDim
