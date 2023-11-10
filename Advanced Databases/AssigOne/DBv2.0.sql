@@ -43,9 +43,8 @@ VALUES
     (2, 'Bob Smith', 25, 'Male', 'bob@example.com'),
     (3, 'Eve Davis', 22, 'Female', 'eve@example.com');
 
--- Create TrainingFact table
+-- Create TrainingFact table without a primary key
 CREATE TABLE TrainingFact (
-    TrainingFactID INT PRIMARY KEY,
     InstructorID INT,
     StudentID INT,
     InstitutionID INT,
@@ -58,11 +57,12 @@ CREATE TABLE TrainingFact (
 );
 
 -- Insert sample values into TrainingFact
-INSERT INTO TrainingFact (TrainingFactID, InstructorID, StudentID, InstitutionID, LocationID, DateID, ModuleID, AttendacePerformace, AttendanceScore, ModuleFees)
+INSERT INTO TrainingFact (InstructorID, StudentID, InstitutionID, LocationID, DateID, ModuleID, AttendacePerformace, AttendanceScore, ModuleFees)
 VALUES
-    (1, 1, 1, 1, 1, 1, 1, 90, 95, 1500.00),
-    (2, 2, 2, 2, 2, 2, 2, 85, 88, 1800.00),
-    (3, 3, 3, 3, 3, 3, 3, 92, 96, 1600.00);
+    (1, 1, 1, 1, 1, 1, 90, 95, 1500.00),
+    (2, 2, 2, 2, 2, 2, 85, 88, 1800.00),
+    (3, 3, 3, 3, 3, 3, 92, 96, 1600.00);
+
 
 -- Create InstitutionDim table
 CREATE TABLE InstitutionDim (
@@ -104,14 +104,15 @@ CREATE TABLE ModuleDim (
     ModuleName VARCHAR(255),
     ModuleDescription VARCHAR(1000),
     ModuleStartDate DATE,
-    ModuleEndDate DATE
+    ModuleEndDate DATE,
     Country VARCHAR(255)
 );
 
 -- Insert sample values into ModuleDim
-INSERT INTO ModuleDim (ModuleID, ModuleName, ModuleDescription, ModuleStartDate, ModuleEndDate)
+INSERT INTO ModuleDim (ModuleID, ModuleName, ModuleDescription, ModuleStartDate, ModuleEndDate, Country)
 VALUES
-    (1, 'Introduction to Programming', 'Learn the basics of programming.', '2023-01-15', '2023-02-15'),
-    (2, 'Database Management', 'Explore database concepts and SQL.', '2023-02-20', '2023-03-20'),
-    (3, 'Web Development', 'Create dynamic web applications.', '2023-03-25', '2023-04-25');
+    (1, 'Introduction to Programming', 'Learn the basics of programming.', '2023-01-15', '2023-02-15', 'USA'),
+    (2, 'Database Management', 'Explore database concepts and SQL.', '2023-02-20', '2023-03-20', 'USA'),
+    (3, 'Web Development', 'Create dynamic web applications.', '2023-03-25', '2023-04-25', 'USA');
+
 
