@@ -1,7 +1,5 @@
---  indexes to enhance the preformance of the DB query
+-- Create an index on StudentID in the StudentDim table
+CREATE INDEX idx_StudentDim_StudentID ON StudentDim (StudentID);
 
-CREATE INDEX idx_TrainingFact_ModuleID ON TrainingFact (ModuleID);
-
-CREATE INDEX idx_TrainingFact_DateID ON TrainingFact (DateID);
-
-CREATE INDEX idx_TimeDim_DimMonth ON TimeDim (DimMonth);
+-- Create an index on StudentID in the TrainingFact table
+CREATE INDEX idx_TrainingFact_StudentID ON TrainingFact (StudentID);
