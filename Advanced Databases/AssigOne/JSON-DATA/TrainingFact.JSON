@@ -1,0 +1,17 @@
+[
+    {"StudentID": 1, "InstitutionID": 1, "DateID": 1, "ModuleID": 1, "PerformaceScore": 85, "AttendaceScore": 90, "DropoutPercentage": 5.0},
+    {"StudentID": 2, "InstitutionID": 2, "DateID": 2, "ModuleID": 2, "PerformaceScore": 92, "AttendaceScore": 88, "DropoutPercentage": 2.5},
+    {"StudentID": 3, "InstitutionID": 3, "DateID": 3, "ModuleID": 3, "PerformaceScore": 78, "AttendaceScore": 92, "DropoutPercentage": 8.0},
+    {"StudentID": 4, "InstitutionID": 4, "DateID": 4, "ModuleID": 4, "PerformaceScore": 88, "AttendaceScore": 95, "DropoutPercentage": 4.5},
+    {"StudentID": 5, "InstitutionID": 5, "DateID": 5, "ModuleID": 5, "PerformaceScore": 90, "AttendaceScore": 87, "DropoutPercentage": 3.0},
+    {"StudentID": 6, "InstitutionID": 6, "DateID": 6, "ModuleID": 6, "PerformaceScore": 85, "AttendaceScore": 91, "DropoutPercentage": 5.5},
+    {"StudentID": 7, "InstitutionID": 7, "DateID": 7, "ModuleID": 7, "PerformaceScore": 93, "AttendaceScore": 89, "DropoutPercentage": 2.0},
+    {"StudentID": 8, "InstitutionID": 8, "DateID": 8, "ModuleID": 8, "PerformaceScore": 80, "AttendaceScore": 93, "DropoutPercentage": 7.0},
+    {"StudentID": 9, "InstitutionID": 9, "DateID": 9, "ModuleID": 9, "PerformaceScore": 91, "AttendaceScore": 86, "DropoutPercentage": 2.8},
+    {"StudentID": 10, "InstitutionID": 10, "DateID": 10, "ModuleID": 10, "PerformaceScore": 87, "AttendaceScore": 94, "DropoutPercentage": 4.0},
+    {"StudentID": 11, "InstitutionID": 11, "DateID": 11, "ModuleID": 11, "PerformaceScore": 89, "AttendaceScore": 88, "DropoutPercentage": 3.5},
+    {"StudentID": 12, "InstitutionID": 12, "DateID": 12, "ModuleID": 12, "PerformaceScore": 94, "AttendaceScore": 92, "DropoutPercentage": 1.5},
+    {"StudentID": 13, "InstitutionID": 13, "DateID": 13, "ModuleID": 13, "PerformaceScore": 82, "AttendaceScore": 89, "DropoutPercentage": 6.0},
+    {"StudentID": 14, "InstitutionID": 14, "DateID": 14, "ModuleID": 14, "PerformaceScore": 96, "AttendaceScore": 91, "DropoutPercentage": 1.0},
+    {"StudentID": 15, "InstitutionID": 15, "DateID": 15, "ModuleID": 15, "PerformaceScore": 85, "AttendaceScore": 95, "DropoutPercentage": 5.2}
+]
