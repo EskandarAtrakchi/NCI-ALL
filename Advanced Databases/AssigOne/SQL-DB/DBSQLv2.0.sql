@@ -20,14 +20,14 @@ CREATE TABLE TimeDim (
     Dayoff INT,
     TrainingDays INT,
     DimQuarter CHAR(2),
-    DimYear CHAR(2)
+    DimYear INT
 );
 
 -- Insert data into TimeDim table
 INSERT INTO TimeDim (DateID, DimMonth, Dayoff, TrainingDays, DimQuarter, DimYear)
 VALUES
-    (1, 'January', 1, 20, 'Q1', '22'),
-    (2, 'February', 2, 18, 'Q1', '22');
+    (1, 'January', 1, 20, 'Q1', 2),
+    (2, 'February', 2, 18, 'Q1', 2);
 
 -- Create InstitutionDim table
 CREATE TABLE InstitutionDim (
