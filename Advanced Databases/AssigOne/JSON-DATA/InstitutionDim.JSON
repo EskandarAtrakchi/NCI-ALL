@@ -1,0 +1,17 @@
+[
+    {"InstitutionID": 1, "InstitutionName": "City Leisure University", "AmountOfStuff": 200, "OpenTime": "8:00 AM", "CloseTime": "5:00 PM", "Address": "123 Main Street, Cityville", "InstitutionEmail": "info@cityuniversity.com"},
+    {"InstitutionID": 2, "InstitutionName": "Tech Training Institute", "AmountOfStuff": 150, "OpenTime": "9:00 AM", "CloseTime": "6:00 PM", "Address": "456 Tech Boulevard, Techland", "InstitutionEmail": "info@techinstitute.com"},
+    {"InstitutionID": 3, "InstitutionName": "Global Leisure Academy", "AmountOfStuff": 180, "OpenTime": "8:30 AM", "CloseTime": "5:30 PM", "Address": "789 International Avenue, Global City", "InstitutionEmail": "info@globalacademy.com"},
+    {"InstitutionID": 4, "InstitutionName": "Creative Arts Leisure College", "AmountOfStuff": 120, "OpenTime": "10:00 AM", "CloseTime": "7:00 PM", "Address": "234 Art Street, Creativityville", "InstitutionEmail": "info@creativeartscollege.com"},
+    {"InstitutionID": 5, "InstitutionName": "Business Training School", "AmountOfStuff": 250, "OpenTime": "8:00 AM", "CloseTime": "6:00 PM", "Address": "567 Commerce Avenue, Business Town", "InstitutionEmail": "info@businessschool.com"},
+    {"InstitutionID": 6, "InstitutionName": "Science Leisure Academy", "AmountOfStuff": 180, "OpenTime": "9:30 AM", "CloseTime": "5:30 PM", "Address": "890 Science Drive, Scienceland", "InstitutionEmail": "info@scienceacademy.com"},
+    {"InstitutionID": 7, "InstitutionName": "Language Leisure Institute", "AmountOfStuff": 130, "OpenTime": "8:00 AM", "CloseTime": "4:00 PM", "Address": "123 Language Lane, Linguaville", "InstitutionEmail": "info@languageinstitute.com"},
+    {"InstitutionID": 8, "InstitutionName": "Health and Wellness Leisure Center", "AmountOfStuff": 100, "OpenTime": "7:00 AM", "CloseTime": "7:00 PM", "Address": "456 Wellness Street, Health City", "InstitutionEmail": "info@healthcenter.com"},
+    {"InstitutionID": 9, "InstitutionName": "Engineering Training School", "AmountOfStuff": 200, "OpenTime": "9:00 AM", "CloseTime": "6:00 PM", "Address": "789 Engineering Avenue, Techland", "InstitutionEmail": "info@engineeringschool.com"},
+    {"InstitutionID": 10, "InstitutionName": "Music Leisure Conservatory", "AmountOfStuff": 80, "OpenTime": "10:00 AM", "CloseTime": "8:00 PM", "Address": "234 Melody Street, Musicville", "InstitutionEmail": "info@musicconservatory.com"},
+    {"InstitutionID": 11, "InstitutionName": "Law Training School", "AmountOfStuff": 220, "OpenTime": "8:30 AM", "CloseTime": "6:30 PM", "Address": "567 Legal Lane, Lawtown", "InstitutionEmail": "info@lawschool.com"},
+    {"InstitutionID": 12, "InstitutionName": "Fashion Leisure Institute", "AmountOfStuff": 150, "OpenTime": "9:00 AM", "CloseTime": "5:00 PM", "Address": "890 Style Street, Fashion City", "InstitutionEmail": "info@fashioninstitute.com"},
+    {"InstitutionID": 13, "InstitutionName": "Social Sciences Leisure Center", "AmountOfStuff": 180, "OpenTime": "8:00 AM", "CloseTime": "5:00 PM", "Address": "123 Society Street, Socialville", "InstitutionEmail": "info@socialsciencescenter.com"},
+    {"InstitutionID": 14, "InstitutionName": "Mathematics Leisure Academy", "AmountOfStuff": 120, "OpenTime": "9:30 AM", "CloseTime": "5:30 PM", "Address": "456 Math Lane, Mathland", "InstitutionEmail": "info@mathematicsacademy.com"},
+    {"InstitutionID": 15, "InstitutionName": "Film and Media Training School", "AmountOfStuff": 200, "OpenTime": "10:00 AM", "CloseTime": "6:00 PM", "Address": "789 Film Avenue, Filmtown", "InstitutionEmail": "info@filmandmediaschool.com"}
+]

@@ -1,0 +1,17 @@
+[
+    {"ModuleID": 1, "ModuleName": "Introduction to Programming", "ModuleDescription": "Basic concepts of programming and problem-solving.", "ModuleStartDate": "2023-01-10", "ModuleEndDate": "2023-02-10"},
+    {"ModuleID": 2, "ModuleName": "Database Management Systems", "ModuleDescription": "Fundamentals of database design and management.", "ModuleStartDate": "2023-02-15", "ModuleEndDate": "2023-03-15"},
+    {"ModuleID": 3, "ModuleName": "Web Development Basics", "ModuleDescription": "Building static and dynamic websites using HTML, CSS, and JavaScript.", "ModuleStartDate": "2023-03-20", "ModuleEndDate": "2023-04-20"},
+    {"ModuleID": 4, "ModuleName": "Data Structures and Algorithms", "ModuleDescription": "Advanced data structures and algorithms for efficient problem-solving.", "ModuleStartDate": "2023-04-25", "ModuleEndDate": "2023-05-25"},
+    {"ModuleID": 5, "ModuleName": "Machine Learning Fundamentals", "ModuleDescription": "Introduction to machine learning concepts and algorithms.", "ModuleStartDate": "2023-06-01", "ModuleEndDate": "2023-07-01"},
+    {"ModuleID": 6, "ModuleName": "Software Engineering Principles", "ModuleDescription": "Best practices in software development and project management.", "ModuleStartDate": "2023-07-05", "ModuleEndDate": "2023-08-05"},
+    {"ModuleID": 7, "ModuleName": "Network Security", "ModuleDescription": "Securing computer networks and systems against cyber threats.", "ModuleStartDate": "2023-08-10", "ModuleEndDate": "2023-09-10"},
+    {"ModuleID": 8, "ModuleName": "Mobile App Development", "ModuleDescription": "Creating mobile applications for iOS and Android platforms.", "ModuleStartDate": "2023-09-15", "ModuleEndDate": "2023-10-15"},
+    {"ModuleID": 9, "ModuleName": "Artificial Intelligence Applications", "ModuleDescription": "Practical applications of AI in various fields.", "ModuleStartDate": "2023-10-20", "ModuleEndDate": "2023-11-20"},
+    {"ModuleID": 10, "ModuleName": "Cloud Computing Technologies", "ModuleDescription": "Understanding and utilizing cloud computing services.", "ModuleStartDate": "2023-11-25", "ModuleEndDate": "2023-12-25"},
+    {"ModuleID": 11, "ModuleName": "Big Data Analytics", "ModuleDescription": "Analyzing large datasets for insights and decision-making.", "ModuleStartDate": "2024-01-05", "ModuleEndDate": "2024-02-05"},
+    {"ModuleID": 12, "ModuleName": "Cybersecurity Essentials", "ModuleDescription": "Essential principles and practices in cybersecurity.", "ModuleStartDate": "2024-02-10", "ModuleEndDate": "2024-03-10"},
+    {"ModuleID": 13, "ModuleName": "User Experience Design", "ModuleDescription": "Creating intuitive and user-friendly interfaces.", "ModuleStartDate": "2024-03-15", "ModuleEndDate": "2024-04-15"},
+    {"ModuleID": 14, "ModuleName": "Software Testing and Quality Assurance", "ModuleDescription": "Ensuring the quality and reliability of software applications.", "ModuleStartDate": "2024-04-20", "ModuleEndDate": "2024-05-20"},
+    {"ModuleID": 15, "ModuleName": "Blockchain Technology", "ModuleDescription": "Understanding the fundamentals of blockchain and its applications.", "ModuleStartDate": "2024-05-25", "ModuleEndDate": "2024-06-25"}
+]
