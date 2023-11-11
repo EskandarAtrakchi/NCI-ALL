@@ -4,7 +4,7 @@ SELECT
     M.ModuleName,
     T.DimMonth,
     T.DimYear,
-    AVG(TF.AttendacePerformace) AS AveragePerformance,
+    AVG(TF.PerformaceScore) AS AveragePerformance,
     AVG(TF.AttendanceScore) AS AverageAttendance,
     COUNT(TF.TrainingFactID) AS TotalSessions
 FROM
