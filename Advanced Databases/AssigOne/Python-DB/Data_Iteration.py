@@ -1,10 +1,12 @@
 import pandas as pd
 import mysql.connector
 
+# All the files are JSON files
 time_df = pd.read_json('TimeDim.json')
 institution_df = pd.read_json('InstitutionDim.json')
 module_df = pd.read_json('ModuleDim.json')
 student_df = pd.read_json('StudentDim.json')
+training_fact_df = pd.read_json('TrainingFact.json')
 
 # Establish a MySQL connection
 conn = mysql.connector.connect(
@@ -46,7 +48,7 @@ for index, row in module_df.iterrows():
         """, (row['ModuleID'], row['ModuleName'], row['ModuleDescription'], row['ModuleStartDate'], row['ModuleEndDate']))
     except mysql.connector.IntegrityError as e:
         print(f"Skipping duplicate entry for ModuleID {row['ModuleID']}")
-        
+
 # Insert data into StudentDim table with handling duplicates
 for index, row in student_df.iterrows():
     try:
@@ -56,6 +58,16 @@ for index, row in student_df.iterrows():
         """, (row['StudentID'], row['StudentName'], row['StudentAge'], row['StudentGender'], row['StudentEmail']))
     except mysql.connector.IntegrityError as e:
         print(f"Skipping duplicate entry for StudentID {row['StudentID']}")
+
+# Insert data into TrainingFact table with handling duplicates
+for index, row in training_fact_df.iterrows():
+    try:
+        cursor.execute("""
+            INSERT INTO TrainingFact (StudentID, InstitutionID, DateID, ModuleID, PerformaceScore, AttendaceScore, DropoutPercentage)
+            VALUES (%s, %s, %s, %s, %s, %s, %s)
+        """, (row['StudentID'], row['InstitutionID'], row['DateID'], row['ModuleID'], row['PerformaceScore'], row['AttendaceScore'], row['DropoutPercentage']))
+    except mysql.connector.IntegrityError as e:
+        print(f"Skipping duplicate entry for StudentID {row['StudentID']}, DateID {row['DateID']}, ModuleID {row['ModuleID']}")
 
 # Commit the changes
 conn.commit()
