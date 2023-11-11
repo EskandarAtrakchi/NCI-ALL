@@ -63,25 +63,21 @@ VALUES
 
 -- Create TrainingFact table
 CREATE TABLE TrainingFact (
-    InstructorID INT,
     StudentID INT,
     InstitutionID INT,
-    LocationID INT,
     DateID INT,
     ModuleID INT,
     PerformaceScore INT,
     AttendaceScore INT,
     DropoutPercentage FLOAT,
-    FOREIGN KEY (InstructorID) REFERENCES InstructorDim(InstructorID),
     FOREIGN KEY (StudentID) REFERENCES StudentDim(StudentID),
     FOREIGN KEY (InstitutionID) REFERENCES InstitutionDim(InstitutionID),
-    FOREIGN KEY (LocationID) REFERENCES LocationDim(LocationID),
     FOREIGN KEY (DateID) REFERENCES TimeDim(DateID),
     FOREIGN KEY (ModuleID) REFERENCES ModuleDim(ModuleID)
 );
 
 -- Insert data into TrainingFact table
-INSERT INTO TrainingFact (InstructorID, StudentID, InstitutionID, LocationID, DateID, ModuleID, PerformaceScore, AttendaceScore, TuitionFees, DropoutPercentage)
+INSERT INTO TrainingFact (StudentID, InstitutionID, DateID, ModuleID, PerformaceScore, AttendaceScore, DropoutPercentage)
 VALUES
-    (1, 1, 1, 1, 1, 1, 90, 95, 2000.0, 5.0),
-    (2, 2, 2, 2, 2, 2, 85, 90, 1800.0, 3.0);
+    (1, 1, 1, 1, 90, 95, 5.0),
+    (2, 2, 2, 2, 85, 90, 3.0);
