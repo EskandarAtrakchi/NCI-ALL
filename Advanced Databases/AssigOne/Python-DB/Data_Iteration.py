@@ -16,7 +16,7 @@ conn = mysql.connector.connect(
     database='Assig'
 )
 
-# Create a cursor object
+# Create a cursor object for mysql to fetch records rows from the tables 
 cursor = conn.cursor()
 
 # Insert data into TimeDim table with handling duplicates
