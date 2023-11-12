@@ -63,34 +63,6 @@ VALUES
     (2, 2, 2, 2, 2, 2, 85, 88, 1800.00),
     (3, 3, 3, 3, 3, 3, 92, 96, 1600.00);
 
-
--- Create InstitutionDim table
-CREATE TABLE InstitutionDim (
-    InstitutionID INT PRIMARY KEY,
-    InstitutionName VARCHAR(255),
-    AmountOfStuff INT,
-    OpenTime VARCHAR(255),
-    CloseTime VARCHAR(255),
-    InstitutionAddress VARCHAR(255),
-    InstitutionEmail VARCHAR(255)
-);
-
--- Insert sample values into InstitutionDim
-INSERT INTO InstitutionDim (InstitutionID, InstitutionName, AmountOfStuff, OpenTime, CloseTime, InstitutionAddress, InstitutionEmail)
-VALUES
-    (1, 'ABC University', 100, '08:00 AM', '06:00 PM', '123 Main St, City', 'contact@abcuniversity.com'),
-    (2, 'XYZ College', 50, '09:00 AM', '05:00 PM', '456 Elm St, Town', 'info@xyzcollege.edu');
-
--- Create TimeDim table
-CREATE TABLE TimeDim (
-    DateID INT PRIMARY KEY,
-    DimMonth VARCHAR(20),
-    Dayoff INT,
-    TrainingDays INT,
-    DimQuarter CHAR(2),
-    DimYear CHAR(2)
-);
-
 -- Insert sample values into TimeDim
 INSERT INTO TimeDim (DateID, DimMonth, Dayoff, TrainingDays, DimQuarter, DimYear)
 VALUES
