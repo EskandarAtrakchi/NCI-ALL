@@ -1,0 +1,49 @@
+BookingApp
+- input: Scanner
++ main(): void
+
+Bookings
+# clientName: String
+# bookingReference: String
+# startDate: String
+# nightDuration: double
++ Bookings()
++ Bookings(String, String, String, double)
++ getClientName(): String
++ setClientName(String): void
++ getBookingReference(): String
++ setBookingReference(String): void
++ getStartDate(): String
++ setStartDate(String): void
++ getNightDuration(): double
++ setNightDuration(double): void
+
+CateringCottages
+- address: String
+- keyCollectionPoint: Char
+- cottageCost: Double
++ CateringCottages()
++ CateringCottages(String, char, double, String, String, String, double)
++ getAddress(): String
++ setAddress(String): void
++ getKeyCollectionPoint(): char
++ setKeyCollectionPoint(char): void
++ getCottageCost(): Double
++ setCottageCost(Double): void
+
+HotelRooms
+- roomNumber: String
+- breakFast: Boolean
+- hotelRoomCost: Double
++ HotelRooms()
++ HotelRooms(String, boolean, double, String, String, String, double)
++ getRoomNumber(): String
++ setRoomNumber(String): void
++ isBreakFast(): Boolean
++ setBreakFast(Boolean): void
++ getHotelRoomCost(): Double
++ setHotelRoomCost(Double): void
+
+UserInterfaceUI
+- cc: ArrayList<Bookings>
++ add(): void
