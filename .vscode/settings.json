@@ -9,10 +9,9 @@
             "server": "localhost",
             "port": 3306,
             "driver": "MySQL",
-            "name": "Eskandar",
-            "database": "MySQLConnection",
-            "username": "root",
-            "password": "0723524754Aa."
+            "name": "Assig",
+            "database": "Assig",
+            "username": "root"
         }
     ]
 }

@@ -41,3 +41,4 @@ print(f"Execution time: {execution_time} seconds")
 
 # Close the connection
 conn.close()
+
