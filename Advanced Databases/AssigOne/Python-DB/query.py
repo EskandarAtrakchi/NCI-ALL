@@ -1,6 +1,7 @@
 import pandas as pd
 import mysql.connector
 from sqlalchemy import create_engine
+#pip install sqlalchemy
 
 # Establish a MySQL connection
 conn = mysql.connector.connect(
