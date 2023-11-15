@@ -1,5 +1,6 @@
 import pandas as pd
 import mysql.connector
+#pip install pandas, mysql-connector
 
 # All the files are JSON files
 time_df = pd.read_json('TimeDim.json')
@@ -20,6 +21,7 @@ conn = mysql.connector.connect(
 cursor = conn.cursor()
 
 #Running five for loops to enter the data to each table in MySQL database
+
 # Insert data into TimeDim table with handling duplicates
 for index, row in time_df.iterrows():
     try:
