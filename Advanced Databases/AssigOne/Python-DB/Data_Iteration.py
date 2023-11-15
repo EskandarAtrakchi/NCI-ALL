@@ -19,6 +19,7 @@ conn = mysql.connector.connect(
 # Create a cursor object
 cursor = conn.cursor()
 
+#Running five for loops to enter the data to each table in MySQL database
 # Insert data into TimeDim table with handling duplicates
 for index, row in time_df.iterrows():
     try:
