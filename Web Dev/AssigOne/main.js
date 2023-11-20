@@ -276,4 +276,24 @@ function scrollBoxForContactUsPage() {
 
 //===================================
 
+// function number 12 checking the internet connection 
+
+//===================================
+
+function checkingInternetStatus () {
+
+    if (navigator.onLine == false) {
+
+        alert('If you want to view the products pictures, please try to make sure you have stable internet connection.');
+
+    }
+
+}
+
+//===================================
+
+//end method here 
+
+//===================================
+
 //event listeners were added in script tags in the pages of html
