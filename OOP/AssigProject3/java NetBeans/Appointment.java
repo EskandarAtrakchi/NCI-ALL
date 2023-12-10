@@ -1,5 +1,4 @@
 package healthconnect;
-
 /**
  *
  * @author eskandar atrakchi
@@ -12,13 +11,6 @@ public class Appointment extends UserProfile {
     private String doctorName;
 
     public Appointment() {
-    }
-
-    public Appointment(int appointmentId, String date, String contactNumber, String doctorName) {
-        this.appointmentId = appointmentId;
-        this.date = date;
-        this.contactNumber = contactNumber;
-        this.doctorName = doctorName;
     }
 
     public Appointment(int appointmentId, String date, String contactNumber, String doctorName, int patientId, String patientFirstName, String patientLastName, String patientAddress, int patientAge, String patientPassword) {
@@ -65,6 +57,6 @@ public class Appointment extends UserProfile {
     //I will use toString method in
     //1. display method on appointment tab 
     public String toString() {
-        return "Appointment{" + "appointmentId=" + appointmentId + ", date=" + date + ", contactNumber=" + contactNumber + ", doctorName=" + doctorName + '}';
+        return "The appointments that been booked are\nAppointment{" + "appointmentId=" + appointmentId + ", date=" + date + ", contactNumber=" + contactNumber + ", doctorName=" + doctorName + '}';   
     }
 }
