@@ -27,5 +27,6 @@
       "database": "OOP"
     }
   ],
-  "java.home": ""
+  "java.home": "",
+  "docwriter.style": "Auto-detect"
 }
