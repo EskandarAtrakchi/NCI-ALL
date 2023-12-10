@@ -1,14 +1,22 @@
 package healthconnect;
 
-import static healthconnect.HealthConnectUI.EHRalergyTF;
-import static healthconnect.HealthConnectUI.EHRcurrentmedicationTF;
-import static healthconnect.HealthConnectUI.EHRidTF;
-import static healthconnect.HealthConnectUI.EHRmedicalhistoryTF;
-import static healthconnect.HealthConnectUI.appointmentidTF;
-import static healthconnect.HealthConnectUI.idTF;
+import static healthconnect.EskandarConnectUI.EHRalergyTF;
+import static healthconnect.EskandarConnectUI.EHRcurrentmedicationTF;
+import static healthconnect.EskandarConnectUI.EHRidTF;
+import static healthconnect.EskandarConnectUI.EHRmedicalhistoryTF;
+import static healthconnect.EskandarConnectUI.appointmentidTF;
+import static healthconnect.EskandarConnectUI.idTF;
+import static healthconnect.EskandarConnectUI.noteidTF;
+import static healthconnect.EskandarConnectUI.notesTA;
+import static healthconnect.EskandarConnectUI.notesfromfileTA;
 import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -29,14 +37,17 @@ public class JavaMethods {
     //ArrayList to save user data temporarly 
     //1. declaring the arraylist and then creating it as the brief says 
     //this arraylist will be responsible to store the data from mysql 
-    private ArrayList<UserProfile> userDataList;
+    private final ArrayList<UserProfile> userDataList;
     //this arraylist will be respinsible on only for patient notes, no connection with mysql
-    private ArrayList<DataNotes> textInfoList;
+    private final ArrayList<DataNotes> textInfoList;
+    //this arraylist will be resonsible for saving what should be written and read to a file 
+    private ArrayList<DataNotes> alFile;
     
     public JavaMethods () {//constructor
         //2. creating the arraylist 
         this.userDataList = new ArrayList<>();
         this.textInfoList = new ArrayList<>();
+        this.alFile = new ArrayList<>();
     }
     
     //First notes arraylist 
@@ -89,6 +100,77 @@ public class JavaMethods {
     public void displayAllTextInfo() {
         for (DataNotes textInfo : textInfoList) {
             JOptionPane.showMessageDialog(null,textInfo.toString());
+        }
+    }
+    //method number five to store data to a file that ends in .dat
+    void notesToFile() {
+        // file
+        File f;
+        // file writer
+        FileOutputStream fs;
+        // buffered writer
+        ObjectOutputStream os;
+        try {
+            f = new File("log.dat");
+            fs = new FileOutputStream(f);
+            os = new ObjectOutputStream(fs);
+
+            // Extract text from JTextArea
+            String text = notesTA.getText();
+            int numberReference = Integer.parseInt(noteidTF.getText());
+            // Create a DataNotes object with the extracted text
+            DataNotes dataNotes = new DataNotes(text, numberReference); //Emer said it is ok to pass them through the constructor
+
+            // Add the DataNotes object to the list
+            alFile.add(dataNotes);
+
+            // Write the ArrayList to the file
+            os.writeObject(alFile);
+            os.close();
+
+            notesTA.setText(null);
+            notesfromfileTA.setText(null);
+            notesTA.append("Saved successfully.");
+        } catch (IOException e) {
+            System.out.println("Error writing to file: " + e);
+        }
+    }
+    //method number six to read from file that exists to textarea
+    void readNotesFromFile() {
+        // file
+        File f;
+        // file reader
+        FileInputStream fis;
+        // object input stream
+        ObjectInputStream ois;
+        try {
+            f = new File("log.dat");
+            fis = new FileInputStream(f);
+            ois = new ObjectInputStream(fis);
+
+            alFile = (ArrayList<DataNotes>) ois.readObject();
+            ois.close();
+            notesTA.setText(null);
+            notesTA.append("Read successfully.");
+
+            // Show the content of the file in a text area 
+            if (alFile.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "File is empty.", "File Content", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                StringBuilder stringsIWantToAttach = new StringBuilder();
+                for (DataNotes dataNotes : alFile) {
+                    stringsIWantToAttach.append(dataNotes.toString()).append("\n");
+                }
+                // Append content to the JTextArea named notesfromfileTA
+                notesfromfileTA.setText(stringsIWantToAttach.toString());
+                notesfromfileTA.append("Read successfully.");
+                noteidTF.setText(null);
+                notesTA.setText(null);
+            }
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("Error reading from file: " + e);
+            // Show an error message if reading fails
+            JOptionPane.showMessageDialog(null, "Error reading from file: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
     //this method number five is to save logged in user data temporarly from mysql in the userDataList arraylist 
@@ -162,7 +244,6 @@ public class JavaMethods {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace(); // Handle the exception appropriately
             //JOptionPane.showMessageDialog(null, e);
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -181,32 +262,10 @@ public class JavaMethods {
                 JOptionPane.showMessageDialog(null, "For credentials & security purposes, the user's details was stored in an ArrayList temporary!");
                 
                 //Manipulate the buttons
-                HealthConnectUI.appointmentidTF.setText(String.valueOf(userProfile.getPatientId()));
-                HealthConnectUI.EHRidTF.setText(String.valueOf(userProfile.getPatientId()));
+                EskandarConnectUI.appointmentidTF.setText(String.valueOf(userProfile.getPatientId()));
+                EskandarConnectUI.EHRidTF.setText(String.valueOf(userProfile.getPatientId()));
                 
-                HealthConnectUI.exitBTN1.setVisible(true);
-                HealthConnectUI.signupBTN.setVisible(false);
-                HealthConnectUI.loginBTN1.setEnabled(false);
-                
-                idTF.setEditable(false);
-                appointmentidTF.setEditable(false);
-                EHRidTF.setEditable(false);
-                //Enable everything if logged in
-                HealthConnectUI.displayBTN.setEnabled(true);
-                HealthConnectUI.deleteBTN.setEnabled(true);
-                HealthConnectUI.updateBTN.setEnabled(true);
-                //HealthConnectUI.loginBTN1.setEnabled(true);
-                HealthConnectUI.appointmentdisplayBTN.setEnabled(true);
-                HealthConnectUI.appointmentdeleteBTN.setEnabled(true);
-                HealthConnectUI.appointmentupdateBTN1.setEnabled(true);
-                HealthConnectUI.appointmentbookBTN .setEnabled(true);
-                HealthConnectUI. EHRdisplayBTN.setEnabled(true);
-                HealthConnectUI. jButton2.setEnabled(true);
-                HealthConnectUI. EHRdeleteBTN.setEnabled(true);
-                HealthConnectUI. EHRupdateBTN.setEnabled(true);
-                HealthConnectUI. EHRaddBTN.setEnabled(true);
-                //HealthConnectUI. .setEnabled(true);
-                
+                manipulateAfterLogIn ();// calling the method 
                 return true;
             } else {
                 // No matching user found or invalid password
@@ -214,7 +273,6 @@ public class JavaMethods {
                 return false;
             }
         } catch (SQLException e) {
-            e.printStackTrace(); // Handle the exception appropriately
             JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
             return false;
         }
@@ -264,10 +322,10 @@ public class JavaMethods {
             if (userProfile != null) {
                 //Display user data using the UserProfile object
                 System.out.println("User Information:");
-                HealthConnectUI.fnameTF.setText(userProfile.getPatientFirstName());
-                HealthConnectUI.lnameTF.setText(userProfile.getPatientLastName());
-                HealthConnectUI.addressTF.setText(userProfile.getPatientAddress());
-                HealthConnectUI.ageTF.setText(String.valueOf(userProfile.getPatientAge()));
+                EskandarConnectUI.fnameTF.setText(userProfile.getPatientFirstName());
+                EskandarConnectUI.lnameTF.setText(userProfile.getPatientLastName());
+                EskandarConnectUI.addressTF.setText(userProfile.getPatientAddress());
+                EskandarConnectUI.ageTF.setText(String.valueOf(userProfile.getPatientAge()));
 
                 JOptionPane.showMessageDialog(null, "The data is populated successfully");
             } else {
@@ -286,12 +344,15 @@ public class JavaMethods {
         if (userProfile != null) {
             // User found, proceed with deletion
             //confirm dialog is needed to confirm that the EHR will be deleted and the appointment will be deleted also
-            //JOptionPane.showConfirmDialog(, this)
-            //The error fixed here, was to delete the children first and then delete the parent.
-            deleteAppointments(patientId);//child number one 
-            deleteElectricalHealthcareRecord(patientId);//child number two 
-
-            JOptionPane.showMessageDialog(null, "the deletetion is successful");
+            int X = JOptionPane.showConfirmDialog(null, "If you have any Electrical Health Record with us will be deleted.\nIf you have any Appointment with us will be deleted.\nPlease confirm...", "User Confirmation Required Before Deletion!", JOptionPane.YES_NO_OPTION);
+            
+            if (X == 0) {
+                //The error fixed here, was to delete the children first and then delete the parent.
+                deleteAppointments(patientId);//child number one 
+                deleteElectricalHealthcareRecord(patientId);//child number two 
+                manipulateAfterLogOut ();
+                JOptionPane.showMessageDialog(null, "the deletetion is successful");
+            }
             // Create a prepared statement to execute the delete query for UserProfile
             String query = "DELETE FROM UserProfile WHERE patientId = ?";
             try (PreparedStatement preparedStatement = myConn.prepareStatement(query)) {
@@ -299,9 +360,10 @@ public class JavaMethods {
 
                 // Execute the delete query for UserProfile
                 int rowsAffected = preparedStatement.executeUpdate();
-
+                
                 //the number of rows that are effected should be more than zero which means true
-                return rowsAffected > 0;
+                return rowsAffected > 0;//bigger than zero means true and in else statement should be false
+                
             } //because the method is boolean, if I add a catch block a return statement will be required and that's not a good practice. // source CHATgpt
         } else {
             JOptionPane.showMessageDialog(null, "No matching user found");
@@ -371,7 +433,6 @@ public class JavaMethods {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace(); // Handle the exception appropriately
             JOptionPane.showMessageDialog(null, "Error checking user existence: " + e.getMessage());
         }
         return false;
@@ -412,39 +473,22 @@ public class JavaMethods {
                     JOptionPane.showMessageDialog(null, "User registered successfully with patientId: " + userProfile.getPatientId());
                     JOptionPane.showMessageDialog(null, "You are logged in as: " + userProfile.getPatientFirstName() + " " + userProfile.getPatientLastName());
                     
-                    //manipulation of the components 
-                    //Enable everything if logged in
-                    HealthConnectUI.displayBTN.setEnabled(true);
-                    HealthConnectUI.deleteBTN.setEnabled(true);
-                    HealthConnectUI.updateBTN.setEnabled(true);
-                    HealthConnectUI.loginBTN1.setEnabled(false);
-                    HealthConnectUI.appointmentdisplayBTN.setEnabled(true);
-                    HealthConnectUI.appointmentdeleteBTN.setEnabled(true);
-                    HealthConnectUI.appointmentupdateBTN1.setEnabled(true);
-                    HealthConnectUI.appointmentbookBTN .setEnabled(true);
-                    HealthConnectUI. EHRdisplayBTN.setEnabled(true);
-                    HealthConnectUI. jButton2.setEnabled(true);
-                    HealthConnectUI. EHRdeleteBTN.setEnabled(true);
-                    HealthConnectUI. EHRupdateBTN.setEnabled(true);
-                    HealthConnectUI. EHRaddBTN.setEnabled(true);
-                    HealthConnectUI. signupBTN.setVisible(false);
-                    HealthConnectUI. exitBTN1.setVisible(true);
+                    manipulatingAfterNewRegisteration ();
                 } else {
                     JOptionPane.showMessageDialog(null, "User registration failed.");
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace(); // Handle the exception appropriately
             JOptionPane.showMessageDialog(null, "Error registering user: " + e.getMessage());
         }
     }
     
     //method number 11 clear FTs
     void clearLoginTab() {
-        HealthConnectUI.lnameTF.setText(null);
-        HealthConnectUI.fnameTF.setText(null);
-        HealthConnectUI.addressTF.setText(null);
-        HealthConnectUI.ageTF.setText(null);
+        EskandarConnectUI.lnameTF.setText(null);
+        EskandarConnectUI.fnameTF.setText(null);
+        EskandarConnectUI.addressTF.setText(null);
+        EskandarConnectUI.ageTF.setText(null);
     }
     //start tab 2 APPOITMENT tab
     //start method number one delete appointment 
@@ -459,14 +503,13 @@ public class JavaMethods {
                 int rowsAffected = preparedStatement.executeUpdate();
 
                 if (rowsAffected > 0) {//bigger than zero means true, exists 
-                    JOptionPane.showMessageDialog(null ,"Appointment with appointmentId " + HealthConnectUI.appointmentidTF1.getText() + " deleted successfully.");
+                    JOptionPane.showMessageDialog(null ,"Appointment with appointmentId " + EskandarConnectUI.appointmentidTF1.getText() + " deleted successfully.");
                 } else {
-                    JOptionPane.showMessageDialog(null ,"No appointment found with appointmentId " + HealthConnectUI.appointmentidTF1.getText() + ". Deletion failed.");
+                    JOptionPane.showMessageDialog(null ,"No appointment found with appointmentId " + EskandarConnectUI.appointmentidTF1.getText() + ". Deletion failed.");
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace(); // Handle the exception appropriately
-            JOptionPane.showMessageDialog(null , "Error deleting appointment with appointmentId " + HealthConnectUI.appointmentidTF1.getText() + " that's because: " + e.getMessage());
+            JOptionPane.showMessageDialog(null , "Error deleting appointment with appointmentId " + EskandarConnectUI.appointmentidTF1.getText() + " that's because: " + e.getMessage());
         }
     }
     //start method number two update appointment 
@@ -490,7 +533,6 @@ public class JavaMethods {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace(); // Handle the exception appropriately
             JOptionPane.showMessageDialog(null, "Error updating appointment with appointmentId " + updatedAppointment.getAppointmentId() + ": " + e.getMessage());
         }
     }//end method 2 update appointment
@@ -577,10 +619,10 @@ public class JavaMethods {
     }//end method_booking appoitment 
     //clear the appointment tab method five
     void clearAppointmentMethod() {
-        HealthConnectUI.appointmentidTF1.setText(null);
-        HealthConnectUI.chosendateTF.setText(null);
-        HealthConnectUI.doctornameTF.setText(null);
-        HealthConnectUI.doctornumberTF.setText(null);
+        EskandarConnectUI.appointmentidTF1.setText(null);
+        EskandarConnectUI.chosendateTF.setText(null);
+        EskandarConnectUI.doctornameTF.setText(null);
+        EskandarConnectUI.doctornumberTF.setText(null);
     }
     //start EHR tab
     //method 1 add EHR 
@@ -635,7 +677,6 @@ public class JavaMethods {
     //start method 3 update EHR 
     void updateEHR(int patientId, String newAllergies, String newCurrentMedication, String newMedicalHistory) {
         try {
-            // Database operations or calls to a DatabaseHandler class
             String query = "UPDATE ElectricalHealthcareRecord SET alergies = ?, currentMedication = ?, medicalHistory = ? WHERE patientId = ?";
             try (PreparedStatement preparedStatement = myConn.prepareStatement(query)) {
                 preparedStatement.setString(1, newAllergies);
@@ -673,6 +714,7 @@ public class JavaMethods {
             bufferedWriter.write(header);
 
             // Write table header
+            //The %-15s %-25s %-25s %-25s%n each one is a fix width to print the required string // source https://stackoverflow.com/questions/29370621/java-printing-string-with-fixed-width
             String tableHeader = String.format("%-15s %-25s %-25s %-25s%n", "Patient ID|", "|Allergies|", "|Current Medication|", "|Medical History|\n"
                     + "--------------------------------------------------------------------------------------------------");
             bufferedWriter.write(tableHeader);
@@ -686,18 +728,18 @@ public class JavaMethods {
                 // Write each EHR record to the file
                 while (resultSet.next()) {
                     int patientId = resultSet.getInt("patientId");
-                    String allergies = resultSet.getString("alergies");
+                    String alergies = resultSet.getString("alergies");
                     String currentMedication = resultSet.getString("currentMedication");
                     String medicalHistory = resultSet.getString("medicalHistory");
 
                     // Write the EHR record to the file
-                    String row = String.format("%-15d %-25s %-25s %-25s%n", patientId, allergies, currentMedication, medicalHistory);
+                    //The %-15s %-25s %-25s %-25s%n each one is a fix width to print the required string // source https://stackoverflow.com/questions/29370621/java-printing-string-with-fixed-width
+                    String row = String.format("%-15d %-25s %-25s %-25s%n", patientId, alergies, currentMedication, medicalHistory);
                     bufferedWriter.write(row);
                 }
-
-                // Close the buffered writer
-                bufferedWriter.close();
-                System.out.println("EHR records for the logged-in user written to file: " + filePath);
+                
+                bufferedWriter.close();// Close the buffered writer
+                System.out.println("EHR records for the logged-in user written to file: " + filePath);//for me to know, delete later 
                 JOptionPane.showMessageDialog(null, "EHR records for the logged-in user written to file: " + filePath);
             }
         } catch (IOException | SQLException e) {
@@ -705,9 +747,7 @@ public class JavaMethods {
             System.err.println("Error writing EHR records to file: " + e.getMessage());
         }
     }
-
-
-    //Clear the TFs in the EHR tab 
+    //Clear the TFs in the EHR tab method number 5
     void ehrClear () {
         EHRalergyTF.setText(null);
         EHRmedicalhistoryTF.setText(null);
@@ -715,7 +755,7 @@ public class JavaMethods {
         //EHRpathTF.setText(null);
         //EHRidTF.setText(null);
     }
-    //test method here
+    //method number 6 displaying the EHR based on their ID 
     public void displayEHR(int patientId) {
         try {
             // Create a prepared statement to execute the query
@@ -729,9 +769,9 @@ public class JavaMethods {
                 // Check if there are matching EHR records
                 if (resultSet.next()) {
                     // Display EHR records in the corresponding text fields
-                    HealthConnectUI.EHRalergyTF.setText(resultSet.getString("alergies"));
-                    HealthConnectUI.EHRcurrentmedicationTF.setText(resultSet.getString("currentMedication"));
-                    HealthConnectUI.EHRmedicalhistoryTF.setText(resultSet.getString("medicalHistory"));
+                    EskandarConnectUI.EHRalergyTF.setText(resultSet.getString("alergies"));
+                    EskandarConnectUI.EHRcurrentmedicationTF.setText(resultSet.getString("currentMedication"));
+                    EskandarConnectUI.EHRmedicalhistoryTF.setText(resultSet.getString("medicalHistory"));
                 } else {
                     // No matching EHR records found
                     JOptionPane.showMessageDialog(null, "EHR records not found for Patient ID: " + patientId);
@@ -740,5 +780,77 @@ public class JavaMethods {
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error displaying EHR records: " + e.getMessage());
         }
+    }
+    //extra methds to manipulate the components 
+    void manipulateAfterLogIn () {
+        EskandarConnectUI.exitBTN1.setVisible(true);
+        EskandarConnectUI.signupBTN.setVisible(false);
+        EskandarConnectUI.loginBTN1.setEnabled(false);
+        idTF.setEditable(false);
+        appointmentidTF.setEditable(false);
+        EHRidTF.setEditable(false);
+        //Enable everything if logged in
+        EskandarConnectUI.displayBTN.setEnabled(true);
+        EskandarConnectUI.deleteBTN.setEnabled(true);
+        EskandarConnectUI.updateBTN.setEnabled(true);
+        //HealthConnectUI.loginBTN1.setEnabled(true);
+        EskandarConnectUI.appointmentdisplayBTN.setEnabled(true);
+        EskandarConnectUI.appointmentdeleteBTN.setEnabled(true);
+        EskandarConnectUI.appointmentupdateBTN1.setEnabled(true);
+        EskandarConnectUI.appointmentbookBTN .setEnabled(true);
+        EskandarConnectUI. EHRdisplayBTN.setEnabled(true);
+        EskandarConnectUI. jButton2.setEnabled(true);
+        EskandarConnectUI. EHRdeleteBTN.setEnabled(true);
+        EskandarConnectUI. EHRupdateBTN.setEnabled(true);
+        EskandarConnectUI. EHRaddBTN.setEnabled(true);
+        //HealthConnectUI. .setEnabled(true);
+    }
+    void manipulateAfterLogOut () {
+        EskandarConnectUI.exitBTN1.setVisible(false);
+        EskandarConnectUI.signupBTN.setVisible(true);
+        EskandarConnectUI.loginBTN1.setEnabled(true);
+        idTF.setEditable(true);
+        appointmentidTF.setEditable(true);
+        EHRidTF.setEditable(true);
+        //Disable everything if logged in
+        EskandarConnectUI.displayBTN.setEnabled(false);
+        EskandarConnectUI.deleteBTN.setEnabled(false);
+        EskandarConnectUI.updateBTN.setEnabled(false);
+        //HealthConnectUI.loginBTN1.setEnabled(false);
+        EskandarConnectUI.appointmentdisplayBTN.setEnabled(false);
+        EskandarConnectUI.appointmentdeleteBTN.setEnabled(false);
+        EskandarConnectUI.appointmentupdateBTN1.setEnabled(false);
+        EskandarConnectUI.appointmentbookBTN.setEnabled(false);
+        EskandarConnectUI.EHRdisplayBTN.setEnabled(false);
+        EskandarConnectUI.jButton2.setEnabled(false);
+        EskandarConnectUI.EHRdeleteBTN.setEnabled(false);
+        EskandarConnectUI.EHRupdateBTN.setEnabled(false);
+        EskandarConnectUI.EHRaddBTN.setEnabled(false);
+        //HealthConnectUI.setEnabled(false);
+    }
+    //create manipulatingAfterRegisteration method 
+    void manipulatingAfterNewRegisteration () {
+        //manipulation of the components 
+        //Enable everything if logged in
+        EskandarConnectUI.displayBTN.setEnabled(true);
+        EskandarConnectUI.deleteBTN.setEnabled(true);
+        EskandarConnectUI.updateBTN.setEnabled(true);
+        EskandarConnectUI.loginBTN1.setEnabled(false);
+        EskandarConnectUI.appointmentdisplayBTN.setEnabled(true);
+        EskandarConnectUI.appointmentdeleteBTN.setEnabled(true);
+        EskandarConnectUI.appointmentupdateBTN1.setEnabled(true);
+        EskandarConnectUI.appointmentbookBTN .setEnabled(true);
+        EskandarConnectUI. EHRdisplayBTN.setEnabled(true);
+        EskandarConnectUI. jButton2.setEnabled(true);
+        EskandarConnectUI. EHRdeleteBTN.setEnabled(true);
+        EskandarConnectUI. EHRupdateBTN.setEnabled(true);
+        EskandarConnectUI. EHRaddBTN.setEnabled(true);
+        EskandarConnectUI. signupBTN.setVisible(false);
+        EskandarConnectUI. exitBTN1.setVisible(true);
+        appointmentidTF.setText(idTF.getText());
+        EHRidTF.setText(idTF.getText());
+        idTF.setEditable(false);
+        appointmentidTF.setEditable(false);
+        EHRidTF.setEditable(false);
     }
 }
