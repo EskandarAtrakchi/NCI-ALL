@@ -2,7 +2,7 @@ package healthconnect;
 
 /**
  *
- * @author eskandar atrakchi
+ * @author Eskandar Atrakchi
  */
 public class ElectricalHealthcareRecord extends UserProfile {
     
@@ -12,13 +12,14 @@ public class ElectricalHealthcareRecord extends UserProfile {
 
     public ElectricalHealthcareRecord() {
     }
-
-    public ElectricalHealthcareRecord(String alergies, String currentMedication, String medicalHistory) {
+    
+    public ElectricalHealthcareRecord(String alergies, String currentMedication, String medicalHistory, int patientId, String patientFirstName, String patientLastName, String patientAddress, int patientAge, String patientPassword) {
+        super(patientId, patientFirstName, patientLastName, patientAddress, patientAge, patientPassword);
         this.alergies = alergies;
         this.currentMedication = currentMedication;
         this.medicalHistory = medicalHistory;
     }
-
+    
     public String getAlergies() {
         return alergies;
     }
@@ -41,5 +42,10 @@ public class ElectricalHealthcareRecord extends UserProfile {
 
     public void setMedicalHistory(String medicalHistory) {
         this.medicalHistory = medicalHistory;
+    }
+
+    @Override
+    public String toString() {
+        return "ElectricalHealthcareRecord { " + "alergies=" + alergies + ", currentMedication=" + currentMedication + ", medicalHistory=" + medicalHistory + '}';
     }
 }
