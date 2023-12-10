@@ -3,7 +3,7 @@ package healthconnect;
 
 /**
  *
- * @author eskandar atrakchi
+ * @author Eskandar Atrakchi
  */
 public class UserProfile {
     
@@ -25,7 +25,7 @@ public class UserProfile {
         this.patientAge = patientAge;
         this.patientPassword = patientPassword;
     }
-
+    
     public int getPatientId() {
         return patientId;
     }
@@ -74,4 +74,8 @@ public class UserProfile {
         this.patientPassword = patientPassword;
     }
 
+    @Override
+    public String toString() {
+        return "UserProfile{" + "patientId=" + patientId + ", patientFirstName=" + patientFirstName + ", patientLastName=" + patientLastName + ", patientAddress=" + patientAddress + ", patientAge=" + patientAge + ", patientPassword=" + patientPassword + '}';
+    }
 }
