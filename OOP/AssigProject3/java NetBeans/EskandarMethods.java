@@ -25,11 +25,13 @@ import javax.swing.JOptionPane;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author Eskandar Atrakchi
  */
-public class JavaMethods {
+public class EskandarMethods {
     //get connection by a static block to run first 
     //myConn will be the instance and will be used in all the methods to connect to mysql
     static Connection myConn = ConnectDB.getConnection();
@@ -43,7 +45,7 @@ public class JavaMethods {
     //this arraylist will be resonsible for saving what should be written and read to a file 
     private ArrayList<DataNotes> alFile;
     
-    public JavaMethods () {//constructor
+    public EskandarMethods () {//constructor
         //2. creating the arraylist 
         this.userDataList = new ArrayList<>();
         this.textInfoList = new ArrayList<>();
@@ -103,6 +105,7 @@ public class JavaMethods {
         }
     }
     //method number five to store data to a file that ends in .dat
+    //Frances Sheridan videos // source https://github.com/EskandarAtrakchi/NCI-YEAR-2-FIRST/tree/main/OOP/java/File%20i/o
     void notesToFile() {
         // file
         File f;
@@ -135,7 +138,7 @@ public class JavaMethods {
             System.out.println("Error writing to file: " + e);
         }
     }
-    //method number six to read from file that exists to textarea
+    //method number six to read from file that exists to textarea // source https://github.com/EskandarAtrakchi/NCI-YEAR-2-FIRST/tree/main/OOP/java/File%20i/o
     void readNotesFromFile() {
         // file
         File f;
@@ -252,30 +255,43 @@ public class JavaMethods {
     //method Number one  login user   metod 
     boolean loginUser(int enteredPatientId, String enteredPassword) {
         try {
-            // Retrieve user profile based on entered patientId
-            //the get user profile is returning  mapResultSetToUserProfile(ResultSet resultSet) and this will return the user data from mysql 
-            UserProfile userProfile = getUserProfile(enteredPatientId);//database-related code is encapsulated within the getUserProfile method.
-
-            if (userProfile != null && userProfile.getPatientPassword().equals(enteredPassword)) {
-                // User credentials are valid
-                JOptionPane.showMessageDialog(null, "Login successful!");
-                JOptionPane.showMessageDialog(null, "For credentials & security purposes, the user's details was stored in an ArrayList temporary!");
-                
-                //Manipulate the buttons
-                EskandarConnectUI.appointmentidTF.setText(String.valueOf(userProfile.getPatientId()));
-                EskandarConnectUI.EHRidTF.setText(String.valueOf(userProfile.getPatientId()));
-                
-                manipulateAfterLogIn ();// calling the method 
-                return true;
+            // Check if the connection is successful // source: https://stackoverflow.com/questions/7764671/java-jdbc-connection-status
+            if (myConn != null && !myConn.isClosed()) {
+                System.out.println("Connected to the database!");
+                try {
+                    // Retrieve user profile based on entered patientId
+                    //the get user profile is returning  mapResultSetToUserProfile(ResultSet resultSet) and this will return the user data from mysql
+                    UserProfile userProfile = getUserProfile(enteredPatientId);//database-related code is encapsulated within the getUserProfile method.
+                    
+                    if (userProfile != null && userProfile.getPatientPassword().equals(enteredPassword)) {
+                        // User credentials are valid
+                        JOptionPane.showMessageDialog(null, "Login successful!");
+                        JOptionPane.showMessageDialog(null, "For credentials & security purposes, the user's details was stored in an ArrayList temporary!");
+                        
+                        //Manipulate the buttons
+                        EskandarConnectUI.appointmentidTF.setText(String.valueOf(userProfile.getPatientId()));
+                        EskandarConnectUI.EHRidTF.setText(String.valueOf(userProfile.getPatientId()));
+                        
+                        manipulateAfterLogIn ();// calling the method
+                        return true;
+                    } else {
+                        // No matching user found or invalid password
+                        JOptionPane.showMessageDialog(null , "invalid password");
+                        return false;
+                    }
+                } catch (SQLException e) {
+                    JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
+                    return false;
+                }
             } else {
-                // No matching user found or invalid password
-                JOptionPane.showMessageDialog(null, "Invalid login credentials. Please try again.");
+                System.out.println("Failed to connect to the database.");
+                JOptionPane.showMessageDialog(null , "Database connection server error! make sure your MySQL server connected.\nHow to solve this problem?\nMake sure you MySQL server is running and enter the correct data when you run the App.\nPlease colse the App now and try again when MySQL server is working.");
                 return false;
             }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
-            return false;
+        } catch (SQLException ex) {
+            Logger.getLogger(EskandarMethods.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return false;
     }
     // the loginUser method Number two now calls a new method getUserProfile, which retrieves the user profile from the database based on the entered patientId
     //this method will be used in the tabs buttons
@@ -363,7 +379,6 @@ public class JavaMethods {
                 
                 //the number of rows that are effected should be more than zero which means true
                 return rowsAffected > 0;//bigger than zero means true and in else statement should be false
-                
             } //because the method is boolean, if I add a catch block a return statement will be required and that's not a good practice. // source CHATgpt
         } else {
             JOptionPane.showMessageDialog(null, "No matching user found");
@@ -439,50 +454,59 @@ public class JavaMethods {
     }
     //I will call the method above and run f statement to make sure if the user exists or not before I register them 
     //method number 10 registerUser
-    void registerUser(int patientId, String patientFirstName, String patientLastName, String patientAddress, int patientAge, String patientPassword) {//all the parameters are passed by the fields that the user enters when they want to register 
-        try {
-            // Check if the chosen patientId already exists
-            if (userExists(patientId) == true) {//call the method and pass value through the parameter
-                JOptionPane.showMessageDialog(null, "User with the chosen patientId already exists. Registration failed.");
-                return;
-            }
-
-            // Create a new UserProfile object and set the attributes
-            UserProfile userProfile = new UserProfile();
-            userProfile.setPatientId(patientId);
-            userProfile.setPatientFirstName(patientFirstName);
-            userProfile.setPatientLastName(patientLastName);
-            userProfile.setPatientAddress(patientAddress);
-            userProfile.setPatientAge(patientAge);
-            userProfile.setPatientPassword(patientPassword);
-
-            // Create a prepared statement to execute the insert query
-            String query = "INSERT INTO UserProfile (patientId, patientFirstName, patientLastName, patientAddress, patientAge, patientPassword) VALUES (?, ?, ?, ?, ?, ?)";
-            try (PreparedStatement preparedStatement = myConn.prepareStatement(query)) {
-                preparedStatement.setInt(1, userProfile.getPatientId());
-                preparedStatement.setString(2, userProfile.getPatientFirstName());
-                preparedStatement.setString(3, userProfile.getPatientLastName());
-                preparedStatement.setString(4, userProfile.getPatientAddress());
-                preparedStatement.setInt(5, userProfile.getPatientAge());
-                preparedStatement.setString(6, userProfile.getPatientPassword());
-
-                // Execute the insert query
-                int rowsAffected = preparedStatement.executeUpdate();
-
-                if (rowsAffected > 0) {//bigger than zero means true, 
-                    JOptionPane.showMessageDialog(null, "User registered successfully with patientId: " + userProfile.getPatientId());
-                    JOptionPane.showMessageDialog(null, "You are logged in as: " + userProfile.getPatientFirstName() + " " + userProfile.getPatientLastName());
-                    
-                    manipulatingAfterNewRegisteration ();
-                } else {
-                    JOptionPane.showMessageDialog(null, "User registration failed.");
+    void registerUser(int patientId, String patientFirstName, String patientLastName, String patientAddress, int patientAge, String patientPassword) {try {
+        //all the parameters are passed by the fields that the user enters when they want to register
+        // Check if the connection is successful // source: https://stackoverflow.com/questions/7764671/java-jdbc-connection-status
+        if (myConn != null && !myConn.isClosed()) {
+            System.out.println("Connected to the database!");
+            try {
+                // Check if the chosen patientId already exists
+                if (userExists(patientId) == true) {//call the method and pass value through the parameter
+                    JOptionPane.showMessageDialog(null, "User with the chosen patientId already exists. Registration failed.");
+                    return;
                 }
+
+                // Create a new UserProfile object and set the attributes
+                UserProfile userProfile = new UserProfile();
+                userProfile.setPatientId(patientId);
+                userProfile.setPatientFirstName(patientFirstName);
+                userProfile.setPatientLastName(patientLastName);
+                userProfile.setPatientAddress(patientAddress);
+                userProfile.setPatientAge(patientAge);
+                userProfile.setPatientPassword(patientPassword);
+
+                // Create a prepared statement to execute the insert query
+                String query = "INSERT INTO UserProfile (patientId, patientFirstName, patientLastName, patientAddress, patientAge, patientPassword) VALUES (?, ?, ?, ?, ?, ?)";
+                try (PreparedStatement preparedStatement = myConn.prepareStatement(query)) {
+                    preparedStatement.setInt(1, userProfile.getPatientId());
+                    preparedStatement.setString(2, userProfile.getPatientFirstName());
+                    preparedStatement.setString(3, userProfile.getPatientLastName());
+                    preparedStatement.setString(4, userProfile.getPatientAddress());
+                    preparedStatement.setInt(5, userProfile.getPatientAge());
+                    preparedStatement.setString(6, userProfile.getPatientPassword());
+
+                    // Execute the insert query
+                    int rowsAffected = preparedStatement.executeUpdate();
+                    
+                    if (rowsAffected > 0) {//bigger than zero means true, 
+                        JOptionPane.showMessageDialog(null, "User registered successfully with patientId: " + userProfile.getPatientId());
+                        JOptionPane.showMessageDialog(null, "You are logged in as: " + userProfile.getPatientFirstName() + " " + userProfile.getPatientLastName());
+
+                        manipulatingAfterNewRegisteration ();
+                    } else {
+                        JOptionPane.showMessageDialog(null, "User registration failed.");
+                    }
+                }
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null, "Error registering user: " + e.getMessage());
             }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error registering user: " + e.getMessage());
+        } else {
+            JOptionPane.showMessageDialog(null , "Database connection server error! make sure your MySQL server connected.\nHow to solve this problem?\nMake sure you MySQL server is running and enter the correct data when you run the App.\nPlease colse the App now and try again when MySQL server is working.");
+        }
+        } catch (SQLException ex) {
+            Logger.getLogger(EskandarMethods.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
     //method number 11 clear FTs
     void clearLoginTab() {
         EskandarConnectUI.lnameTF.setText(null);
@@ -804,6 +828,9 @@ public class JavaMethods {
         EskandarConnectUI. EHRupdateBTN.setEnabled(true);
         EskandarConnectUI. EHRaddBTN.setEnabled(true);
         //HealthConnectUI. .setEnabled(true);
+        EskandarConnectUI.yonasBTN.setEnabled (true);
+        EskandarConnectUI.joshuaBTN.setEnabled(true);
+        
     }
     void manipulateAfterLogOut () {
         EskandarConnectUI.exitBTN1.setVisible(false);
@@ -827,6 +854,8 @@ public class JavaMethods {
         EskandarConnectUI.EHRupdateBTN.setEnabled(false);
         EskandarConnectUI.EHRaddBTN.setEnabled(false);
         //HealthConnectUI.setEnabled(false);
+        EskandarConnectUI.yonasBTN.setEnabled (false);
+        EskandarConnectUI.joshuaBTN.setEnabled(false );
     }
     //create manipulatingAfterRegisteration method 
     void manipulatingAfterNewRegisteration () {
@@ -852,5 +881,8 @@ public class JavaMethods {
         idTF.setEditable(false);
         appointmentidTF.setEditable(false);
         EHRidTF.setEditable(false);
+        EskandarConnectUI.yonasBTN.setEnabled (true);
+        EskandarConnectUI.joshuaBTN.setEnabled(true);
+        
     }
 }

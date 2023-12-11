@@ -3,7 +3,6 @@ package healthconnect;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -19,11 +18,10 @@ import javax.swing.Timer;
 public class EskandarConnectUI extends javax.swing.JFrame {
 
     //create an instance from javamethods class 
-    JavaMethods jm = new JavaMethods();
+    EskandarMethods jm = new EskandarMethods();
     
     public EskandarConnectUI() {
         initComponents();
-  
         //divide the width and the height on 2 so the frame will should in the middle 
         Toolkit toolkit = getToolkit();
         Dimension size = toolkit.getScreenSize();
@@ -156,6 +154,14 @@ public class EskandarConnectUI extends javax.swing.JFrame {
         regulardisplayLoginDG3 = new javax.swing.JLabel();
         ehrAnimationLBL1 = new javax.swing.JLabel();
         EHRbackgroundLBL1 = new javax.swing.JLabel();
+        loginTAB1 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        logoLBL4 = new javax.swing.JLabel();
+        exitfBTN = new javax.swing.JButton();
+        joshuaBTN = new javax.swing.JButton();
+        yonasBTN = new javax.swing.JButton();
+        regulardisplayLoginDG4 = new javax.swing.JLabel();
+        loginbackgroundLBL1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         date = new javax.swing.JMenu();
         time = new javax.swing.JMenu();
@@ -166,12 +172,17 @@ public class EskandarConnectUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jTabbedPane3.setToolTipText("");
+
+        loginTAB.setToolTipText("to manage profile ");
+
         jPanel6.setLayout(null);
 
         clearBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         clearBTN.setForeground(new java.awt.Color(102, 102, 102));
         clearBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BTNs_ImgsOne/edit.png"))); // NOI18N
         clearBTN.setText("Clear?");
+        clearBTN.setToolTipText("clear the fields");
         clearBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clearBTNActionPerformed(evt);
@@ -200,6 +211,7 @@ public class EskandarConnectUI extends javax.swing.JFrame {
         updateBTN.setForeground(new java.awt.Color(102, 102, 102));
         updateBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BTNs_ImgsTwo/update icon.png"))); // NOI18N
         updateBTN.setText("Update");
+        updateBTN.setToolTipText("Update user data ");
         updateBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 updateBTNActionPerformed(evt);
@@ -262,6 +274,7 @@ public class EskandarConnectUI extends javax.swing.JFrame {
         deleteBTN.setForeground(new java.awt.Color(102, 102, 102));
         deleteBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BTNs_ImgsTwo/delete_16x16.gif"))); // NOI18N
         deleteBTN.setText("Delete");
+        deleteBTN.setToolTipText("Delete user data ");
         deleteBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteBTNActionPerformed(evt);
@@ -313,6 +326,7 @@ public class EskandarConnectUI extends javax.swing.JFrame {
         displayBTN.setForeground(new java.awt.Color(102, 102, 102));
         displayBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BTNs_ImgsOne/job.png"))); // NOI18N
         displayBTN.setText("Display");
+        displayBTN.setToolTipText("Display user data ");
         displayBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 displayBTNActionPerformed(evt);
@@ -326,6 +340,7 @@ public class EskandarConnectUI extends javax.swing.JFrame {
         loginBTN1.setForeground(new java.awt.Color(102, 102, 102));
         loginBTN1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BTNs_ImgsTwo/Search.png"))); // NOI18N
         loginBTN1.setText("Log-in");
+        loginBTN1.setToolTipText("log in button");
         loginBTN1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginBTN1ActionPerformed(evt);
@@ -342,7 +357,7 @@ public class EskandarConnectUI extends javax.swing.JFrame {
         jPanel6.add(regulardisplayLoginDG);
         regulardisplayLoginDG.setBounds(0, 0, 730, 710);
 
-        loginbackgroundLBL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/Screenshot (462).png"))); // NOI18N
+        loginbackgroundLBL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/newDarkBG.png"))); // NOI18N
         jPanel6.add(loginbackgroundLBL);
         loginbackgroundLBL.setBounds(0, -20, 770, 740);
 
@@ -414,6 +429,7 @@ public class EskandarConnectUI extends javax.swing.JFrame {
         appointmentdeleteBTN.setForeground(new java.awt.Color(102, 102, 102));
         appointmentdeleteBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BTNs_ImgsTwo/delete_16x16.gif"))); // NOI18N
         appointmentdeleteBTN.setText("Delete");
+        appointmentdeleteBTN.setToolTipText("Delete appointment details");
         appointmentdeleteBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 appointmentdeleteBTNActionPerformed(evt);
@@ -444,6 +460,7 @@ public class EskandarConnectUI extends javax.swing.JFrame {
         appointmentbookBTN.setForeground(new java.awt.Color(102, 102, 102));
         appointmentbookBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BTNs_ImgsTwo/attachment-512.png"))); // NOI18N
         appointmentbookBTN.setText("Book");
+        appointmentbookBTN.setToolTipText("Book an appointment");
         appointmentbookBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 appointmentbookBTNActionPerformed(evt);
@@ -457,6 +474,7 @@ public class EskandarConnectUI extends javax.swing.JFrame {
         appointmentupdateBTN1.setForeground(new java.awt.Color(102, 102, 102));
         appointmentupdateBTN1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BTNs_ImgsTwo/update icon.png"))); // NOI18N
         appointmentupdateBTN1.setText("Update");
+        appointmentupdateBTN1.setToolTipText("Update appointment details");
         appointmentupdateBTN1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 appointmentupdateBTN1ActionPerformed(evt);
@@ -476,7 +494,7 @@ public class EskandarConnectUI extends javax.swing.JFrame {
             }
         });
         jPanel8.add(hideC);
-        hideC.setBounds(10, 350, 130, 25);
+        hideC.setBounds(10, 320, 130, 25);
         hideC.setVisible(false);
 
         showC.setBackground(new java.awt.Color(153, 153, 153));
@@ -510,6 +528,7 @@ public class EskandarConnectUI extends javax.swing.JFrame {
         confirmdateTOGGLEBTN.setForeground(new java.awt.Color(102, 102, 102));
         confirmdateTOGGLEBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BTNs_ImgsOne/save.png"))); // NOI18N
         confirmdateTOGGLEBTN.setText("Confirm Date");
+        confirmdateTOGGLEBTN.setToolTipText("To populate the date in the text field");
         confirmdateTOGGLEBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 confirmdateTOGGLEBTNActionPerformed(evt);
@@ -528,6 +547,7 @@ public class EskandarConnectUI extends javax.swing.JFrame {
         appointmentdisplayBTN.setForeground(new java.awt.Color(102, 102, 102));
         appointmentdisplayBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BTNs_ImgsOne/job.png"))); // NOI18N
         appointmentdisplayBTN.setText("Display");
+        appointmentdisplayBTN.setToolTipText("Display appointment details");
         appointmentdisplayBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 appointmentdisplayBTNActionPerformed(evt);
@@ -541,6 +561,7 @@ public class EskandarConnectUI extends javax.swing.JFrame {
         clearBTN1.setForeground(new java.awt.Color(102, 102, 102));
         clearBTN1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BTNs_ImgsOne/edit.png"))); // NOI18N
         clearBTN1.setText("Clear?");
+        clearBTN1.setToolTipText("clear the fields ");
         clearBTN1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clearBTN1ActionPerformed(evt);
@@ -553,7 +574,7 @@ public class EskandarConnectUI extends javax.swing.JFrame {
         jPanel8.add(regulardisplayLoginDG1);
         regulardisplayLoginDG1.setBounds(0, 0, 730, 710);
 
-        appointmentbackgroundLBL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/Screenshot (462).png"))); // NOI18N
+        appointmentbackgroundLBL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/newDarkBG.png"))); // NOI18N
         jPanel8.add(appointmentbackgroundLBL);
         appointmentbackgroundLBL.setBounds(-10, -10, 760, 730);
 
@@ -576,6 +597,7 @@ public class EskandarConnectUI extends javax.swing.JFrame {
         EHRdisplayBTN.setForeground(new java.awt.Color(102, 102, 102));
         EHRdisplayBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BTNs_ImgsOne/save.png"))); // NOI18N
         EHRdisplayBTN.setText("Print the EHR");
+        EHRdisplayBTN.setToolTipText("print a readable file .txt");
         EHRdisplayBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EHRdisplayBTNActionPerformed(evt);
@@ -630,6 +652,7 @@ public class EskandarConnectUI extends javax.swing.JFrame {
         EHRupdateBTN.setForeground(new java.awt.Color(102, 102, 102));
         EHRupdateBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BTNs_ImgsTwo/update icon.png"))); // NOI18N
         EHRupdateBTN.setText("Update");
+        EHRupdateBTN.setToolTipText("Update the EHR");
         EHRupdateBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EHRupdateBTNActionPerformed(evt);
@@ -643,6 +666,7 @@ public class EskandarConnectUI extends javax.swing.JFrame {
         exitBTN.setForeground(new java.awt.Color(102, 102, 102));
         exitBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BTNs_ImgsTwo/logout.png"))); // NOI18N
         exitBTN.setText("Exit");
+        exitBTN.setToolTipText("Click me to exit and log out ");
         exitBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitBTNActionPerformed(evt);
@@ -655,6 +679,7 @@ public class EskandarConnectUI extends javax.swing.JFrame {
         ehrClearBTN.setForeground(new java.awt.Color(102, 102, 102));
         ehrClearBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BTNs_ImgsOne/edit.png"))); // NOI18N
         ehrClearBTN.setText("Clear");
+        ehrClearBTN.setToolTipText("clear the fields");
         ehrClearBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ehrClearBTNActionPerformed(evt);
@@ -667,6 +692,7 @@ public class EskandarConnectUI extends javax.swing.JFrame {
         EHRdeleteBTN.setForeground(new java.awt.Color(102, 102, 102));
         EHRdeleteBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BTNs_ImgsTwo/delete_16x16.gif"))); // NOI18N
         EHRdeleteBTN.setText("Delete");
+        EHRdeleteBTN.setToolTipText("Delete the EHR");
         EHRdeleteBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EHRdeleteBTNActionPerformed(evt);
@@ -680,6 +706,7 @@ public class EskandarConnectUI extends javax.swing.JFrame {
         jButton2.setForeground(new java.awt.Color(102, 102, 102));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BTNs_ImgsOne/job.png"))); // NOI18N
         jButton2.setText("Display");
+        jButton2.setToolTipText("Display the EHR");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -697,6 +724,7 @@ public class EskandarConnectUI extends javax.swing.JFrame {
         EHRaddBTN.setForeground(new java.awt.Color(102, 102, 102));
         EHRaddBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BTNs_ImgsTwo/attachment-512.png"))); // NOI18N
         EHRaddBTN.setText("Add");
+        EHRaddBTN.setToolTipText("Add the EHR");
         EHRaddBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EHRaddBTNActionPerformed(evt);
@@ -736,6 +764,7 @@ public class EskandarConnectUI extends javax.swing.JFrame {
         readfromfileBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         readfromfileBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BTNs_ImgsOne/folder.png"))); // NOI18N
         readfromfileBTN.setText("Read From File");
+        readfromfileBTN.setToolTipText("Reading from a file .dat ");
         readfromfileBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 readfromfileBTNActionPerformed(evt);
@@ -758,6 +787,7 @@ public class EskandarConnectUI extends javax.swing.JFrame {
         safetofileBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         safetofileBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BTNs_ImgsOne/save.png"))); // NOI18N
         safetofileBTN.setText("Safe To File");
+        safetofileBTN.setToolTipText("Saving to a file .dat");
         safetofileBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 safetofileBTNActionPerformed(evt);
@@ -795,6 +825,7 @@ public class EskandarConnectUI extends javax.swing.JFrame {
         searchnoteBTN.setForeground(new java.awt.Color(102, 102, 102));
         searchnoteBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BTNs_ImgsTwo/Save-icon.png"))); // NOI18N
         searchnoteBTN.setText("Search");
+        searchnoteBTN.setToolTipText("Search data from ArrayList");
         searchnoteBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchnoteBTNActionPerformed(evt);
@@ -820,6 +851,7 @@ public class EskandarConnectUI extends javax.swing.JFrame {
         clearnotesBTN.setForeground(new java.awt.Color(102, 102, 102));
         clearnotesBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BTNs_ImgsOne/edit.png"))); // NOI18N
         clearnotesBTN.setText("Clear");
+        clearnotesBTN.setToolTipText("clear field & text area ");
         clearnotesBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clearnotesBTNActionPerformed(evt);
@@ -832,6 +864,7 @@ public class EskandarConnectUI extends javax.swing.JFrame {
         deletenoteBTN.setForeground(new java.awt.Color(102, 102, 102));
         deletenoteBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BTNs_ImgsTwo/delete_16x16.gif"))); // NOI18N
         deletenoteBTN.setText("Delete");
+        deletenoteBTN.setToolTipText("Delete data from ArrayList");
         deletenoteBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deletenoteBTNActionPerformed(evt);
@@ -845,6 +878,7 @@ public class EskandarConnectUI extends javax.swing.JFrame {
         displaynoteBTN.setForeground(new java.awt.Color(102, 102, 102));
         displaynoteBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BTNs_ImgsOne/job.png"))); // NOI18N
         displaynoteBTN.setText("Display");
+        displaynoteBTN.setToolTipText("Display data from ArrayList");
         displaynoteBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 displaynoteBTNActionPerformed(evt);
@@ -874,6 +908,7 @@ public class EskandarConnectUI extends javax.swing.JFrame {
         addnoteBTN.setForeground(new java.awt.Color(102, 102, 102));
         addnoteBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BTNs_ImgsTwo/attachment-512.png"))); // NOI18N
         addnoteBTN.setText("Add");
+        addnoteBTN.setToolTipText("Add data to the ArrayList");
         addnoteBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addnoteBTNActionPerformed(evt);
@@ -897,6 +932,70 @@ public class EskandarConnectUI extends javax.swing.JFrame {
 
         jTabbedPane3.addTab("NOTES TO MYSELF", jPanel10);
 
+        jPanel7.setLayout(null);
+
+        logoLBL4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Logo_ImgsOne/logo.gif"))); // NOI18N
+        jPanel7.add(logoLBL4);
+        logoLBL4.setBounds(0, 0, 80, 80);
+
+        exitfBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        exitfBTN.setForeground(new java.awt.Color(102, 102, 102));
+        exitfBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BTNs_ImgsTwo/logout.png"))); // NOI18N
+        exitfBTN.setText("Exit");
+        exitfBTN.setToolTipText("Click me to exit");
+        exitfBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitfBTNActionPerformed(evt);
+            }
+        });
+        jPanel7.add(exitfBTN);
+        exitfBTN.setBounds(620, 0, 110, 40);
+
+        joshuaBTN.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        joshuaBTN.setText("Mental Health");
+        joshuaBTN.setToolTipText("Joshua Tupas UI");
+        joshuaBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                joshuaBTNActionPerformed(evt);
+            }
+        });
+        jPanel7.add(joshuaBTN);
+        joshuaBTN.setBounds(20, 200, 300, 100);
+        joshuaBTN.setEnabled(false);
+
+        yonasBTN.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        yonasBTN.setText("Physical Health");
+        yonasBTN.setToolTipText("Yonas Haftom UI ");
+        yonasBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yonasBTNActionPerformed(evt);
+            }
+        });
+        jPanel7.add(yonasBTN);
+        yonasBTN.setBounds(380, 200, 300, 100);
+        yonasBTN.setEnabled(false);
+
+        regulardisplayLoginDG4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/1_BwPVRH0tiR2p_667fasjrQ.jpg"))); // NOI18N
+        jPanel7.add(regulardisplayLoginDG4);
+        regulardisplayLoginDG4.setBounds(0, 0, 730, 710);
+
+        loginbackgroundLBL1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/newDarkBG.png"))); // NOI18N
+        jPanel7.add(loginbackgroundLBL1);
+        loginbackgroundLBL1.setBounds(0, -20, 770, 740);
+
+        javax.swing.GroupLayout loginTAB1Layout = new javax.swing.GroupLayout(loginTAB1);
+        loginTAB1.setLayout(loginTAB1Layout);
+        loginTAB1Layout.setHorizontalGroup(
+            loginTAB1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 730, Short.MAX_VALUE)
+        );
+        loginTAB1Layout.setVerticalGroup(
+            loginTAB1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 698, Short.MAX_VALUE)
+        );
+
+        jTabbedPane3.addTab("OTHER SERVICES", loginTAB1);
+
         jMenuBar1.setToolTipText("Menu to view data ");
 
         date.setText("Date");
@@ -915,7 +1014,7 @@ public class EskandarConnectUI extends javax.swing.JFrame {
         jMenuBar1.add(LightMode);
 
         cannotloginBTNTAB.setText("Got an Issue?");
-        cannotloginBTNTAB.setToolTipText("Contact Us");
+        cannotloginBTNTAB.setToolTipText("path to be authorizated");
         cannotloginBTNTAB.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cannotloginBTNTABMouseClicked(evt);
@@ -933,7 +1032,7 @@ public class EskandarConnectUI extends javax.swing.JFrame {
         jMenuBar1.add(RegularDisplay);
 
         arrayListUserTemporaryStoredData.setText("Logged Data");
-        arrayListUserTemporaryStoredData.setToolTipText("Clcik me to switch the mode");
+        arrayListUserTemporaryStoredData.setToolTipText("Read user profile from ArrayList");
         arrayListUserTemporaryStoredData.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 arrayListUserTemporaryStoredDataMouseClicked(evt);
@@ -971,8 +1070,10 @@ public class EskandarConnectUI extends javax.swing.JFrame {
                 || EHRbackgroundLBL.isShowing() == true
                 || ehrAnimationLBL.isShowing() == true 
                 || EHRbackgroundLBL1.isShowing() == true
-                || ehrAnimationLBL1.isShowing() == true ) {
+                || ehrAnimationLBL1.isShowing() == true 
+                || loginbackgroundLBL1.isShowing() == true) {
             
+            regulardisplayLoginDG4.setVisible(false);
             regulardisplayLoginDG3.setVisible(false);
             regulardisplayLoginDG2.setVisible(false);
             regulardisplayLoginDG1.setVisible(false);
@@ -986,6 +1087,7 @@ public class EskandarConnectUI extends javax.swing.JFrame {
         ehrAnimationLBL.setVisible(!isLightMode);
         EHRbackgroundLBL1.setVisible(!isLightMode);
         ehrAnimationLBL1.setVisible(!isLightMode);
+        loginbackgroundLBL1.setVisible(!isLightMode);
 
         // note: will have to create  to be able to toggle other labels in other frames
         LightMode.setText(isLightMode ? "Dark-mode" : "Light-mode");
@@ -1196,7 +1298,7 @@ public class EskandarConnectUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null , "Please log in first!");
         } else {
             String fileName = JOptionPane.showInputDialog("Please write file name.");
-            String filePath = "C:/Users/escan/Desktop/" + fileName + ".txt";
+            String filePath = fileName + ".txt";
             
             String loggedInUserId = EHRidTF.getText();
             // Call the writeAllEHRToFile method
@@ -1429,7 +1531,8 @@ public class EskandarConnectUI extends javax.swing.JFrame {
 
     private void RegularDisplayMouseClicked(java.awt.event.MouseEvent evt) {                                            
         
-        if (regulardisplayLoginDG3.isShowing() == true
+        if (regulardisplayLoginDG4.isShowing() == true
+                || regulardisplayLoginDG3.isShowing() == true
                 || regulardisplayLoginDG2.isShowing() == true 
                 || regulardisplayLoginDG1.isShowing() == true 
                 || regulardisplayLoginDG.isShowing() == true) {
@@ -1440,11 +1543,13 @@ public class EskandarConnectUI extends javax.swing.JFrame {
             ehrAnimationLBL.setVisible(false);
             EHRbackgroundLBL1.setVisible(false);
             ehrAnimationLBL1.setVisible(false);
+            loginbackgroundLBL1.setVisible(false);
         }
         regulardisplayLoginDG.setVisible(!isLightMode);
         regulardisplayLoginDG1.setVisible(!isLightMode);
         regulardisplayLoginDG2.setVisible(!isLightMode);
         regulardisplayLoginDG3.setVisible(!isLightMode);
+        regulardisplayLoginDG4.setVisible(!isLightMode);
 
         // note: will have to create  to be able to toggle other labels in other frames
         RegularDisplay.setText(isLightMode ? "Regular-mode" : "Advanced-mode");
@@ -1591,6 +1696,23 @@ public class EskandarConnectUI extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null , "You are only reading data from here!\nType your notes in the text area below.");
     }                                            
 
+    private void yonasBTNActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        
+        this.dispose ();
+        HealthConnectUI.main(null);
+    }                                        
+
+    private void joshuaBTNActionPerformed(java.awt.event.ActionEvent evt) {                                          
+
+        JoshuaConnectUI.main(null);
+        this.dispose ();
+        
+    }                                         
+
+    private void exitfBTNActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        System.exit(0);
+    }                                        
+
     /**
      * @param args the command line arguments
      */
@@ -1683,6 +1805,7 @@ public class EskandarConnectUI extends javax.swing.JFrame {
     private javax.swing.JButton exitBTN;
     public static javax.swing.JButton exitBTN1;
     private javax.swing.JButton exitBTN2;
+    private javax.swing.JButton exitfBTN;
     private javax.swing.JLabel fnameLBL;
     public static javax.swing.JTextField fnameTF;
     private javax.swing.JRadioButton hideC;
@@ -1691,22 +1814,27 @@ public class EskandarConnectUI extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
+    public static javax.swing.JButton joshuaBTN;
     private javax.swing.JLabel lnameLBL;
     public static javax.swing.JTextField lnameTF;
     public static javax.swing.JButton loginBTN1;
     private javax.swing.JPanel loginTAB;
+    private javax.swing.JPanel loginTAB1;
     private javax.swing.JPanel loginTAB2;
     private javax.swing.JLabel loginbackgroundLBL;
+    private javax.swing.JLabel loginbackgroundLBL1;
     private javax.swing.JLabel loginidLBL;
     private javax.swing.JLabel logoLBL;
     private javax.swing.JLabel logoLBL1;
     private javax.swing.JLabel logoLBL2;
     private javax.swing.JLabel logoLBL3;
+    private javax.swing.JLabel logoLBL4;
     public static javax.swing.JTextField noteidTF;
     private javax.swing.JLabel notereferenceLBL;
     public static javax.swing.JTextArea notesTA;
@@ -1718,6 +1846,7 @@ public class EskandarConnectUI extends javax.swing.JFrame {
     private javax.swing.JLabel regulardisplayLoginDG1;
     private javax.swing.JLabel regulardisplayLoginDG2;
     private javax.swing.JLabel regulardisplayLoginDG3;
+    private javax.swing.JLabel regulardisplayLoginDG4;
     private javax.swing.JButton safetofileBTN;
     public static javax.swing.JButton searchnoteBTN;
     private javax.swing.JRadioButton showC;
@@ -1725,5 +1854,6 @@ public class EskandarConnectUI extends javax.swing.JFrame {
     private javax.swing.JMenu time;
     public static javax.swing.JButton updateBTN;
     private javax.swing.JLabel warningLBL;
+    public static javax.swing.JButton yonasBTN;
     // End of variables declaration                   
 }

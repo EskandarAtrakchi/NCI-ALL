@@ -23,10 +23,10 @@ public class ConnectDB {
     
     //static block to initilise values with predifined values 
     static {
-        //existed DB in mysql for testing
-        String url = "jdbc:mysql://127.0.0.1:3306/OOP";
-        String user = "root";
-        String password = "0723524754Aa.";
+        //existed DB in mysql for storing user data
+        String url = JOptionPane.showInputDialog("Please enter the url to MySQL.");//"jdbc:mysql://127.0.0.1:3306/OOP";
+        String user = JOptionPane.showInputDialog("Please enter the username of MySQL.");//"root";
+        String password = JOptionPane.showInputDialog("Please enter the password of MySQL.");//"0723524754Aa.";
         try {
             conn = DriverManager.getConnection (url, user, password);
         }
