@@ -42,4 +42,3 @@ public class Therapy extends MentalHealth {
                 ",      Severity: " + getSeverity() + ",     Category: " + category + ",     Duration: " + duration;
     }
 }
-
