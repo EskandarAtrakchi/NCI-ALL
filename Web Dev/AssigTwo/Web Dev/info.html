@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- for the tabe icon -->
+        <link rel="website icon" href="https://cliply.co/wp-content/uploads/2021/02/372102230_BITCOIN_400px.gif" />
+        <!--linking the css styling sheet here -->
+        <link rel="stylesheet" href="style.css" />
+        <!-- linking the main.js here -->
+        <script src="main.js"></script>
+        <title>Info Page</title>
+    </head>
+    <body onload="checkingInternetStatus ()">
+        <img src="https://cliply.co/wp-content/uploads/2021/02/372102230_BITCOIN_400px.gif" class="logo" alt="Logo" />
+        <input type="checkbox" name="checkbox" class="switch" id="darkModeCheckbox" />
+
+        <script>
+            // Check if dark mode is enabled and apply the appropriate styles
+            var darkModeEnabled = false;
+            if (darkModeEnabled) {
+                applyLightMode();
+            } else {
+                applyDarkMode();
+            }
+            // Add an event listener to the checkbox to call the toggleDarkMode function when it's clicked
+            document.getElementById("darkModeCheckbox").addEventListener("click", toggleDarkMode);
+        </script>
+
+        <!-- marquee here -->
+        <marquee>Discover Innovation Unfolding – Where Real Time Prices Meets The Financial Technology!</marquee>
+        <!-- I will use div to create a simple space -->
+        <div style="padding-bottom: 0.009%;"></div>
+        <!-- nav bar here -->
+        <div class="topnav">
+            <a href="index.html">Home</a>
+            <a href="listings.html">Listings</a>
+            <a href="ticker.html">Ticker</a>
+            <a href="info.html" class="split"  id="active" >Info</a>
+        </div>
+
+        <!--Content here -->
+        <div style="padding-left:5%;">
+            <h1>Home page explained</h1>
+            <br>
+            The fear and greed index is to give you a better understanding of the current market sentiment and to help you make more informed decisions. The index is calculated from 0 to 100. Zero means "Extreme Fear", while 100 means "Extreme Greed". The index is updated every hour. The index on this website is calculated from the following API : <a href="https://api.alternative.me/fng/" style="color:rgb(0, 255, 68)" >https://api.alternative.me/fng/</a> 
+            <br>
+            The images of fear and greed index are available also and the are taken from the same website using this API : 
+            <br>
+            Fear Index Image API : <a href="https://alternative.me/images/fng/crypto-fear-and-greed-index-2020-5-13.png" style="color:rgb(0, 255, 68)" >https://alternative.me/images/fng/crypto-fear-and-greed-index-2020-5-13.png</a>
+            <br>
+            Greed Index Image API : <a href="https://alternative.me/crypto/fear-and-greed-index.png" style="color:rgb(0, 255, 68)" >https://alternative.me/images/fng/crypto-fear-and-greed-index-2020-5-13.png</a>
+            <br>
+            The crypto fear and greed index help you know where the crypto market standing in real time.
+            info about the API : <br>
+            API: https://api.alternative.me/ <br>
+            Endpoint: /fng/ <br>
+            Method: GET <br>
+            Description: Get the latest data of the Fear and Greed Index. <br>
+            Optional Parameters: <br>
+            limit, [int]: Limit the number of returned results. The default value is '1', use '0' for all available data.  <br>Please note that the field "time_until_update" will only be returned for the latest value ( in other words: when the value '1' is used). <br>
+            format, [string]: Choose to either receive the data part formatted as regular JSON or formatted as CSV for easy pasting in spreadsheets, use either 'json' or 'csv' respectively.  <br>The default is 'json'. <br>
+            date_format, [string]: Choose to either receive the date part formatted for the United States (MM/DD/YYYY), for China and Korea (YYYY/MM/DD) or for the rest of the world (DD/MM/YYYY).  <br> Use 'us', 'cn', 'kr' or 'world' respectively.  <br>The default is an empty string which will return the date in unixtime, unless format is set to 'csv'.  <br>When "format" is set to 'csv' the default "date_format" is 'world'.
+            JSON format response should be like this : <br>
+            <pre>
+                {
+                    "name": "Fear and Greed Index",
+                    "data": [
+                        {
+                            "value": "40",
+                            "value_classification": "Fear",
+                            "timestamp": "1551157200",
+                            "time_until_update": "68499"
+                        },
+                        {
+                            "value": "47",
+                            "value_classification": "Neutral",
+                            "timestamp": "1551070800"
+                        }
+                    ],
+                    "metadata": {
+                        "error": null
+                    }
+                }
+            </pre>
+            <h1>Listings page explained</h1>
+            <br>
+            The simple description of listings API is an overview of all accessible crypto currencies; use the provided id to obtain further information about a single crypto currency using the ticker endpoint.
+            <br>
+            When click on (Fetch Crypto Data) button all the available crypto that been listed with their IDs will be retrieved and a chart will be generated to show the available crypto and their IDs accordingly, the chart is then displayed in the same page.
+            <br>
+            Retrieving the data in a chart can be use for the user to check listings IDs of the cryptocurrencies.<br>
+            info about the API : 
+            <br>
+            Endpoint: /listings/<br>
+            Method: GET<br>
+            Description: Overview of all available crypto currencies, use the returned id to retrieve more data on a specific crypto currency on the ticker endpoint.<br>
+            Example URL: <a herf="https://api.alternative.me/v2/listings/" style="color:rgb(0, 255, 68)" >https://api.alternative.me/v2/listings/</a> 
+            <br>
+            Example Response: /listings/<br>
+            JSON format response should be like this : <br>
+            <pre>
+                {
+                    "data": [
+                        {
+                            "id": "1",
+                            "name": "Bitcoin",
+                            "symbol": "BTC",
+                            "website_slug": "bitcoin"
+                        },
+                        {
+                            "id": "2",
+                            "name": "Litecoin",
+                            "symbol": "LTC",
+                            "website_slug": "litecoin"
+                        },
+                        // ... (more cryptocurrency entries)
+                    ],
+                    "metadata": {
+                        "timestamp": 1537430627,
+                        "num_cryptocurrencies": 935,
+                        "error": null
+                    }
+                }
+            </pre>
+            <br>
+            The output should look like this if the user enters (bitcoin) in the text field
+            <br>
+            <h6>&nbsp;</h6>
+            <!--Space-->
+            <img src="https://github.com/EskandarAtrakchi/WebDev-NCI-YEAR-2-FIRST-project-2/blob/main/imgs/Listings.png?raw=true" style="width:50%; height:50%;" />
+            <h1>Ticker page explained</h1>
+            The text field for user input accepts multiple data from the user, for example; if the user wants to know the data of a specific coins the user simply enters the symbols of the coins separated by space and the data will be retrieved and displayed in the chart and also as a plain text.
+            <br>
+            if the user enters BTC XRP NEAR SOL the data of these coins will be retrieved and displayed in the chart and also as a table.
+            <br>
+            this should be shown <br>
+            <h6>&nbsp;</h6>
+            <!--Space-->
+            <img src="https://github.com/EskandarAtrakchi/WebDev-NCI-YEAR-2-FIRST-project-2/blob/main/imgs/TickerTable.png?raw=true" style="width:50%; height:50%;" />
+            <h6>&nbsp;</h6>
+            <!--Space-->
+            That's how the chart looks like <br>
+            <img src="https://github.com/EskandarAtrakchi/WebDev-NCI-YEAR-2-FIRST-project-2/blob/main/imgs/TickerChart.png?raw=true" style="width:50%; height:50%;" />
+            <br>
+            <h6>&nbsp;</h6>
+            <!--Space-->
+            info about the API : <br>
+            Endpoint: /ticker/<br>
+            Method: GET<br>
+            Description: Coin and token prices updated every 5 minutes.<br>
+            Optional Parameters:<br>
+            limit, [int]: Limit the number of returned results. The default value is 100, use '0' for all available data.<br>
+            start, [int]: Sets the first element to be fetched, all requests are ordered by the Marketcap. That means the order of the returned elements can change over time.<br>
+            convert, [string]: In addition to the USD values the converted values will be delivered in the requested currency. <br> Possible fiat conversion target values are: ' USD', 'EUR', 'GBP', 'RUB', 'JPY', 'CAD', 'KRW', 'PLN' it is also possible to convert to other cryptocurrencies like: 'BTC', 'ETH', 'XRP', 'LTC' and 'BCH'.<br>
+            structure, [string]: sets the structure of the data field as either array or name-value pair style. Possible values are 'dictionary' for name-value pair style and 'array' for array style.<br>
+            sort, [string]: returned results can be sorted by: 'id', 'rank' (means marketcap), 'volume_24h', 'percent_change_24h' default sorting is by rank. <br>In addition it can be sorted by: 'price', 'percent_change_1h', 'percent_change_7d', 'circulating_supply' and 'name'.<br>
+            Example URL: <a href="https://api.alternative.me/v2/ticker/" style="color:rgb(0, 255, 68)" >https://api.alternative.me/v2/ticker/</a><br>
+            JSON format response should be like this : <br>
+            <pre>
+                {
+                    "data": [
+                    {
+                        "id": 1,
+                        "name": "Bitcoin",
+                        "symbol": "BTC",
+                        "website_slug": "bitcoin",
+                        "rank": 1,
+                        "circulating_supply": 17277612,
+                        "total_supply": 17277612,
+                        "max_supply": 21000000,
+                        "quotes": {
+                            "USD": {
+                                "price": 6418.85820382,
+                                "volume_24h": 4263700490.8,
+                                "market_cap": 110902541529,
+                                "percentage_change_1h": 0.1,
+                                "percentage_change_24h": 0.84,
+                                "percentage_change_7d": -0.23
+                            },
+                            "EUR": {
+                                "price": 5490.04942172725,
+                                "volume_24h": 3646743029.78124,
+                                "market_cap": 94854943769.7537,
+                                "percentage_change_1h": 0.1,
+                                "percentage_change_24h": 0.84,
+                                "percentage_change_7d": -0.23
+                            }
+                        },
+                        "last_updated": 1537428143
+                    },
+                    ...
+                    ],
+                    "metadata": {
+                    "timestamp": 1537428090,
+                    "num_cryptocurrencies": 935,
+                    "error": null
+                    }
+                }
+            </pre>
+        </div>
+        <!-- Footer section -->
+        <footer>
+            <div>
+                <!--Social media icons -->
+                <ul style="display: flex;">
+                    <a href="https://www.facebook.com" style="padding: 3%; padding-left: 38.555555%; color: aqua;">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="iconsblog" id="fb-ico" width="2rem" height="2rem" fill="currentColor" viewBox="0 0 16  16">
+                            <path
+                                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+                            />
+                        </svg>
+                    </a>
+                    <br />
+                    <a href="https://www.linkedin.com" style="padding: 3%; color: aqua;">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="iconsblog" id="li-ico" width="2rem" height="2rem" fill="currentColor" viewBox="0 0 16  16">
+                            <path
+                                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"
+                            />
+                        </svg>
+                    </a>
+                    <br />
+                    <a href="https://www.twitter.com" style="padding: 3%; color: aqua;">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="iconsblog" id="tw-ico" width="2rem" height="2rem" fill="currentColor" viewBox="0 0 16 16">
+                            <path
+                                d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+                            />
+                        </svg>
+                    </a>
+                </ul>
+            </div>
+            <p style="color: aqua;">
+                &copy; 2023 IT company for real crypto prices in time
+                <br />
+                Developing, maintaining, and updating a real prices and much more for web application by <strong>Eskandar Atrakchi</strong>
+            </p>
+        </footer>
+
+        <!--Arrow to go up -->
+        <a href="#top">
+            <h1 style="float: right;"><img src="https://archive.org/download/arrowup/arrowup.gif" style="width: 13%; height: 33%; float: right;" alt="IMG-HERE" /></h1>
+        </a>
+    </body>
+</html>
