@@ -1,6 +1,4 @@
-Certainly! Here's the content in Markdown format:
-
-```markdown
+markdown
 # Running Linux on Windows 10
 
 ## Windows Subsystem for Linux (WSL)
