@@ -21,5 +21,3 @@ Restart your computer.
 
 Install a Linux distribution from the Microsoft Store (e.g., Ubuntu, Debian, Fedora).
 ```
-
-You can copy and paste this content into a new Markdown file (with a `.md` extension) and then upload it to your GitHub repository.
