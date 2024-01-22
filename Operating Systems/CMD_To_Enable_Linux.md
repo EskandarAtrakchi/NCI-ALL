@@ -20,4 +20,3 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 Restart your computer.
 
 Install a Linux distribution from the Microsoft Store (e.g., Ubuntu, Debian, Fedora).
-```
